@@ -1,0 +1,24 @@
+
+{#
+<li><a href="#" title="Experiências">Experiências</a></li>
+<li><a href="#" title="Alojamentos">Alojamentos</a></li>
+<li><a href="#" title="Loja">Loja</a></li>
+<li><a href="#" title="Parceiros">Parceiros</a></li>
+#}
+{#<li><a href="{{ baseUri }}/" title="{% trans %}Home{% endtrans %}">{% trans %}Home{% endtrans %}</a></li>#}
+<li class="py-3"><a href="{{ baseUri }}/about-us" title="{% trans %}Solutions{% endtrans %}" class="menu-link-font">{% trans %}Solutions{% endtrans %}</a></li>
+<li class="py-3" ><a href="{{ baseUri }}/product" title="{% trans %}Business areas{% endtrans %}"  class="menu-link-font">{% trans %}Business areas{% endtrans %}</a></li>
+<li class="py-3"><a href="{{ baseUri }}/customer-support" title="{% trans %}Customer support{% endtrans %}"  class="menu-link-font">{% trans %}Customer support{% endtrans %}</a></li>
+
+{#% if customerId is defined and customerId > 0 %}
+    <li class="px-2">
+        <a href="{{ baseUri }}/customer" class="btn btn-secondary text-white">{% trans %}Customer Area{% endtrans %}</a>
+    </li>
+{% else %}
+    <li class="px-2">
+        <div class="btn-group btn-grey-group btn-group-sm btn-sm" role="group">
+            <a href="{{ baseUri }}/login" class="btn btn-primary text-white">{% trans %}Login{% endtrans %}</a>
+            <a href="{{ baseUri }}/signup" class="btn btn-primary">{% trans %}Register{% endtrans %}</a>
+        </div>
+    </li>
+#}

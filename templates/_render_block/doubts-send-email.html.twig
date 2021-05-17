@@ -1,0 +1,12 @@
+{% set formDoubts = null %}
+{% for i in colDoubts %}
+	{% if i.title == "send-email" %}
+		{% set formDoubts = i %}
+	{% endif %}
+{% endfor %}
+	<div class="row py-5">
+			<div class="col-12 col-md-8 col-lg-8 py-5"><img src="{{formDoubts.filename}}" style="width:100%;"></div>
+			<div class="col-12 col-md-4 col-lg-4 py-5">
+				{{formDoubts.text|raw}}
+			</div>
+		</div>
