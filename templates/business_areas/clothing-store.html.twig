@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    {% set text = null  %}
+    {% set image = null %}
+    {% for media in colBanner %}
+        {% if media.referenceKey == 'richmedia-clothing-store-banner' %}
+            {% set text = media.text %}
+            {% set image = media.filename %}
+        {% endif %}
+    {% endfor %}
+  <div class="background-image-header" style="background-image: url('{{image}}')">
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            {{text|raw}}
+        </div>
+    </div>
+    </div>
+
+<div class="background-index-image" style="padding-top: 15vh; padding-bottom: 100px;">
+
+        <div class="container py-5">
+        <div class="row d-flex justify-content-center">
+            <i class="mdi-48px mdi mdi-tshirt-crew clothing-store-icon-style"></i>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <span class="restaurants-under-icon-text">{% trans %}Clothing Store{% endtrans %}</span>
+        </div>
+    </div>
+
+
+
+    <div class="container py-5">
+
+
+    <!--1ª ROW-->
+    <div class="row">
+            <div class="col-12 col-md-6 d-flex align-items-center">
+                <div>
+                <p class="restaurant-title">RESTORATION AND SIMILARS<br>THE MOST COMPLETE SOFTWARE FOR THE FOOD AND BEVERAGE SECTOR</p>
+                <p class="restaurant-text">A software designed to be reliable, easy to use and with all the features you need, including the integration of 100% of Glovo and Uber Eats orders directly into the POS. Certified by the Tax Authority and with the guarantee of all legally required updates, free of charge and quickly.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <img  class="restaurant-image_01" src="assets/images/img1-clothing-store.svg">
+            </div>
+            <div class="col-12">
+                <svg class='clothing-svg-line-window'>
+                    <line x1="500" y1="0" x2="0" y2="250" style="stroke:rgb(115,115,115);stroke-width:1" />
+                </svg>
+                <svg class='clothing-svg-line-mobile'>
+                    <line x1="0" y1="0" x2="50" y2="250" style="stroke:rgb(115,115,115);stroke-width:1" />
+                </svg>
+            </div>
+    </div>
+    <!--/1ª ROW-->
+
+    <!--2ª ROW-->
+        <div class="row py-5">
+            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+                <div class="d-flex justify-content-center align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="232" height="232" viewBox="0 0 232 232">
+                              <g id="Caminho_618" data-name="Caminho 618" fill="#fff">
+                              
+                                <path d="M 116 1 C 108.1967315673828 1 100.398681640625 1.786087036132813 92.82244873046875 3.336410522460938 C 85.43923950195313 4.84722900390625 78.1768798828125 7.101593017578125 71.23712158203125 10.03684997558594 C 64.42311096191406 12.9189453125 57.85090637207031 16.4862060546875 51.703125 20.63958740234375 C 45.61343383789063 24.75370788574219 39.88694763183594 29.47850036621094 34.6827392578125 34.6827392578125 C 29.47850036621094 39.88694763183594 24.75370788574219 45.61343383789063 20.63958740234375 51.703125 C 16.4862060546875 57.85090637207031 12.9189453125 64.42311096191406 10.03684997558594 71.23712158203125 C 7.101593017578125 78.1768798828125 4.84722900390625 85.43923950195313 3.336410522460938 92.82244873046875 C 1.786087036132813 100.398681640625 1 108.1967315673828 1 116 C 1 123.6597671508789 1.7574462890625 131.3207397460938 3.251266479492188 138.7700805664063 C 4.705764770507813 146.0234375 6.875411987304688 153.1638793945313 9.699859619140625 159.9930572509766 C 12.47064208984375 166.6924438476563 15.89878845214844 173.1592407226563 19.88905334472656 179.2137603759766 C 23.83811950683594 185.2058258056641 28.37088012695313 190.8448791503906 33.36143493652344 195.9742889404297 C 38.63546752929688 201.3953552246094 44.4454345703125 206.3152008056641 50.62994384765625 210.59716796875 C 56.86805725097656 214.916259765625 63.54347229003906 218.625 70.47073364257813 221.6203308105469 C 77.51968383789063 224.6682586669922 84.90299987792969 227.0087890625 92.41555786132813 228.5769348144531 C 100.1183471679688 230.1847686767578 108.0532913208008 231 116 231 C 123.8032684326172 231 131.601318359375 230.2139129638672 139.1775512695313 228.6635894775391 C 146.5607604980469 227.1527709960938 153.8231201171875 224.8984069824219 160.7628784179688 221.9631500244141 C 167.5768737792969 219.0810546875 174.1490936279297 215.5137939453125 180.296875 211.3604125976563 C 186.3865661621094 207.2462921142578 192.1130676269531 202.5214996337891 197.3172607421875 197.3172607421875 C 202.5214996337891 192.1130676269531 207.2462921142578 186.3865661621094 211.3604125976563 180.296875 C 215.5137939453125 174.1490936279297 219.0810546875 167.5768737792969 221.9631500244141 160.7628784179688 C 224.8984069824219 153.8231201171875 227.1527709960938 146.5607604980469 228.6635894775391 139.1775512695313 C 230.2139129638672 131.601318359375 231 123.8032684326172 231 116 C 231 108.1967315673828 230.2139129638672 100.398681640625 228.6635894775391 92.82244873046875 C 227.1527709960938 85.43923950195313 224.8984069824219 78.1768798828125 221.9631500244141 71.23712158203125 C 219.0810546875 64.42311096191406 215.5137939453125 57.85090637207031 211.3604125976563 51.703125 C 207.2462921142578 45.61343383789063 202.5214996337891 39.88694763183594 197.3172607421875 34.6827392578125 C 192.1130676269531 29.47850036621094 186.3865661621094 24.75370788574219 180.296875 20.63958740234375 C 174.1490936279297 16.4862060546875 167.5768737792969 12.9189453125 160.7628784179688 10.03684997558594 C 153.8231201171875 7.101593017578125 146.5607604980469 4.84722900390625 139.1775512695313 3.336410522460938 C 131.601318359375 1.786087036132813 123.8032684326172 1 116 1 M 116 0 C 180.0650329589844 0 232 51.93496704101563 232 116 C 232 180.0650329589844 180.0650329589844 232 116 232 C 83.39091491699219 232 53.92446899414063 218.5446166992188 32.64468383789063 196.6716156005859 C 12.52052307128906 175.9875335693359 0 147.4559326171875 0 116 C 0 51.93496704101563 51.93496704101563 0 116 0 Z" stroke="none" fill="#707070"/>
+                              </g>
+                            </svg>
+                            <i class="mdi-48px mdi mdi-tshirt-crew clothing-icon_1-content icon-mobile"></i>
+                    </div>
+            </div>
+            <div class="col-12 col-md-6 d-flex align-items-center py-3 py-lg-0">
+                <div>
+                <p class="restaurant-text">ZS CLOUD<br>SEGURANÇA E MOBILIDADE</p>
+                <p class="restaurant-text">A informação gerada pelos pontos de venda é sincronizada em tempo real, armazenada na cloud, sem custos adicionais, para que tenha toda a sua informação sempre disponível e segura.</p>
+
+                </div>
+            </div>
+
+        </div>
+    <!--/2ª ROW-->
+    <!--3ª ROW-->
+        <div class="row">
+            <div class="col-12 col-md-6 d-flex align-items-center">
+                <div>
+                    <p class="restaurant-title">freebee®<br>DESCONTOS AQUI, ALI E ACOLÁ</p>
+                    <p class="restaurant-text">Plataforma de fidelização integrada nos softwares Zone Soft. Permite aos clientes obter vantagens num conjunto alargado de pontos de venda e tornar o seu negócio alvo da atenção de milhares de pessoas.</p>
+                </div>
+            </div>
+        </div>
+    <!--/3ª ROW-->
+    <!--4ª ROW-->
+    <div class="row d-flex justify-content-end py-5">
+            <div class="col-12 col-md-6">
+                <div class="py-5 py-md-2">
+                    <p class="restaurant-text">AUTORIDADE TRIBUTÁRIA<br>FATURAÇÃO E EMISSÃO DE DOCUMENTOS DE TRANSPORTE</p>
+                    <p class="restaurant-text">Software certificado pela Autoridade Tributária, para faturação e emissão de documentos de transporte, com comunicação em tempo real e garantia de todas as atualizações legalmente exigidas gratuitamente.</p>
+                </div>
+            </div>
+        </div>
+    <!--/4ª ROW-->
+    <!--5ª ROW-->
+    
+    <!--/5ª ROW-->
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="container py-5">
+            {% include '_render_block/doubts-send-email.html.twig' %}
+    </div>
+</div>
+
+     
+{% endblock %}
+
+{% block  javascript %}
+{% endblock %}

@@ -95,6 +95,15 @@ body {
     top: -140px;
     left: 180px;
 }
+.clothing-svg-line-mobile{
+	    display: block !important;
+    z-index: -1;
+    position: absolute !important;
+    width: 50px;
+    height: 200px;
+    top: -140px;
+    left: 180px;
+}
 .restaurant-mobile-div_1{
 	margin-bottom: 450px;
 }
@@ -179,6 +188,9 @@ img{
 	.restaurant-svg-line-window{
 		display: none !important;
 
+	}
+	.clothing-svg-line-window{
+		display: none !important;
 	}
 	.restaurant-svg-line-window_2{
 		display: none !important;
@@ -785,6 +797,10 @@ border-bottom: 1px solid white !important;
 	color: #8019b3;
 	font-size: 116px !important;
 }
+.clothing-store-icon-style::before{
+	color: #8ac926;
+	font-size: 116px !important;
+}
 .restaurants-under-icon-text{
 	font-weight: bold;
 	font-size: 24px;
@@ -811,6 +827,14 @@ border-bottom: 1px solid white !important;
 .restaurant-icon_1-content:before{
 	font-size:70px !important;
 	color: #8019b3;
+}
+.clothing-icon_1-content{
+	position: absolute;
+}
+
+.clothing-icon_1-content::before{
+	font-size:70px !important;
+	color: #8ac926;
 }
 
 
@@ -852,6 +876,18 @@ border-bottom: 1px solid white !important;
     top: -129px;
     left: 204px;
 
+}
+.clothing-svg-line-window{
+	display: block;
+    z-index: -1;
+    position: absolute;
+    width: 600px;
+    height: 187px;
+    top: -129px;
+    left: 204px;
+}
+.clothing-svg-line-mobile{
+	display: none;
 }
 .restaurant-svg-line-mobile{
 	display: none;
