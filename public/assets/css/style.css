@@ -101,9 +101,10 @@ body {
     position: absolute !important;
     width: 50px;
     height: 200px;
-    top: -140px;
+	top: -146px;
     left: 180px;
 }
+
 .restaurant-mobile-div_1{
 	margin-bottom: 450px;
 }
@@ -135,8 +136,18 @@ body {
     left: 50% !important;
     transform: translateX(-50%);
 }
+.clothing-store-img{
+	width: 100% !important;
+}
+.clothing-img-mobile{
+	position: absolute;
+	top: calc(100% + 350px);
+}
+.clothing-mobile-padding-bot{
+	padding-bottom: 350px;
+}
 img{
-	max-width: 300px;
+	max-width: 300px !important;
 }
 }
 @media only screen and (max-width:770px){
@@ -144,7 +155,6 @@ img{
 		height: 288px;
 	}
 }
-
 @media only screen and (max-width: 989px){
 	.card-secondary{
         display:none;
@@ -192,6 +202,30 @@ img{
 	.clothing-svg-line-window{
 		display: none !important;
 	}
+	.plumbers-svg-line-window{
+		display: none !important;
+	}
+	.clothing-svg-line-window_2{
+		display: none !important;
+	}
+	.plumbers-svg-line-window_2{
+		display: none !important;
+	}
+	.clothing-svg-line-window_3{
+		display: none !important;
+	}
+	.plumbers-svg-line-window_3{
+		display: none !important;
+	}
+	.plumbers-svg-line-window_5{
+		display:none !important;
+	}
+	.clothing-svg-line-window_4{
+		display: none !important;
+	}
+	.plumbers-svg-line-window_4{
+		display: none !important; 
+	}
 	.restaurant-svg-line-window_2{
 		display: none !important;
 	}
@@ -211,6 +245,37 @@ img{
 	}
 	.restaurant-svg-line-window_5{
 		display: none !important;
+	}
+	.clothing-svg-line-window_2{
+			width: 400px !important;
+	}  
+	.plumbers-svg-line-window{
+		width: 500px !important;
+    	height: 187px !important;
+    	top: -123px !important;
+    	left: 170px !important;
+	}
+	.plumbers-svg-line-window_2{
+		    left: 257px !important;
+			width: 212px !important;
+	}
+	.clothing-svg-line-window_3{
+			width: 340px !important;
+	}    
+	.plumbers-svg-line-window_3{
+		left: 302px !important;
+		width: 218px !important; 
+	}
+	.plumbers-svg-line-window_5{
+		left: 302px !important;
+    	width: 324px !important;
+	}
+	.clothing-svg-line-window_4{
+			width: 340px !important;
+	}    
+	.plumbers-svg-line-window_4{
+		    top: -394px !important;
+		    width: 208px !important;
 	}
 }
 .menu-mobile-link :nth-child(2){
@@ -801,6 +866,10 @@ border-bottom: 1px solid white !important;
 	color: #8ac926;
 	font-size: 116px !important;
 }
+.plumbers-store-icon-style::before{
+	color: #ffc31f;
+	font-size: 116px !important;
+}
 .restaurants-under-icon-text{
 	font-weight: bold;
 	font-size: 24px;
@@ -835,6 +904,14 @@ border-bottom: 1px solid white !important;
 .clothing-icon_1-content::before{
 	font-size:70px !important;
 	color: #8ac926;
+}
+.plumbers-icon_1-content{
+	position: absolute;
+}
+
+.plumbers-icon_1-content::before{
+	font-size:70px !important;
+	color: #ffc31f;
 }
 
 
@@ -886,6 +963,78 @@ border-bottom: 1px solid white !important;
     top: -129px;
     left: 204px;
 }
+.plumbers-svg-line-window{
+	display: block;
+    z-index: -1;
+    position: absolute;
+    width: 600px;
+    height: 187px;
+    top: -129px;
+    left: 204px;
+}
+.clothing-svg-line-window_2{
+	display: block;
+    z-index: -1;
+    position: absolute;
+    width: 500px;
+    height: 249px;
+    top: -122px;
+    left: 76px;
+}
+.clothing-svg-line-window_3{
+	display: block;
+    z-index: -1;
+    position: absolute;
+	width: 430px;
+    height: 249px;
+    top: 186px;
+    left: 196px;
+}
+.plumbers-svg-line-window_3{
+	display: block;
+    z-index: -1;
+    position: absolute;
+    width: 290px;
+    height: 249px;
+    top: 214px;
+    left: 344px;
+}
+.plumbers-svg-line-window_5{
+	    display: block;
+    z-index: -1;
+    position: absolute;
+    width: 400px;
+    height: 249px;
+    top: -113px;
+    left: 344px;
+}
+.clothing-svg-line-window_4{
+	    display: block;
+    z-index: -1;
+    position: absolute;
+	width: 432px;
+    height: 249px;
+    top: -501px;
+    left: 196px;
+}
+.plumbers-svg-line-window_4{
+	display: block;
+    z-index: -1;
+    position: absolute;
+    width: 321px;
+    height: 249px;
+    top: -550px;
+    left: 316px;
+}
+.plumbers-svg-line-window_2{
+	display: block;
+    z-index: -1;
+    position: absolute;
+    width: 258px;
+    height: 249px;
+    top: -200px;
+    left: 300px;
+}
 .clothing-svg-line-mobile{
 	display: none;
 }
@@ -936,4 +1085,7 @@ border-bottom: 1px solid white !important;
 }
 .restaurant-svg-line-mobile_5{
 	display: none;
+}
+.clothing-store-img{
+	width:50%;
 }
