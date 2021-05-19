@@ -1,0 +1,275 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    {% set text = null  %}
+    {% set image = null %}
+    {% for media in colBanner %}
+        {% if media.referenceKey == 'richmedia-taxis-banner' %}
+            {% set text = media.text %}
+            {% set image = media.filename %}
+        {% endif %}
+    {% endfor %}
+  <div class="background-image-header" style="background-image: url('{{image}}')">
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            {{text|raw}}
+        </div>
+    </div>
+    </div>
+
+<div class="background-index-image" style="padding-top: 15vh; padding-bottom: 100px;">
+
+        <div class="container py-5">
+        <div class="row d-flex justify-content-center">
+            <i class="mdi-48px mdi mdi-taxi taxis-store-icon-style"></i>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <span class="restaurants-under-icon-text">{% trans %}Taxis{% endtrans %}</span>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <!--1ª ROW-->
+         {% set colRow = colContent['first-row'] %}
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-12 col-md-6 py-5 py-md-0">
+                {{ colRow.text[0]|raw}}
+                <!--p class="restaurant-title">ZS MOBILE<br><br>COMÉRCIO COM MOBILIDADE<br>FATURAÇÃO EM SMARTPHONE OU TABLET</p>
+                <p class="restaurant-text">Sem custos elevados e sem a necessidade de um computador, tenha o seu ponto de venda no seu smartphone ou tablet.<br>Agora, de uma forma simples e rápida, tenha o seu POS móvel para que possa fazer e gerir o seu negócio, onde quer que esteja e ligado a uma impressora de talões portátil via bluetooth.<br>A solução ideal para o seu negócio sempre em movimento, com o backup de toda a informação na cloud.</p-->
+            </div>
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <img height="533" src="{{colRow.image[0]}}">
+            </div>
+
+
+            <div class="col-12">
+                <svg class='taxis-svg-line-window'>
+                    <line x1="500" y1="0" x2="0" y2="250" style="stroke:rgb(115,115,115);stroke-width:1" />
+                </svg>
+                <svg class='taxis-svg-line-mobile'>
+                    <line x1="0" y1="0" x2="0" y2="50" style="stroke:rgb(115,115,115);stroke-width:1" />
+                </svg>
+            </div>
+        </div>
+        <!--/1ª ROW-->
+
+        <!--2ª ROW-->
+         {% set colRow = colContent['second-row'] %}
+              <div class="row d-flex align-items-center py-5">
+            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center pb-5 pb-md-0">
+               
+                   <svg xmlns="http://www.w3.org/2000/svg" width="232" height="232" viewBox="0 0 232 232">
+                              <g id="Caminho_618" data-name="Caminho 618" fill="#fff">
+                              
+                                <path d="M 116 1 C 108.1967315673828 1 100.398681640625 1.786087036132813 92.82244873046875 3.336410522460938 C 85.43923950195313 4.84722900390625 78.1768798828125 7.101593017578125 71.23712158203125 10.03684997558594 C 64.42311096191406 12.9189453125 57.85090637207031 16.4862060546875 51.703125 20.63958740234375 C 45.61343383789063 24.75370788574219 39.88694763183594 29.47850036621094 34.6827392578125 34.6827392578125 C 29.47850036621094 39.88694763183594 24.75370788574219 45.61343383789063 20.63958740234375 51.703125 C 16.4862060546875 57.85090637207031 12.9189453125 64.42311096191406 10.03684997558594 71.23712158203125 C 7.101593017578125 78.1768798828125 4.84722900390625 85.43923950195313 3.336410522460938 92.82244873046875 C 1.786087036132813 100.398681640625 1 108.1967315673828 1 116 C 1 123.6597671508789 1.7574462890625 131.3207397460938 3.251266479492188 138.7700805664063 C 4.705764770507813 146.0234375 6.875411987304688 153.1638793945313 9.699859619140625 159.9930572509766 C 12.47064208984375 166.6924438476563 15.89878845214844 173.1592407226563 19.88905334472656 179.2137603759766 C 23.83811950683594 185.2058258056641 28.37088012695313 190.8448791503906 33.36143493652344 195.9742889404297 C 38.63546752929688 201.3953552246094 44.4454345703125 206.3152008056641 50.62994384765625 210.59716796875 C 56.86805725097656 214.916259765625 63.54347229003906 218.625 70.47073364257813 221.6203308105469 C 77.51968383789063 224.6682586669922 84.90299987792969 227.0087890625 92.41555786132813 228.5769348144531 C 100.1183471679688 230.1847686767578 108.0532913208008 231 116 231 C 123.8032684326172 231 131.601318359375 230.2139129638672 139.1775512695313 228.6635894775391 C 146.5607604980469 227.1527709960938 153.8231201171875 224.8984069824219 160.7628784179688 221.9631500244141 C 167.5768737792969 219.0810546875 174.1490936279297 215.5137939453125 180.296875 211.3604125976563 C 186.3865661621094 207.2462921142578 192.1130676269531 202.5214996337891 197.3172607421875 197.3172607421875 C 202.5214996337891 192.1130676269531 207.2462921142578 186.3865661621094 211.3604125976563 180.296875 C 215.5137939453125 174.1490936279297 219.0810546875 167.5768737792969 221.9631500244141 160.7628784179688 C 224.8984069824219 153.8231201171875 227.1527709960938 146.5607604980469 228.6635894775391 139.1775512695313 C 230.2139129638672 131.601318359375 231 123.8032684326172 231 116 C 231 108.1967315673828 230.2139129638672 100.398681640625 228.6635894775391 92.82244873046875 C 227.1527709960938 85.43923950195313 224.8984069824219 78.1768798828125 221.9631500244141 71.23712158203125 C 219.0810546875 64.42311096191406 215.5137939453125 57.85090637207031 211.3604125976563 51.703125 C 207.2462921142578 45.61343383789063 202.5214996337891 39.88694763183594 197.3172607421875 34.6827392578125 C 192.1130676269531 29.47850036621094 186.3865661621094 24.75370788574219 180.296875 20.63958740234375 C 174.1490936279297 16.4862060546875 167.5768737792969 12.9189453125 160.7628784179688 10.03684997558594 C 153.8231201171875 7.101593017578125 146.5607604980469 4.84722900390625 139.1775512695313 3.336410522460938 C 131.601318359375 1.786087036132813 123.8032684326172 1 116 1 M 116 0 C 180.0650329589844 0 232 51.93496704101563 232 116 C 232 180.0650329589844 180.0650329589844 232 116 232 C 83.39091491699219 232 53.92446899414063 218.5446166992188 32.64468383789063 196.6716156005859 C 12.52052307128906 175.9875335693359 0 147.4559326171875 0 116 C 0 51.93496704101563 51.93496704101563 0 116 0 Z" stroke="none" fill="#707070"/>
+                              </g>
+                            </svg>
+                            <i class="d-flex mdi-48px {{colRow.icon[0]}} taxis-icon_1-content icon-mobile"></i>
+
+            </div>
+            <div class="col-12 col-md-6">
+                {{colRow.text[0]|raw}}
+                <!--p class="restaurant-title">GADGETS<br>SISTEMA NATIVO ANDROID</p>
+                <p class="restaurant-text">Solução de mobilidade sem necessidade de ter um computador.<br>Funcionamento em smartphone e tablet (sistema Android, versão igual ou superior à 4.4), com interface específica e ligação a impressoras de talões portáteis via bluetooth.</p-->
+            </div>
+          
+        </div>
+        <!--/2ª ROW-->
+
+        <!--3ª ROW-->
+         {% set colRow = colContent['third-row'] %}
+        <div class="row d-flex align-items-center py-5">
+            <div class="col-12 col-md-6">
+                {{colRow.text[0]|raw}}
+                <!--p class="restaurant-title">GEOLOCALIZAÇÃO<br>GESTÃO EM TEMPO REAL</p>
+                <p class="restaurant-text">Fature onde quiser, quando quiser, no seu smartphone ou tablet, com controlo de localização e possibilidade de associar a venda à mesma.</p-->
+            </div>
+          
+        </div>
+
+        <!--/3ª ROW-->
+
+        <!--4ª ROW-->
+         {% set colRow = colContent['fourth-row'] %}
+        <div class="row d-flex align-items-center justify-content-end py-5">
+            <div class="col-12 col-md-6">
+                {{colRow.text[0]|raw}}
+                <!--p class="restaurant-title">INTERNET<br>SINCRONIZAÇÃO AUTOMÁTICA</p>
+                <p class="restaurant-text">Possibilidade de funcionar e faturar sem ligação à internet, com uma sincronização com a cloud automática mínima de 5 em 5 dias.</p-->
+            </div>
+          
+        </div>
+
+        <!--/4ª ROW-->
+
+        <!--5ª ROW-->
+         {% set colRow = colContent['fifth-row'] %}
+        <div class="row d-flex align-items-center py-5">
+            <div class="col-12 col-md-6">
+                {{colRow.text[0]|raw}}
+                <!--p class="restaurant-title">ZS BMS<br>BACKOFFICE COM GESTÃO ONLINE</p>
+                <p class="restaurant-text">ZS BMS é um portal online que permite a gestão remota de toda a informação de produtos, stocks, vendas, compras e fornecedores, e o acompanhamento em tempo real do negócio com apresentação de gráficos, mapas e relatórios.<br>Clique aqui para mais informações.</p-->
+            </div>
+
+            <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start">
+                <img src="{{colRow.image[0]}}" width="100%">
+            </div>
+          
+        </div>
+        <!--/5ª ROW-->
+
+
+        <!--6ª ROW-->
+         {% set colRow = colContent['sixth-row'] %}
+        <div class="row d-flex align-items-center justify-content-end py-5">
+            <div class="col-12 col-md-6">
+                {{colRow.text[0]|raw}}
+                <!--p class="restaurant-title">ZS CLOUD<br>SEGURANÇA E MOBILIDADE</p>
+                <p class="restaurant-text">A informação gerada pelos pontos de venda é sincronizada em tempo real, armazenada na cloud, sem custos adicionais, para que tenha toda a sua informação sempre disponível e segura.</p-->
+            </div> 
+        </div>
+        <!--/6ª ROW-->
+
+        <!--7ª ROW-->
+         {% set colRow = colContent['seventh-row'] %}
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-12 col-md-6">
+                {{colRow.text[0]|raw}}
+                <!--p class="restaurant-title">freebee®<br>DESCONTOS AQUI, ALI E ACOLÁ<br></p>
+                <p class="restaurant-text">Plataforma de fidelização integrada nos softwares Zone Soft. Permite aos clientes obter vantagens num conjunto alargado de pontos de venda e tornar o seu negócio alvo da atenção de milhares de pessoas.<br>Clique aqui para mais informações.</p-->
+            </div>
+            <div class="col-12 col-md-6 d-none d-md-block">
+                <div class="d-flex justify-content-center">
+                    <div class="d-flex justify-content-center py-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104">
+                          <g id="Elipse_14" data-name="Elipse 14" fill="#fff" stroke="#707070" stroke-width="1">
+                            <circle cx="52" cy="52" r="52" stroke="none"/>
+                            <circle cx="52" cy="52" r="51.5" fill="none"/>
+                          </g>
+                        </svg>
+                        <span class="taxis-percentagem-font">%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                     <div class="d-flex justify-content-center py-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104">
+                          <g id="Elipse_14" data-name="Elipse 14" fill="#fff" stroke="#707070" stroke-width="1">
+                            <circle cx="52" cy="52" r="52" stroke="none"/>
+                            <circle cx="52" cy="52" r="51.5" fill="none"/>
+                          </g>
+                        </svg>
+                        <span class="taxis-percentagem-font">%</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                 <div class="d-flex justify-content-center py-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104">
+                      <g id="Elipse_14" data-name="Elipse 14" fill="#fff" stroke="#707070" stroke-width="1">
+                        <circle cx="52" cy="52" r="52" stroke="none"/>
+                        <circle cx="52" cy="52" r="51.5" fill="none"/>
+                      </g>
+                    </svg>
+                    <span class="taxis-percentagem-font">%</span>
+                </div>
+                </div>
+            </div>
+            <div class="col-12">
+                 <svg class='taxis-svg-line-window_2'>
+                    <line x1="500" y1="0" x2="0" y2="250" style="stroke:rgb(115,115,115);stroke-width:1" />
+                </svg>
+                 <svg class='taxis-svg-line-window_3'>
+                    <line x1="500" y1="0" x2="0" y2="0" style="stroke:rgb(115,115,115);stroke-width:1" />
+                </svg>
+                   <svg class='taxis-svg-line-window_4'>
+                    <line x1="500" y1="250" x2="0" y2="0" style="stroke:rgb(115,115,115);stroke-width:1" />
+                </svg>
+            </div>
+        </div>
+        <!--/7ª ROW-->
+
+        <!--8ª ROW-->
+ {% set colRow = colContent['eighth-row'] %}
+        <div class="row d-flex align-items-center pt-5">
+
+            <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start">
+                <img width="100%" src="{{colRow.image[0]}}">
+            </div>
+            <div class="col-12 col-md-6 py-5 py-md-0">
+                <div>
+                    {{colRow.text[0]|raw}}
+                <!--p class="restaurant-title">AUTORIDADE TRIBUTÁRIA<br>COM TODOS OS REQUISITOS LEGAIS</p>
+                <p class="restaurant-text">Faturação com emissão de SAFT, global ou por dispositivo e emissão de documentos de transporte com comunicação em tempo real à AT (guias de remessa com conversão em fatura, guias de transporte e guias de transporte global).</p-->
+                </div>
+                <div class="d-flex justify-content-center justify-content-md-end align-items-end" style="padding-top:200px;">
+                    <img src="{{colRow.image[1]}}">
+                </div>
+            </div>
+            <div class="col-12">
+                   <svg class='taxis-svg-line-window_5'>
+                    <line x1="400" y1="500" x2="0" y2="0" style="stroke:rgb(115,115,115);stroke-width:1" />
+                </svg>
+            </div>
+        </div>
+
+        <!--/8ª ROW-->
+        <!--9ª ROW-->
+         {% set colRow = colContent['ninth-row'] %}
+            <div class="row py-5">
+
+                <div class="col-12 col-md-6">
+                    {{colRow.text[0]|raw}}
+                <!--p class="restaurant-title">PAGAMENTOS MÓVEIS<br>UM NOVO MEIO DE PAGAMENTO</p>
+                <p class="restaurant-text">Integração nativa do serviço MB WAY e das carteiras virtuais MEO Wallet e SEQR Wallet nos softwares Zone Soft, para que possa disponibilizar os meios de pagamento mais inovadores.</p-->
+                </div>
+            </div>
+        <!--/9ª ROW-->
+
+         <!--10ª ROW-->
+          {% set colRow = colContent['tenth-row'] %}
+            <div class="row d-flex align-items-center pt-5">
+                <div class="col-12">
+                    <svg class='taxis-svg-line-window_6'>
+                        <line x1="400" y1="0" x2="0" y2="500" style="stroke:rgb(115,115,115);stroke-width:1" />
+                    </svg>
+                </div>
+                <div class="col-12 col-md-6 d-flex justify-content-center">
+                    <img src="{{colRow.image[0]}}">
+                </div>
+                <div class="col-12 col-md-6 py-5 py-md-0">
+                    {{colRow.text[0]|raw}}
+                <!--p class="restaurant-title">Requisitos mínimos para utilização do software ZS POS MOBILE:<br></p>
+                <p class="restaurant-text">– Funcionamento em smartphone e tablet, sistema operativo android versão 4.4 ou superior.<br>– Conexão à internet.</p-->
+                </div>
+            </div>
+        <!--/10ª ROW-->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container py-5">
+            {% include '_render_block/doubts-send-email.html.twig' %}
+    </div>
+</div>
+
+     
+{% endblock %}
+
+{% block  javascript %}
+{% endblock %}

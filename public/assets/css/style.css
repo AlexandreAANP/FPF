@@ -95,6 +95,15 @@ body {
     top: -140px;
     left: 180px;
 }
+.taxis-svg-line-mobile{
+	    display: block !important;
+    z-index: -1;
+    position: absolute !important;
+    width: 50px;
+    height: 50px;
+    top: -1px;
+    left: 50%;
+}
 .clothing-svg-line-mobile{
 	    display: block !important;
     z-index: -1;
@@ -205,6 +214,24 @@ img{
 	.plumbers-svg-line-window{
 		display: none !important;
 	}
+	.taxis-svg-line-window{
+		display: none !important;
+	}
+	.taxis-svg-line-window_2{
+		display: none !important;
+	}
+	.taxis-svg-line-window_3{
+		display: none !important;
+	}
+	.taxis-svg-line-window_4{
+		display: none !important;
+	}
+	.taxis-svg-line-window_5{
+		display: none !important;
+	}
+	.taxis-svg-line-window_6{
+		display: none !important;
+	}
 	.clothing-svg-line-window_2{
 		display: none !important;
 	}
@@ -276,6 +303,30 @@ img{
 	.plumbers-svg-line-window_4{
 		    top: -394px !important;
 		    width: 208px !important;
+	}
+	.taxis-svg-line-window{
+		left: 219px !important;
+	}
+	.taxis-svg-line-window_2{
+		    left: 367px !important;
+		    top: -574px !important;
+		    width: 312px !important;
+	}
+	.taxis-svg-line-window_3{
+		    width: 355px !important;
+		    left: 491px !important;
+	}
+	.taxis-svg-line-window_4{
+		    width: 218px !important;
+    		left: 491px !important;
+	}
+	.taxis-svg-line-window_5{
+		left: 516px !important;
+		top: -443px !important;
+	}
+	.taxis-svg-line-window_6{
+		top: -269px !important;
+    	left: 57px !important;
 	}
 }
 .menu-mobile-link :nth-child(2){
@@ -870,6 +921,10 @@ border-bottom: 1px solid white !important;
 	color: #ffc31f;
 	font-size: 116px !important;
 }
+.taxis-store-icon-style::before{
+	color: #fb5223;
+	font-size: 116px !important;
+}
 .restaurants-under-icon-text{
 	font-weight: bold;
 	font-size: 24px;
@@ -914,6 +969,14 @@ border-bottom: 1px solid white !important;
 	color: #ffc31f;
 }
 
+.taxis-icon_1-content{
+	position: absolute;
+}
+
+.taxis-icon_1-content::before{
+	font-size:70px !important;
+	color: #fb5223;
+}
 
 .restaurant_div_blur{
 	position: absolute;
@@ -971,6 +1034,60 @@ border-bottom: 1px solid white !important;
     height: 187px;
     top: -129px;
     left: 204px;
+}
+.taxis-svg-line-window{
+	display: block;
+    z-index: -1;
+    position: absolute;
+    width: 600px;
+    height: 198px;
+    top: -114px;
+    left: 264px;
+}
+.taxis-svg-line-window_2{
+	display: block;
+    z-index: -1;
+    position: absolute;
+    width: 370px;
+    height: 198px;
+    top: -545px;
+    left: 438px;
+}
+.taxis-svg-line-window_3{
+	display: block;
+    z-index: -1;
+    position: absolute;
+    width: 459px;
+    height: 198px;
+    top: -296px;
+    left: 568px;
+}
+.taxis-svg-line-window_4{
+	    display: block;
+    z-index: -1;
+    position: absolute;
+    width: 301px;
+    height: 198px;
+    top: -231px;
+    left: 548px;
+}
+.taxis-svg-line-window_5{
+	display: block;
+    z-index: -1;
+    position: absolute;
+    width: 301px;
+    height: 324px;
+    top: -499px;
+    left: 662px;
+}
+.taxis-svg-line-window_6{
+	display: block;
+    z-index: -1;
+    position: absolute;
+    width: 253px;
+    height: 324px;
+    top: -289px;
+    left: 167px;
 }
 .clothing-svg-line-window_2{
 	display: block;
@@ -1041,6 +1158,9 @@ border-bottom: 1px solid white !important;
 .restaurant-svg-line-mobile{
 	display: none;
 }
+.taxis-svg-line-mobile{
+	display: none;
+}
 .restaurant-svg-line-window_2{
     display: block;
     z-index: -1;
@@ -1088,4 +1208,15 @@ border-bottom: 1px solid white !important;
 }
 .clothing-store-img{
 	width:50%;
+}
+.taxis-percentagem-font{
+	position: absolute;
+    color: #FB5223;
+    font-size: 53px;
+    font-family: arial;
+    transform: translateY(125%);
+    font-style: italic;
+}
+.background-image-about-us{
+	background-image: url("/assets/images/background-about-us.svg");
 }

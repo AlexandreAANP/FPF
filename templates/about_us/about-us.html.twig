@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    {% set text = null  %}
+    {% set image = null %}
+    {% for media in colBanner %}
+        {% if media.referenceKey == 'richmedia-about-us-banner' %}
+            {% set text = media.text %}
+            {% set image = media.filename %}
+        {% endif %}
+    {% endfor %}
+  <div class="background-image-header" style="background-image: url('{{image}}')">
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            {{text|raw}}
+        </div>
+    </div>
+    </div>
+
+<div class="background-image-about-us" style="padding-top: 15vh; padding-bottom: 100px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 mx-5">
+                <img src="assets/images/logo-about-us.svg">
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+     
+{% endblock %}
+
+{% block  javascript %}
+{% endblock %}

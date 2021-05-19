@@ -1,0 +1,417 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1938" height="718.508" viewBox="0 0 1938 718.508">
+  <defs>
+    <filter id="Retângulo_100" x="0" y="0" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_183" x="0" y="142.502" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_131" x="782.163" y="285.003" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_146" x="782.163" y="213.752" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_172" x="782.163" y="142.502" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-5"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_153" x="284.423" y="71.251" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-6"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_179" x="284.423" y="142.502" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-7"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_126" x="1066.586" y="0" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-8"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-8"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_142" x="1066.586" y="71.251" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-9"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-9"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_168" x="1066.586" y="142.502" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-10"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-10"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_132" x="1635.432" y="71.251" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-11"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-11"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_189" x="1635.432" y="427.505" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-12"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-12"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_186" x="1635.432" y="356.254" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-13"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-13"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_160" x="1635.432" y="285.003" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-14"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-14"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_246" x="1350.864" y="71.251" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-15"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-15"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_261" x="1777.499" y="71.251" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-16"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-16"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_267" x="1848.749" y="498.755" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-17"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-17"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_129" x="924.375" y="0" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-18"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-18"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_173" x="711.057" y="142.502" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-19"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-19"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_136" x="1493.221" y="213.752" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-20"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-20"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_162" x="1493.221" y="142.502" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-21"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-21"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_151" x="426.634" y="71.251" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-22"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-22"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_140" x="1208.798" y="356.254" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-23"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-23"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_108" x="995.48" y="0" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-24"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-24"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_143" x="995.48" y="213.752" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-25"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-25"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_156" x="71.106" y="71.251" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-26"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-26"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_182" x="71.106" y="142.502" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-27"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-27"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_105" x="355.529" y="213.752" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-28"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-28"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_152" x="355.529" y="71.251" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-29"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-29"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_178" x="355.529" y="142.502" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-30"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-30"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_141" x="1137.692" y="285.003" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-31"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-31"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_159" x="1706.538" y="285.003" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-32"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-32"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_102" x="213.317" y="213.752" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-33"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-33"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_135" x="1564.326" y="71.251" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-34"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-34"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_161" x="1564.326" y="142.502" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-35"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-35"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Retângulo_106" x="711.202" y="285.003" width="89.251" height="89.251" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-36"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-36"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Componente_7_1" data-name="Componente 7 – 1" transform="translate(9 6)">
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_100)">
+      <rect id="Retângulo_100-2" data-name="Retângulo 100" width="71.251" height="71.251" transform="translate(9 6)" fill="#8019b3"/>
+    </g>
+    <rect id="Retângulo_157" data-name="Retângulo 157" width="71.251" height="71.251" transform="translate(0 285.003)" fill="#000826"/>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_183)">
+      <rect id="Retângulo_183-2" data-name="Retângulo 183" width="71.251" height="71.251" transform="translate(9 148.5)" fill="#8019b3"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_131)">
+      <rect id="Retângulo_131-2" data-name="Retângulo 131" width="71.251" height="71.251" transform="translate(791.16 291)" fill="#ffc31f"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_146)">
+      <rect id="Retângulo_146-2" data-name="Retângulo 146" width="71.251" height="71.251" transform="translate(791.16 219.75)" fill="#ffc31f"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_172)">
+      <rect id="Retângulo_172-2" data-name="Retângulo 172" width="71.251" height="71.251" transform="translate(791.16 148.5)" fill="#ffc31f"/>
+    </g>
+    <rect id="Retângulo_115" data-name="Retângulo 115" width="71.251" height="71.251" transform="translate(568.846)" fill="#00020b"/>
+    <rect id="Retângulo_149" data-name="Retângulo 149" width="71.251" height="71.251" transform="translate(568.846 71.251)" fill="#00020b"/>
+    <rect id="Retângulo_175" data-name="Retângulo 175" width="71.251" height="71.251" transform="translate(568.846 285.003)" fill="#00020b"/>
+    <rect id="Retângulo_116" data-name="Retângulo 116" width="71.251" height="71.251" transform="translate(1351.009)" fill="#00030a"/>
+    <rect id="Retângulo_138" data-name="Retângulo 138" width="71.251" height="71.251" transform="translate(1351.009 285.003)" fill="#00030a"/>
+    <rect id="Retângulo_164" data-name="Retângulo 164" width="71.251" height="71.251" transform="translate(1351.009 142.502)" fill="#00030a"/>
+    <rect id="Retângulo_187" data-name="Retângulo 187" width="71.251" height="71.251" transform="translate(1351.009 427.505)" fill="#00030a"/>
+    <rect id="Retângulo_107" data-name="Retângulo 107" width="71.251" height="71.251" transform="translate(284.423)" fill="#000619"/>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_153)">
+      <rect id="Retângulo_153-2" data-name="Retângulo 153" width="71.251" height="71.251" transform="translate(293.42 77.25)" fill="#1985a1"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_179)">
+      <rect id="Retângulo_179-2" data-name="Retângulo 179" width="71.251" height="71.251" transform="translate(293.42 148.5)" fill="#1985a1"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_126)">
+      <rect id="Retângulo_126-2" data-name="Retângulo 126" width="71.251" height="71.251" transform="translate(1075.59 6)" fill="#fb5223"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_142)">
+      <rect id="Retângulo_142-2" data-name="Retângulo 142" width="71.251" height="71.251" transform="translate(1075.59 77.25)" fill="#fb5223"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_168)">
+      <rect id="Retângulo_168-2" data-name="Retângulo 168" width="71.251" height="71.251" transform="translate(1075.59 148.5)" fill="#fb5223"/>
+    </g>
+    <rect id="Retângulo_111" data-name="Retângulo 111" width="71.251" height="71.251" transform="translate(853.269)" fill="#00030a"/>
+    <rect id="Retângulo_145" data-name="Retângulo 145" width="71.251" height="71.251" transform="translate(853.269 71.251)" fill="#00030a"/>
+    <rect id="Retângulo_171" data-name="Retângulo 171" width="71.251" height="71.251" transform="translate(853.269 142.502)" fill="#00030a"/>
+    <rect id="Retângulo_117" data-name="Retângulo 117" width="71.251" height="71.251" transform="translate(1635.432)" fill="#00030a"/>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_132)">
+      <rect id="Retângulo_132-2" data-name="Retângulo 132" width="71.251" height="71.251" transform="translate(1644.43 77.25)" fill="#8ac926"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_189)">
+      <rect id="Retângulo_189-2" data-name="Retângulo 189" width="71.251" height="71.251" transform="translate(1644.43 433.5)" fill="#8019b3"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_186)">
+      <rect id="Retângulo_186-2" data-name="Retângulo 186" width="71.251" height="71.251" transform="translate(1644.43 362.25)" fill="#8019b3"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_160)">
+      <rect id="Retângulo_160-2" data-name="Retângulo 160" width="71.251" height="71.251" transform="translate(1644.43 291)" fill="#8019b3"/>
+    </g>
+    <rect id="Retângulo_103" data-name="Retângulo 103" width="71.251" height="71.251" transform="translate(142.211)" fill="#000720"/>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_246)">
+      <rect id="Retângulo_246-2" data-name="Retângulo 246" width="71.251" height="71.251" transform="translate(1359.86 77.25)" fill="#8019b3"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_261)">
+      <rect id="Retângulo_261-2" data-name="Retângulo 261" width="71.251" height="71.251" transform="translate(1786.5 77.25)" fill="#8ac926"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_267)">
+      <rect id="Retângulo_267-2" data-name="Retângulo 267" width="71.251" height="71.251" transform="translate(1857.75 504.76)" fill="#ffc31f"/>
+    </g>
+    <rect id="Retângulo_181" data-name="Retângulo 181" width="71.251" height="71.251" transform="translate(142.211 142.502)" fill="#000720"/>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_129)">
+      <rect id="Retângulo_129-2" data-name="Retângulo 129" width="71.251" height="71.251" transform="translate(933.37 6)" fill="#fb5223"/>
+    </g>
+    <rect id="Retângulo_144" data-name="Retângulo 144" width="71.251" height="71.251" transform="translate(924.375 356.254)" fill="#00030a"/>
+    <rect id="Retângulo_170" data-name="Retângulo 170" width="71.251" height="71.251" transform="translate(924.375 285.003)" fill="#00030a"/>
+    <rect id="Retângulo_113" data-name="Retângulo 113" width="71.251" height="71.251" transform="translate(711.057)" fill="#00030a"/>
+    <rect id="Retângulo_147" data-name="Retângulo 147" width="71.251" height="71.251" transform="translate(711.057 71.251)" fill="#00030a"/>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_173)">
+      <rect id="Retângulo_173-2" data-name="Retângulo 173" width="71.251" height="71.251" transform="translate(720.06 148.5)" fill="#ffc31f"/>
+    </g>
+    <rect id="Retângulo_118" data-name="Retângulo 118" width="71.251" height="71.251" transform="translate(1493.221)" fill="#00030a"/>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_136)">
+      <rect id="Retângulo_136-2" data-name="Retângulo 136" width="71.251" height="71.251" transform="translate(1502.22 219.75)" fill="#8ac926"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_162)">
+      <rect id="Retângulo_162-2" data-name="Retângulo 162" width="71.251" height="71.251" transform="translate(1502.22 148.5)" fill="#8ac926"/>
+    </g>
+    <rect id="Retângulo_104" data-name="Retângulo 104" width="71.251" height="71.251" transform="translate(426.634)" fill="#000412"/>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_151)">
+      <rect id="Retângulo_151-2" data-name="Retângulo 151" width="71.251" height="71.251" transform="translate(435.63 77.25)" fill="#1985a1"/>
+    </g>
+    <rect id="Retângulo_177" data-name="Retângulo 177" width="71.251" height="71.251" transform="translate(426.634 285.003)" fill="#000412"/>
+    <rect id="Retângulo_119" data-name="Retângulo 119" width="71.251" height="71.251" transform="translate(1208.798)" fill="#00030a"/>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_140)">
+      <rect id="Retângulo_140-2" data-name="Retângulo 140" width="71.251" height="71.251" transform="translate(1217.8 362.25)" fill="#ffc31f"/>
+    </g>
+    <rect id="Retângulo_166" data-name="Retângulo 166" width="71.251" height="71.251" transform="translate(1208.798 142.502)" fill="#00030a"/>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_108)">
+      <rect id="Retângulo_108-2" data-name="Retângulo 108" width="71.251" height="71.251" transform="translate(1004.48 6)" fill="#fb5223"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_143)">
+      <rect id="Retângulo_143-2" data-name="Retângulo 143" width="71.251" height="71.251" transform="translate(1004.48 219.75)" fill="#fb5223"/>
+    </g>
+    <rect id="Retângulo_169" data-name="Retângulo 169" width="71.251" height="71.251" transform="translate(995.48 142.502)" fill="#00030a"/>
+    <rect id="Retângulo_120" data-name="Retângulo 120" width="71.251" height="71.251" transform="translate(1777.643 641.257)" fill="#00030a"/>
+    <rect id="Retângulo_133" data-name="Retângulo 133" width="71.251" height="71.251" transform="translate(1777.643 570.006)" fill="#00030a"/>
+    <rect id="Retângulo_158" data-name="Retângulo 158" width="71.251" height="71.251" transform="translate(1777.643 142.502)" fill="#00030a"/>
+    <rect id="Retângulo_191" data-name="Retângulo 191" width="71.251" height="71.251" transform="translate(1777.643 498.755)" fill="#00030a"/>
+    <rect id="Retângulo_101" data-name="Retângulo 101" width="71.251" height="71.251" transform="translate(71.106)" fill="#000823"/>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_156)">
+      <rect id="Retângulo_156-2" data-name="Retângulo 156" width="71.251" height="71.251" transform="translate(80.11 77.25)" fill="#8019b3"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_182)">
+      <rect id="Retângulo_182-2" data-name="Retângulo 182" width="71.251" height="71.251" transform="translate(80.11 148.5)" fill="#8019b3"/>
+    </g>
+    <rect id="Retângulo_114" data-name="Retângulo 114" width="71.251" height="71.251" transform="translate(639.952 356.254)" fill="#00030a"/>
+    <rect id="Retângulo_148" data-name="Retângulo 148" width="71.251" height="71.251" transform="translate(639.952 71.251)" fill="#00030a"/>
+    <rect id="Retângulo_174" data-name="Retângulo 174" width="71.251" height="71.251" transform="translate(639.952 142.502)" fill="#00030a"/>
+    <rect id="Retângulo_121" data-name="Retângulo 121" width="71.251" height="71.251" transform="translate(1422.115)" fill="#00030a"/>
+    <rect id="Retângulo_137" data-name="Retângulo 137" width="71.251" height="71.251" transform="translate(1422.115 71.251)" fill="#00030a"/>
+    <rect id="Retângulo_163" data-name="Retângulo 163" width="71.251" height="71.251" transform="translate(1422.115 356.254)" fill="#00030a"/>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_105)">
+      <rect id="Retângulo_105-2" data-name="Retângulo 105" width="71.251" height="71.251" transform="translate(364.53 219.75)" fill="#1985a1"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_152)">
+      <rect id="Retângulo_152-2" data-name="Retângulo 152" width="71.251" height="71.251" transform="translate(364.53 77.25)" fill="#1985a1"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_178)">
+      <rect id="Retângulo_178-2" data-name="Retângulo 178" width="71.251" height="71.251" transform="translate(364.53 148.5)" fill="#1985a1"/>
+    </g>
+    <rect id="Retângulo_127" data-name="Retângulo 127" width="71.251" height="71.251" transform="translate(1137.692)" fill="#00030a"/>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_141)">
+      <rect id="Retângulo_141-2" data-name="Retângulo 141" width="71.251" height="71.251" transform="translate(1146.69 291)" fill="#ffc31f"/>
+    </g>
+    <rect id="Retângulo_167" data-name="Retângulo 167" width="71.251" height="71.251" transform="translate(1137.692 142.502)" fill="#00030a"/>
+    <rect id="Retângulo_122" data-name="Retângulo 122" width="71.251" height="71.251" transform="translate(1706.538)" fill="#00030a"/>
+    <rect id="Retângulo_134" data-name="Retângulo 134" width="71.251" height="71.251" transform="translate(1706.538 71.251)" fill="#00030a"/>
+    <rect id="Retângulo_190" data-name="Retângulo 190" width="71.251" height="71.251" transform="translate(1706.538 498.755)" fill="#00030a"/>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_159)">
+      <rect id="Retângulo_159-2" data-name="Retângulo 159" width="71.251" height="71.251" transform="translate(1715.54 291)" fill="#8019b3"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_102)">
+      <rect id="Retângulo_102-2" data-name="Retângulo 102" width="71.251" height="71.251" transform="translate(222.32 219.75)" fill="#8019b3"/>
+    </g>
+    <rect id="Retângulo_154" data-name="Retângulo 154" width="71.251" height="71.251" transform="translate(213.317 71.251)" fill="#00071d"/>
+    <rect id="Retângulo_123" data-name="Retângulo 123" width="71.251" height="71.251" transform="translate(1564.326)" fill="#00030a"/>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_135)">
+      <rect id="Retângulo_135-2" data-name="Retângulo 135" width="71.251" height="71.251" transform="translate(1573.33 77.25)" fill="#8ac926"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_161)">
+      <rect id="Retângulo_161-2" data-name="Retângulo 161" width="71.251" height="71.251" transform="translate(1573.33 148.5)" fill="#8ac926"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Retângulo_106)">
+      <rect id="Retângulo_106-2" data-name="Retângulo 106" width="71.251" height="71.251" transform="translate(720.2 291)" fill="#ffc31f"/>
+    </g>
+    <rect id="Retângulo_176" data-name="Retângulo 176" width="71.251" height="71.251" transform="translate(497.74 142.502)" fill="#00040e"/>
+    <rect id="Retângulo_124" data-name="Retângulo 124" width="71.251" height="71.251" transform="translate(1279.903 427.505)" fill="#00030a"/>
+    <rect id="Retângulo_139" data-name="Retângulo 139" width="71.251" height="71.251" transform="translate(1279.903 71.251)" fill="#00030a"/>
+    <rect id="Retângulo_165" data-name="Retângulo 165" width="71.251" height="71.251" transform="translate(1279.903 142.502)" fill="#00030a"/>
+    <rect id="Retângulo_188" data-name="Retângulo 188" width="71.251" height="71.251" transform="translate(1279.903 498.755)" fill="#00030a"/>
+    <rect id="Retângulo_125" data-name="Retângulo 125" width="71.251" height="71.251" transform="translate(1848.749 570.006)" fill="#00030a"/>
+    <rect id="Retângulo_184" data-name="Retângulo 184" width="71.251" height="71.251" transform="translate(1848.749 71.251)" fill="#00030a"/>
+    <rect id="Retângulo_185" data-name="Retângulo 185" width="71.251" height="71.251" transform="translate(1848.749 142.502)" fill="#00030a"/>
+  </g>
+</svg>

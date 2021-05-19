@@ -470,7 +470,7 @@ class DefaultController extends SiteCacheController
             /*Artigos*/
             /*/Artigos*/
             $colContent = [];
-                $url = $this->apiUrl . '/api/content?category=articles-category-clothing-store&type=articles&fields=url,text,filename&language=' . $defaultLanguage;
+                $url = $this->apiUrl . '/api/content?category=articles-category-plumbers&type=articles&fields=url,text,filename&language=' . $defaultLanguage;
             if ($data = $this->getAPIData($url)) {
                 if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                     if (array_key_exists('colContent', $objData)) {
@@ -533,6 +533,147 @@ class DefaultController extends SiteCacheController
         }
         /*/CANALIZADORES*/
         
+
+
+        /*TAXIS*/
+
+          if($category_selected === 'taxis' || $category_selected === 'taxi'){
+            /*Artigos*/
+            /*/Artigos*/
+            $colContent = [];
+                $url = $this->apiUrl . '/api/content?category=articles-category-taxis&type=articles&fields=url,text,filename&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $colContent = $objData['colContent'];
+                        $colContent = $this->organizeArticles($objData['colContent']);
+                    }
+                }
+            }
+            /*/Content*/
+
+
+              /*Banner*/
+            $colBanner = [];
+            $url = $this->apiUrl . '/api/content?category=richmedia-category-taxis&area=content-area-page-header&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $colBanner = $objData['colContent'];
+                    }
+                }
+            }
+
+            /*/Banner*/
+                /*Footer*/
+            $colFooter = [];
+            $url = $this->apiUrl . '/api/content?category=richmedia-category-taxis&area=content-area-page-footer&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $colFooter = $objData['colContent'];
+                    }
+                }
+            }
+            /*/Footer*/
+            /*Footer Down*/
+            $colFooterDown = [];
+            $url = $this->apiUrl . '/api/content?category=richmedia-category-taxis&area=content-area-footer-footer&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $colFooterDown = $objData['colContent'];
+                    }
+                }
+            }
+            /*/Footer Down*/
+
+            return $this->renderSite('business_areas/taxis.html.twig',[
+                'colContent' => $colContent,
+                'colDoubts' => $colDoubts,
+                'colBanner' =>$colBanner,
+                'colFooter' =>$colFooter,
+                'colFooterDown' => $colFooterDown,
+                'colRestoration' => $colRestoration,
+                'colRetail' => $colRetail,
+                'colServices' => $colServices,
+                'colMobile' => $colMobile,
+                'colHealth' => $colHealth
+        ]);
+
+        }
+        /*/TAXIS*/
+
+
+
+
+        /*ABOUT-US*/
+          if($category_selected === 'about-us' || $category_selected === 'sobre-nos'){
+            /*Artigos*/
+            /*/Artigos*/
+            $colContent = [];
+                $url = $this->apiUrl . '/api/content?category=articles-category-about-us&type=articles&fields=url,text,filename&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $colContent = $objData['colContent'];
+                        $colContent = $this->organizeArticles($objData['colContent']);
+                    }
+                }
+            }
+            /*/Content*/
+
+
+              /*Banner*/
+            $colBanner = [];
+            $url = $this->apiUrl . '/api/content?category=richmedia-category-about-us&area=content-area-page-header&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $colBanner = $objData['colContent'];
+                    }
+                }
+            }
+
+            /*/Banner*/
+                /*Footer*/
+            $colFooter = [];
+            $url = $this->apiUrl . '/api/content?category=richmedia-category-home&area=content-area-page-footer&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $colFooter = $objData['colContent'];
+                    }
+                }
+            }
+            /*/Footer*/
+            /*Footer Down*/
+            $colFooterDown = [];
+            $url = $this->apiUrl . '/api/content?category=richmedia-category-home&area=content-area-footer-footer&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $colFooterDown = $objData['colContent'];
+                    }
+                }
+            }
+            /*/Footer Down*/
+
+            return $this->renderSite('about_us/about-us.html.twig',[
+                'colContent' => $colContent,
+                'colDoubts' => $colDoubts,
+                'colBanner' =>$colBanner,
+                'colFooter' =>$colFooter,
+                'colFooterDown' => $colFooterDown,
+                'colRestoration' => $colRestoration,
+                'colRetail' => $colRetail,
+                'colServices' => $colServices,
+                'colMobile' => $colMobile,
+                'colHealth' => $colHealth
+        ]);
+
+        }
+        /*/ABOUT-US*/
     }
 
     public function organizeArticles($data){
