@@ -23,10 +23,10 @@
 
         <div class="container py-5">
         <div class="row d-flex justify-content-center">
-            <i class="mdi-48px mdi mdi-engine plumbers-store-icon-style"></i>
+            <i class="mdi-48px {{item.url}} plumbers-store-icon-style"></i>
         </div>
         <div class="row d-flex justify-content-center">
-            <span class="restaurants-under-icon-text">{% trans %}Plumbers{% endtrans %}</span>
+            <span class="restaurants-under-icon-text">{{item.title}}</span>
         </div>
     </div>
 
@@ -184,7 +184,7 @@
                 </svg>
             </div>
         </div>
-    <!--/4ª ROW-->
+    <!--/5ª ROW-->
 
 
 
@@ -206,6 +206,18 @@
 
      
 {% endblock %}
+
+{% block stylesheets %}
+    {{parent()}}
+    <style type="text/css">
+        @media only screen and( max-width:770px){
+            img{
+               max-width: 300px !important;
+            }
+        }
+    </style>
+{% endblock %}
+
 
 {% block  javascript %}
 {% endblock %}

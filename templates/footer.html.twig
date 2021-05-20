@@ -63,7 +63,7 @@
 </footer>
 {% set color = null %}
 {% set image = null %}
-{% for i in colFooterDown %}
+{% for i in colFooterDown ?? [] %}
 {% if i.url == 'footer-down'%}
     {% set color = i.description %}
     {% set image = i.filename %}

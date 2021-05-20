@@ -23,10 +23,10 @@
 
         <div class="container py-5">
         <div class="row d-flex justify-content-center">
-            <i class="mdi-48px mdi mdi-tshirt-crew clothing-store-icon-style"></i>
+            <i class="mdi-48px {{item.url}} clothing-store-icon-style"></i>
         </div>
         <div class="row d-flex justify-content-center">
-            <span class="restaurants-under-icon-text">{% trans %}Clothing Store{% endtrans %}</span>
+            <span class="restaurants-under-icon-text">{{item.title}}</span>
         </div>
     </div>
 
@@ -112,17 +112,23 @@
             </div>
             <div class="col-12 col-md-6 d-flex justify-content-center align-items-start">
                 <div>
-               <img class="clothing-store-img" src="{{colRow.image[0]}}">
+                    <div class="d-flex justify-content-center justify-content-md-start">
+                        <img class="clothing-store-img" src="{{colRow.image[0]}}">
+                    </div>
                    <div class="py-5">
                     {{colRow.text[1]|raw}}
                    </div>
-                <img class="clothing-store-img clothing-img-mobile pt-5" src="{{colRow.image[2]}}">
+                   <div class="d-flex justify-content-center justify-content-md-start">
+                        <img class="clothing-store-img clothing-img-mobile pt-5" src="{{colRow.image[2]}}">
+                    </div>
                </div>
             </div>
             
             <div class="col-12 col-md-6 d-flex justify-content-end align-items-center">
                 <div>
+                    <div class="d-flex justify-content-center">
                     <img width="100%" class="clothing-mobile-padding-bot" src="{{colRow.image[1]}}">
+                    </div>
                     <div class="mt-5 py-5">
                         {{colRow.text[2]|raw}}
                     </div>
@@ -149,7 +155,7 @@
     <!--6ª ROW-->
         {% set colRow = colContent['sixth-row'] %}
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 d-flex justify-content-center">
                 <img width="100%" src="{{colRow.image[0]}}">
             </div>
             <div class="col-12 col-md-6 d-flex align-items-center">
@@ -173,6 +179,17 @@
 </div>
 
      
+{% endblock %}
+
+{% block stylesheets %}
+    {{parent()}}
+    <style type="text/css">
+        @media only screen and (max-width:770px){
+            img{
+               max-width: 300px !important;
+            }
+        }
+    </style>
 {% endblock %}
 
 {% block  javascript %}

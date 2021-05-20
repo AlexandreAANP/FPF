@@ -37,7 +37,7 @@ class ContentController extends SiteCacheController
                 $contentType = substr($pageInfo, 1);
             }
         }
-
+        dd("dd");
         $contentType = $this->parseLanguageInRouteName($contentType);
 
         $self = $this;

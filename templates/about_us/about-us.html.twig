@@ -18,15 +18,57 @@
         </div>
     </div>
     </div>
-
-<div class="background-image-about-us" style="padding-top: 15vh; padding-bottom: 100px;">
-    <div class="container-fluid">
+    <img class='img-background-about-us' src="assets/images/background-about-us.svg">
+<div style="padding-top: 15vh; padding-bottom: 100px;">
+    
+    <div class="container-fluid py-5">
+        <div class="row mt-5 py-5">
+            <div class="col-12 col-md-6 mr-md-5 d-flex justify-content-center">
+                <img src="{{colContent.image}}">
+            </div>
+        </div>
         <div class="row">
-            <div class="col-6 mx-5">
-                <img src="assets/images/logo-about-us.svg">
-                <div>
-
+            <div class="col-12 col-md-6 mx-md-5">
+                <div class="py-5">
+                    {{colContent['text-1']|raw}}
+                    <!--p class="about-us-first-text">A FPF Sistemas Gestão iniciou atividade em 1999, é especializada em Tecnologias de Informação, e presta serviços nas áreas de Consultoria, Desenvolvimento e Implementação de Software de Gestão. Empresa 100% nacional, tem como principiais atividades a instalação e implementação do ERP (Drivefx, ZONESOFT, Eticadata), desenvolvimento de software próprio e integrações com plataformas web, móveis e TI.</p-->
+                    
                 </div>
+            </div>
+            <div class="col-12 col-md d-flex justify-content-end justify-content-md-start">
+                <div class="about-us-squares-position">
+                        <span class="about-us-square-plus"><i class="mdi mdi-plus icon-about-us"></i></span>
+                        <span class="about-us-square-plus_2"></span>
+                </div>
+                <div>
+                    <span class="about-us-plus-info d-none"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 mx-md-5 about-us-bg-content" style="display: none;">
+                <span class="about-us-text-content">
+                    {{colContent['text-2']|raw}}
+                    <!--p>A FPF Sistemas Gestão é uma empresa dedicada exclusivamente ao mercado empresarial.</p>
+                    }
+
+<p>Dotada da mais recente tecnologia e de um superior serviço de acompanhamento, através de Gestores de Clientes, a FPF Sistemas Gestão vem trazer-lhe uma nova realidade livre de preocupações de modo a que se possa concentrar no que lhe é mais próximo: o seu Negócio.</p>
+
+<p>A FPF Sistemas Gestão apresenta ampla experiência na disponibilização de soluções integradas a algumas das maiores empresas do panorama empresarial nacional, através de uma vasta oferta de soluções integradas de voz, Internet, dados e tecnologias de informação adequadas a empresas e organizações de diferentes dimensões.</p>
+
+<p>A filosofia de acção da FPF Sistemas Gestão assenta em seis valores fundamentais. Neles reside a nossa força e identidade. Assumimos o compromisso de agir de acordo com estes princípios, no sentido de melhorarmos a vida dos que em nós depositam confiança:</p>
+
+<p>Experiência – Dispomos de uma grande experiência acumulada ao longo de mais de cinco anos na prestação de serviços e soluções ao Mercado Empresarial;</p>
+
+<p>Simplicidade – Criamos soluções de fácil utilização e compreensão;</p>
+<p>Transparência – Os nossos Clientes sabem com o que podem contar. Somos claros e directos;</p>
+
+<p>Inovação – Procuramos novas formas de satisfazer as necessidades dos nossos Clientes;</p>
+
+<p>Orientação para o Cliente – A nossa principal preocupação é oferecer o que os nossos Clientes querem e necessitam;</p>
+
+<p>Espírito de equipa – Recrutamos desenvolvemos e mantemos uma equipa de sucesso.</p-->
+                </span>
             </div>
         </div>
     </div>
@@ -34,9 +76,32 @@
 
 </div>
 
-
-     
 {% endblock %}
 
-{% block  javascript %}
+{% block  javascripts %}
+        {{parent()}}
+    <script type="text/javascript">
+             console.log("fd");
+        $(document).ready(function(){
+          $('.about-us-square-plus').on('click', function(){
+                    
+                    if($(this).children().hasClass('mdi-plus')){
+                        $('.about-us-bg-content').slideDown();
+                        $('.about-us-plus-info').removeClass('d-none');
+                        $(this).children().removeClass('mdi-plus');
+                        $(this).children().addClass('mdi-minus');
+                    }
+                    else{
+                        $('.about-us-bg-content').slideUp();
+                        $('.about-us-plus-info').addClass('d-none');
+                        $(this).children().removeClass('mdi-minus');
+                        $(this).children().addClass('mdi-plus');
+                    }
+                });
+        });
+       
+
+    </script>
+
+
 {% endblock %}
