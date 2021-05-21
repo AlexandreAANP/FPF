@@ -38,111 +38,67 @@
 
 <!--Restoration-->
 
-                {% if colRestoration.header is defined %}
-
-                    {% set Title = null %}
-                    {% set Description = null %}
-                    {% set url_first_image = null %}
-                    {% set  url_second_image = null %}
-                    
-                    {% for header in colRestoration.header %}
-                        {% if header.referenceKey == 'files-business' %}
-                            {% set Title = header.title %}
-                        
-                            {% set Description = header.description %}
-                            {% set url_first_image = header.filename %}
-                            
-                            {% set url_second_image = header.url %}
-                        
-                        {% endif %}
-
-                    {% endfor %}
-                   
-                {% endif %}
-
-
-    
-       
-
                
 
                     <div class="container py-5">
+
+                        {% if allItens['Restoration-header'] is defined %}
                         <!--Header Business-->
                         <div class="row pb-4">
-                            <div class="col-12 d-flex justify-content-center py-3"><span class="tittle-body-index">{{Title}}</span></div>
-                            <div class="col-12 d-flex justify-content-center"><span class="subtittle-body-index">{{Description}}</span></div>
+                            <div class="col-12 d-flex justify-content-center py-3"><span class="tittle-body-index">{{allItens['Restoration-header'].title}}</span></div>
+                            <div class="col-12 d-flex justify-content-center"><span class="subtittle-body-index">{{allItens['Restoration-header'].description}}</span></div>
                         </div>
                         <!--/Header Business-->
-            {% if colRestoration is defined %}
+            
                         <!--Header-->
                         <div class="row py-3">
-                            <div class="col-12 d-flex justify-content-center mt-3 mb-4"><span style="background-image: url('{{url_first_image}}');"  class="index-img-restauration"></div>
+                            <div class="col-12 d-flex justify-content-center mt-3 mb-4"><span style="background-image: url('{{allItens['Restoration-header'].filename}}');"  class="index-img-restauration"></div>
                             <div class="col-12 d-flex justify-content-center py-4"><span class="index-restoration">{% trans %}Restoration{% endtrans %}</span></div>
-                            <style type="text/css">.index-img-restauration:hover{ background-image: url("{{apiUrl}}{{url_second_image}}") !important; }</style>
+                            <style type="text/css">.index-img-restauration:hover{ background-image: url("{{apiUrl}}{{allItens['Restoration-header'].url}}") !important; }</style>
                         </div>
                         <!--/header-->
 
                         <!--Body icons-->
                         <div class="row">
                             <div class="container row py-4 mx-0"> 
-                                {% for  items in colRestoration.body %}
+                                {% for  items in allItens['Restoration-body'] ?? [] %}
 
-                                    <div class="col item-index">
+                                    <div class="col item-index"><a class="tag-a-class" href="{{baseUri}}/{% trans %}restoration{% endtrans %}/{{items.title}}">
                                             <img src='{{items.filename}}' class="img-squares">
                                             <i class="mdi-48px {{items.url}} index-icon-restoration d-flex justify-content-center"></i>
 
                                             <p class=" d-flex justify-content-center font-weight-bold text-center py-4">{{items.title}}</p>
-                                    </div>
+                                    </a></div>
                                 {% endfor %}
                             </div>    
                         </div>
                         <!--/Body icons-->
-            {% endif %}
+                    {% endif %}
 
 <!--/Restoration-->
 
 <!--Retail-->
-
-                    
-                {% if colRetail.header is defined %}
-                    {% set Title = null %}
-                    {% set url_first_image = null %}
-                    {% set  url_second_image = null %}
-                   
-                    {% for header in colRetail.header %}
-                        {% if header.referenceKey == 'files-retail' %}
-                            {% set Title = header.title %}
-                            
-                            {% set url_first_image = header.filename %}
-                            
-                            {% set url_second_image = header.url %}
-                        
-                        {% endif %}
-
-                    {% endfor %}
-                   
-                {% endif %}
-
           
-                {% if colRetail is defined %}
+                {% if allItens['Retail-header'] is defined %}
                      <!--Header-->
                         <div class="row py-3">
-                            <div class="col-12 d-flex justify-content-center mt-3 mb-4"><span style="background-image: url('{{url_first_image}}');"  class="index-img-retail"></div>
+                            <div class="col-12 d-flex justify-content-center mt-3 mb-4"><span style="background-image: url('{{allItens['Retail-header'].filename}}');"  class="index-img-retail"></div>
                             <div class="col-12 d-flex justify-content-center py-4"><span class="index-retail">{% trans %}Retail{% endtrans %}</span></div>
-                            <style type="text/css">.index-img-retail:hover{ background-image: url("{{apiUrl}}{{url_second_image}}") !important; }</style>
+                            <style type="text/css">.index-img-retail:hover{ background-image: url("{{apiUrl}}{{allItens['Retail-header'].url}}") !important; }</style>
                         </div>
                         <!--/header-->
                            <!--Body icons-->
                         <div class="row">
                             <div class="container row py-4 mx-0"> 
-                                {% for  items in colRetail.body %}
+                                {% for  items in allItens['Retail-body'] %}
 
-                                    <div class="col item-index">
+                                   <div class="col item-index">
+                                     <a class='tag-a-class' href="{{baseUri}}/{% trans %}retail{% endtrans %}/{{items.title}}">
                                             <img src='{{items.filename}}' class="img-squares-retail">
                                             <i class="mdi-48px {{items.url}} index-icon-retail d-flex justify-content-center"></i>
 
                                             <p class=" d-flex justify-content-center font-weight-bold text-center py-4">{{items.title}}</p>
-                                    </div>
+                                    </a></div>
                                 {% endfor %}
                             </div>    
                         </div>
@@ -153,45 +109,27 @@
 
 <!--Services-->
 
-                {% if colServices is defined %}
-                    {% set Title = null %}
-                    {% set url_first_image = null %}
-                    {% set  url_second_image = null %}
-                   
-                    {% for header in colServices.header %}
-                        {% if header.referenceKey == 'files-services' %}
-                            {% set Title = header.title %}
-                            
-                            {% set url_first_image = header.filename %}
-                            
-                            {% set url_second_image = header.url %}
-                        
-                        {% endif %}
-
-                    {% endfor %}
-                   
-                {% endif %}
-
+           
             
-                {% if colServices is defined %}
+                {% if allItens['Services-header'] is defined %}
                      <!--Header-->
                         <div class="row py-3">
-                            <div class="col-12 d-flex justify-content-center mt-3 mb-4"><span style="background-image: url('{{url_first_image}}');"  class="index-img-services"></div>
+                            <div class="col-12 d-flex justify-content-center mt-3 mb-4"><span style="background-image: url('{{allItens['Services-header'].filename}}');"  class="index-img-services"></div>
                             <div class="col-12 d-flex justify-content-center py-4"><span class="index-services">{% trans %}Services{% endtrans %}</span></div>
-                            <style type="text/css">.index-img-services:hover{ background-image: url("{{apiUrl}}{{url_second_image}}") !important; }</style>
+                            <style type="text/css">.index-img-services:hover{ background-image: url("{{apiUrl}}{{allItens['Services-header'].url}}") !important; }</style>
                         </div>
                         <!--/header-->
                            <!--Body icons-->
                         <div class="row">
                             <div class="container row py-4 mx-0"> 
-                                {% for  items in colServices.body %}
+                                {% for  items in allItens['Services-body'] %}
 
-                                    <div class="col item-index">
+                                    <div class="col item-index"><a class="tag-a-class" href="{{baseUri}}/{% trans %}services{% endtrans %}/{{items.title}}">
                                             <img src='{{items.filename}}' class="img-squares-services">
                                             <i class="mdi-48px {{items.url}} index-icon-services d-flex justify-content-center"></i>
 
                                             <p class=" d-flex justify-content-center font-weight-bold text-center py-4">{{items.title}}</p>
-                                    </div>
+                                    </a></div>
                                 {% endfor %}
                             </div>    
                         </div>
@@ -203,45 +141,26 @@
 
 <!--Mobile-->
 
-                {% if colMobile is defined %}
-                    {% set Title = null %}
-                    {% set url_first_image = null %}
-                    {% set  url_second_image = null %}
-                   
-                    {% for header in colMobile.header %}
-                        {% if header.referenceKey == 'files-mobile' %}
-                            {% set Title = header.title %}
-                            
-                            {% set url_first_image = header.filename %}
-                            
-                            {% set url_second_image = header.url %}
-                        
-                        {% endif %}
 
-                    {% endfor %}
-                   
-                {% endif %}
-
-
-                {% if colMobile is defined %}
+                {% if allItens['Mobile-header'] is defined %}
                      <!--Header-->
                         <div class="row py-3">
-                            <div class="col-12 d-flex justify-content-center mt-3 mb-4"><span style="background-image: url('{{url_first_image}}');"  class="index-img-mobile"></div>
+                            <div class="col-12 d-flex justify-content-center mt-3 mb-4"><span style="background-image: url('{{allItens['Mobile-header'].filename}}');"  class="index-img-mobile"></div>
                             <div class="col-12 d-flex justify-content-center py-4"><span class="index-mobile">{% trans %}Mobile{% endtrans %}</span></div>
-                            <style type="text/css">.index-img-mobile:hover{ background-image: url("{{apiUrl}}{{url_second_image}}") !important; }</style>
+                            <style type="text/css">.index-img-mobile:hover{ background-image: url("{{apiUrl}}{{allItens['Mobile-header'].url}}") !important; }</style>
                         </div>
                         <!--/header-->
                            <!--Body icons-->
                         <div class="row">
                             <div class="container row py-4 mx-0"> 
-                                {% for  items in colMobile.body %}
+                                {% for  items in allItens['Mobile-body'] %}
 
-                                    <div class="col item-index">
+                                    <div class="col item-index"><a class="tag-a-class" href="{{baseUri}}/{% trans %}mobile{% endtrans %}/{{items.title}}">
                                             <img src='{{items.filename}}' class="img-squares-mobile">
                                             <i class="mdi-48px {{items.url}} index-icon-mobile d-flex justify-content-center"></i>
 
                                             <p class=" d-flex justify-content-center font-weight-bold text-center py-4">{{items.title}}</p>
-                                    </div>
+                                    </a></div>
                                 {% endfor %}
                             </div>    
                         </div>
@@ -252,38 +171,18 @@
 
 <!--Health-->
 
-                {% if colHealth.header is defined %}
-                    {% set Title = null %}
-                    {% set url_first_image = null %}
-                    {% set  url_second_image = null %}
-                   
-                    {% for header in colHealth.header %}
-                        {% if header.referenceKey == 'files-health' %}
-                            {% set Title = header.title %}
-                            
-                            {% set url_first_image = header.filename %}
-                            
-                            {% set url_second_image = header.url %}
-                        
-                        {% endif %}
-
-                    {% endfor %}
-                   
-                {% endif %}
-
-          
-                {% if colHealth is defined %}
+                {% if allItens['Health-header'] is defined %}
                      <!--Header-->
                         <div class="row py-3">
-                            <div class="col-12 d-flex justify-content-center mt-3 mb-4"><span style="background-image: url('{{url_first_image}}');"  class="index-img-health"></div>
+                            <div class="col-12 d-flex justify-content-center mt-3 mb-4"><span style="background-image: url('{{allItens['Health-header'].filename}}');"  class="index-img-health"></div>
                             <div class="col-12 d-flex justify-content-center py-4"><span class="index-health">{% trans %}Health{% endtrans %}</span></div>
-                            <style type="text/css">.index-img-health:hover{ background-image: url("{{apiUrl}}{{url_second_image}}") !important; }</style>
+                            <style type="text/css">.index-img-health:hover{ background-image: url("{{apiUrl}}{{allItens['Health-header'].url}}") !important; }</style>
                         </div>
                         <!--/header-->
                            <!--Body icons-->
                         <div class="row">
                             <div class="container row py-4 mx-0"> 
-                                {% for  items in colHealth.body %}
+                                {% for  items in allItens['Health-body'] %}
 
                                     <div class="col item-index">
                                             <img src='{{items.filename}}' class="img-squares-health">
@@ -384,79 +283,6 @@
 
 </div>
 
-
-     
-     
-        <!--div class=""><img src="/assets/images/background-squares.svg"></div>
-        <div class="background-squares-right"></div-->
-
-<!--Serviços-->
-<!--/Serviços-->
-   {# <section class="mt-5 mb60">
-
-        <div class="container text-center mb-5">
-            {% set colContentHomeInstitucional = LayoutFunctions.getContentGroup('content?area=content-area-home-institucional&fields=area,url', 'area') %}
-            {% if colContentHomeInstitucional is iterable and colContentHomeInstitucional|length > 0 %}
-                {% if colContentHomeInstitucional['content-area-home-institucional'] is defined %}
-                    {% for page in colContentHomeInstitucional['content-area-home-institucional'] %}
-                        {% set url = page.referenceKey %}
-                        {% if page.url != '' %}
-                            {% set url = page.url %}
-                        {% endif %}
-
-                        <a href="{{ baseUri }}/{{ url }}" title="{{ page.title }}">
-                            <div class="col-5 d-inline-block" style="height: 200px; background-image: url('{{ page.filename }}'); background-size: cover; background-repeat: no-repeat">
-                                {{ page.title }}
-                            </div>
-                        </a>
-                    {% endfor %}
-                {% endif %}
-
-            {% endif %}
-        </div>
-
-        <div class="container">
-            <div class="row">
-                {% if colProductHighlighted['physical-products'] is defined and colProductHighlighted['physical-products']|length > 0 %}
-                    <div class="col-12 positive-z-index">
-                        <div class="products-slider-top">
-                            <h1>{% trans %}Highlighted{% endtrans %}</h1>
-                        </div>
-                        <div class="products-slider">
-                            {% for product in colProductHighlighted['physical-products'] %}
-                                <div>
-                                    {{ include('_render_block/product-card-rounded.html.twig', {
-                                        'baseUri': baseUri,
-                                        'product': product,
-                                    }) }}
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                {% if colProductCategoryHighlighted is defined and colProductCategoryHighlighted|length > 0 %}
-                    {% for productCategoryHighlighted in colProductCategoryHighlighted %}
-                        <div>
-                            <a href="{{ baseUri }}/product?category={{ productCategoryHighlighted.referenceKey }}">
-                                <div class="m-2" data-name="{{ productCategoryHighlighted.name|url_encode }}" style="width: 200px; height: 200px; background-image: url('{{ productCategoryHighlighted.image }}'); background-size: cover; background-repeat: no-repeat; ">
-                                    <div class="title_activity_s">
-                                    <span>
-                                        {{ productCategoryHighlighted.name }}
-                                    </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            </div>
-        </div>
-    </section>#}
 {% endblock %}
 
 {% block javascripts %}
@@ -592,18 +418,6 @@
             $('.card-right').trigger('click');
             i++;
         });
-        /*$('.card-video').on('pause', function(){
-            let video = $(this);
-            window.setTimeout(function(){
-                let video2 = $('.card-main').find('.card-video');
-                if(video2.paused){
-                    console.log("está pousado");
-                }
-                else{
-                    console.log("deu play");
-                }
-            },2000);
-        })*/
      
   
     });

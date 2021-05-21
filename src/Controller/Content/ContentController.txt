@@ -37,7 +37,7 @@ class ContentController extends SiteCacheController
                 $contentType = substr($pageInfo, 1);
             }
         }
-        dd("dd");
+        
         $contentType = $this->parseLanguageInRouteName($contentType);
 
         $self = $this;
@@ -112,7 +112,6 @@ class ContentController extends SiteCacheController
             'templateFile' => $templateFile,
         ]);
     }
-
     /**
      * @Route("/{req}", name="frontoffice_content_category", methods={"GET"}, requirements={"req"="%app.content_type%-category"})
      * @Route("/articles-category", name="frontoffice_content_articles_category", methods={"GET"})
