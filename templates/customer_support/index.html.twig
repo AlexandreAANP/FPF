@@ -12,6 +12,7 @@
         {% endif %}
     {% endfor %}
   <div class="background-image-header" style="background-image: url('{{image}}')">
+  	  {% include '_render_block/header_squares_animation.html.twig' %}
     <div class="container">
         <div class="d-flex justify-content-center">
             {{text|raw}}

@@ -823,7 +823,7 @@ class DefaultController extends SiteCacheController
             }
             else{
                 if($allItens['Mobile-body']){
-                    $item=$colMobile['body'][0];
+                    $item=$allItens['Mobile-body'][0];
                 }
             }
             /*Item*/
