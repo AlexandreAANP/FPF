@@ -92,7 +92,7 @@ class DefaultController extends SiteCacheController
         $defaultLanguage = $request->getLocale();
 
         $allItens = [];
-        $itensOrganize['Health-body'] = [];
+        
            $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=' . $defaultLanguage;
         if ($data = $this->getAPIData($url)) {
             if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
@@ -204,7 +204,7 @@ class DefaultController extends SiteCacheController
         $defaultLanguage = $request->getLocale();
 
         $allItens = [];
-        $itensOrganize['Health-body'] = [];
+        
            $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=' . $defaultLanguage;
         if ($data = $this->getAPIData($url)) {
             if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
@@ -296,7 +296,7 @@ class DefaultController extends SiteCacheController
         $defaultLanguage = $request->getLocale();
 
         $allItens = [];
-        $itensOrganize['Health-body'] = [];
+        
            $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=' . $defaultLanguage;
         if ($data = $this->getAPIData($url)) {
             if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
@@ -394,7 +394,7 @@ class DefaultController extends SiteCacheController
 
     /**
      * @Route("/restoration/{item}", name="frontoffice_restoration", methods={"GET"})
-     * @Route("/restauracao/{item}", name="frontoffice_restauracao", methods={"GET"})
+     * @Route("/restauracao/{item}", name="frontoffice_restauracao", methods={"GET"})   
      */
     public function Restoration(Request $request, $item = null){
 
@@ -402,7 +402,7 @@ class DefaultController extends SiteCacheController
         $defaultLanguage = $request->getLocale();
 
         $allItens = [];
-        $itensOrganize['Health-body'] = [];
+        
            $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=' . $defaultLanguage;
         if ($data = $this->getAPIData($url)) {
             if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
@@ -457,7 +457,7 @@ class DefaultController extends SiteCacheController
             /*Artigos*/
             /*/Artigos*/
             $colContent = [];
-                $url = $this->apiUrl . '/api/content?category=articles-category-restoration&type=articles&fields=url,text,filename&language=' . $defaultLanguage;
+                $url = $this->apiUrl . '/api/content?category=articles-category-restoration&type=articles&fields=url,text,filename,area&language=' . $defaultLanguage;
             if ($data = $this->getAPIData($url)) {
                 if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                     if (array_key_exists('colContent', $objData)) {
@@ -528,7 +528,7 @@ class DefaultController extends SiteCacheController
         $defaultLanguage = $request->getLocale();
 
         $allItens = [];
-        $itensOrganize['Health-body'] = [];
+        
            $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=' . $defaultLanguage;
         if ($data = $this->getAPIData($url)) {
             if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
@@ -582,7 +582,7 @@ class DefaultController extends SiteCacheController
             /*Artigos*/
             /*/Artigos*/
             $colContent = [];
-                $url = $this->apiUrl . '/api/content?category=articles-category-retail&type=articles&fields=url,text,filename&language=' . $defaultLanguage;
+                $url = $this->apiUrl . '/api/content?category=articles-category-retail&type=articles&fields=url,text,filename,area&language=' . $defaultLanguage;
             if ($data = $this->getAPIData($url)) {
                 if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                     if (array_key_exists('colContent', $objData)) {
@@ -652,8 +652,9 @@ class DefaultController extends SiteCacheController
         $this->setCacheFilename('home');
         $defaultLanguage = $request->getLocale();
 
+        
         $allItens = [];
-        $itensOrganize['Health-body'] = [];
+        
            $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=' . $defaultLanguage;
         if ($data = $this->getAPIData($url)) {
             if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
@@ -707,7 +708,7 @@ class DefaultController extends SiteCacheController
             /*Artigos*/
             /*/Artigos*/
             $colContent = [];
-                $url = $this->apiUrl . '/api/content?category=articles-category-services&type=articles&fields=url,text,filename&language=' . $defaultLanguage;
+                $url = $this->apiUrl . '/api/content?category=articles-category-services&type=articles&fields=url,text,filename,area&language=' . $defaultLanguage;
             if ($data = $this->getAPIData($url)) {
                 if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                     if (array_key_exists('colContent', $objData)) {
@@ -780,7 +781,6 @@ class DefaultController extends SiteCacheController
         $defaultLanguage = $request->getLocale();
 
         $allItens = [];
-        $itensOrganize['Health-body'] = [];
            $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=' . $defaultLanguage;
         if ($data = $this->getAPIData($url)) {
             if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
@@ -888,36 +888,41 @@ class DefaultController extends SiteCacheController
         ]);
     }
 
-    public function organizeArticles($data){
-
+    private function organizeArticles($data){
                     $row = [];
-                    $info = [];
                     $lines = ['first-row', 'second-row', 'third-row', 'fourth-row', 'fifth-row', 'sixth-row', 'seventh-row', 'eighth-row', 'ninth-row', 'tenth-row', 'eleventh-row', 'twelfth-row'];
-
-                    foreach ($lines as $value) {
-                        $row[$value]['text'] = [];
-                        $row[$value]['icon'] = [];
-                        $row[$value]['image'] = [];
-                    }
-                        
+                    
+                    //Separa os valores da query em linhas, pelo o nome da categoria que se encontra
                     foreach ($data as $value) {
-                          
-                            if(array_key_exists('colContentArea', $value) && in_array($value['colContentArea'][0]['name'],$lines)){
-                                    $nameRow = $value['colContentArea'][0]['name'];
-                                        if(array_key_exists('description', $value) && strpos($value['description'], 'text') !== false ){
-                                             array_push($row[$nameRow]['text'], $value['text']);
-                                             //dd($row[$nameRow]);
-                                        }
-                                        if(array_key_exists('description', $value) && strpos($value['description'], 'icon') !== false ){
-                                             array_push($row[$value['colContentArea'][0]['name']]['icon'], $value['url']);
-                                        }
-                                        if(array_key_exists('description', $value) && strpos($value['description'], 'image') !== false ){
-                                             array_push($row[$value['colContentArea'][0]['name']]['image'], $value['filename']);
+                    
+                        if(is_array($value) && array_key_exists('colContentArea', $value) && in_array($value['colContentArea'][0]['name'], $lines)){
 
-                                        }
-                            }
+                            $row[$value['colContentArea'][0]['name']] [] = $value;
+
+                        }
+
                     }
-                    dd($row);
+
+                    //separa o tipo
+                    foreach ($row as $key => $value) {
+                        foreach ($value as $value2) {
+                            if(strpos('text',$value2['description'])!==false){
+                                $row[$key]['text'] [] = $value2;
+                            }
+                            elseif(strpos('image',$value2['description'])!==false){
+                                $row[$key]['image'] [] = $value2;
+                            }
+                            elseif(strpos('icon',$value2['description'])!==false){
+                                $row[$key]['icon'] [] = $value2;
+                            }
+                        }
+                        foreach($value as $chave => $value2){
+                            if(is_numeric($chave)){
+                                unset($row[$key][$chave]);
+                            }
+                        }
+                    }
+
                     return $row;
     }
 

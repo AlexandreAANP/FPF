@@ -1310,3 +1310,9 @@ border-bottom: 1px solid white !important;
 	color:none;
 	text-decoration: none !important;
 }
+.square_header_animation{
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: red;
+}
