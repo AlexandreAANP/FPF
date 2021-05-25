@@ -395,6 +395,7 @@ class DefaultController extends SiteCacheController
     /**
      * @Route("/restoration/{item}", name="frontoffice_restoration", methods={"GET"})
      * @Route("/restauracao/{item}", name="frontoffice_restauracao", methods={"GET"})   
+     * @Route("/restauração/{item}", name="frontoffice_restauração", methods={"GET"})  
      */
     public function Restoration(Request $request, $item = null){
 
@@ -644,7 +645,8 @@ class DefaultController extends SiteCacheController
 
     /**
      * @Route("/services/{item}", name="frontoffice_services", methods={"GET"})
-     * @Route("/servicos/{item}", name="frontoffice_servico", methods={"GET"})
+     * @Route("/serviços/{item}", name="frontoffice_serviços", methods={"GET"})
+     * @Route("/servicos/{item}", name="frontoffice_servicos", methods={"GET"})
      */
 
         public function Services(Request $request, $item = null){
