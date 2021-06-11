@@ -288,25 +288,12 @@ class DefaultController extends SiteCacheController
     }
 
     /**
-     * @Route("/about-us", name="frontoffice_about-us", methods={"GET"})
-     * @Route("/sobre-nos", name="frontoffice_sobre-nos", methods={"GET"})
+     * @Route("/who-we-are", name="frontoffice_about-us", methods={"GET"})
+     * @Route("/quem-somos", name="frontoffice_sobre-nos", methods={"GET"})
      */
     public function AboutUs(Request $request, $item = null){
            $this->setCacheFilename('home');
         $defaultLanguage = $request->getLocale();
-
-        $allItens = [];
-        
-           $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=' . $defaultLanguage;
-        if ($data = $this->getAPIData($url)) {
-            if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
-                if (array_key_exists('colContent', $objData)) {
-                    $allItens = $this->OrganizeItens($objData['colContent']);
-
-                }
-            }
-        }
-
 
 
         /*DOUBTS*/
@@ -322,12 +309,26 @@ class DefaultController extends SiteCacheController
         /*/DOUBTS*/
          $colContent = [];
             $data = [];
-                $url = $this->apiUrl . '/api/content?category=articles-category-about-us&type=articles&fields=url,text,filename&language=' . $defaultLanguage;
+                $url = $this->apiUrl . '/api/content?category=articles-category-who-we-are&type=articles&fields=url,text,filename&language=' . $defaultLanguage;
             if ($data = $this->getAPIData($url)) {
                 if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                     if (array_key_exists('colContent', $objData)) {
                         $data = $objData['colContent'];
+                      
+                        $articles = [];
+                        $logo = null;
                         foreach ($data as $value) {
+                            if($value['url'] === 'logo' ){
+                                $logo = $value;
+                            }
+                            if($value['url'] !== '' && $value['url'] !== 'logo'){
+                                $articles[intval($value['url'])][intval($value['description'])] = $value;
+                            }
+                        }
+                        $colContent["articles"] = $articles;
+                        $colContent["logo"] = $logo;
+                     
+                       /* foreach ($data as $value) {
                             if(array_key_exists('referenceKey', $value) && $value['referenceKey']==='articles-about-us-logo'){
                                 $colContent['image']= $value['filename'];
                             } 
@@ -337,7 +338,7 @@ class DefaultController extends SiteCacheController
                             if(array_key_exists('referenceKey', $value) && $value['referenceKey']==='articles-about-us-text-2'){
                                 $colContent['text-2']=$value['text'];
                             }
-                        }
+                        }*/
                     }
                 }
             }
@@ -381,7 +382,6 @@ class DefaultController extends SiteCacheController
 
             return $this->renderSite('about_us/about-us.html.twig',[
                 'colContent' => $colContent,
-                'allItens' => $allItens,
                 'colDoubts' => $colDoubts,
                 'colBanner' =>$colBanner,
                 'colFooter' =>$colFooter,

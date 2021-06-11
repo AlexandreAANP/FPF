@@ -1787,3 +1787,25 @@ border-bottom: 1px solid white !important;
 	transition-duration: 0.3s;
 }
 /*//SQUARES ANIMATION HEADER*/
+
+.body-load{
+	background-color: rgba(0,0,0,0.2);
+    position: fixed;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+}
+.body-load img{
+	width: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.about-us-title{
+	font-size: 50px;
+    font-weight: bold;
+}
+.about-us-text-content{
+	color: white;
+}

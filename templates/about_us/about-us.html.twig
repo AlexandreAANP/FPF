@@ -24,12 +24,56 @@
     <div class="container-fluid py-5">
         <div class="row mt-5 py-5">
             <div class="col-12 col-md-6 mr-md-5 d-flex justify-content-center">
-                <img src="{{colContent.image}}">
+                <img src="{{colContent.logo['filename']}}">
+            </div>
+        </div>
+
+        {% set articles = colContent.articles %}
+        {% for i in 1..articles|length %}
+        
+        <div class="row" data-id="{{i}}">
+            <div class="col-12 col-md-6 mx-md-5">
+                <div class="pt-5 pb-3">
+                    <p class="about-us-title">{{articles[i][1].title}}</p>
+                </div>
+                <div class="pb-5">
+                    {{articles[i][1].text|raw}}
+                    <!--p class="about-us-first-text">A FPF Sistemas Gestão iniciou atividade em 1999, é especializada em Tecnologias de Informação, e presta serviços nas áreas de Consultoria, Desenvolvimento e Implementação de Software de Gestão. Empresa 100% nacional, tem como principiais atividades a instalação e implementação do ERP (Drivefx, ZONESOFT, Eticadata), desenvolvimento de software próprio e integrações com plataformas web, móveis e TI.</p-->
+                    
+                </div>
+            </div>
+            <div class="col-12 col-md d-flex justify-content-end justify-content-md-start">
+                <div class="about-us-squares-position">
+                        <span class="about-us-square-plus"><i class="mdi mdi-plus icon-about-us"></i></span>
+                        <span class="about-us-square-plus_2"></span>
+                </div>
+                <div>
+                    <span class="about-us-plus-info d-none"></span>
+                </div>
             </div>
         </div>
         <div class="row">
+            <div class="col-12 col-md-6 mx-md-5 about-us-bg-content" style="display: none;">
+                <span data-target={{i}} class="about-us-text-content">
+                    {{articles[i][2].text|raw}}
+                   
+                </span>
+            </div>
+        </div>
+        
+        {% endfor %}
+
+
+
+
+        {#
+        <!--Info - 1 -->
+        <div class="row">
             <div class="col-12 col-md-6 mx-md-5">
-                <div class="py-5">
+                <div class="pt-5 pb-3">
+                    <p class="about-us-title">Quem Somos</p>
+                </div>
+                <div class="pb-5">
                     {{colContent['text-1']|raw}}
                     <!--p class="about-us-first-text">A FPF Sistemas Gestão iniciou atividade em 1999, é especializada em Tecnologias de Informação, e presta serviços nas áreas de Consultoria, Desenvolvimento e Implementação de Software de Gestão. Empresa 100% nacional, tem como principiais atividades a instalação e implementação do ERP (Drivefx, ZONESOFT, Eticadata), desenvolvimento de software próprio e integrações com plataformas web, móveis e TI.</p-->
                     
@@ -49,28 +93,47 @@
             <div class="col-12 col-md-6 mx-md-5 about-us-bg-content" style="display: none;">
                 <span class="about-us-text-content">
                     {{colContent['text-2']|raw}}
-                    <!--p>A FPF Sistemas Gestão é uma empresa dedicada exclusivamente ao mercado empresarial.</p>
-                    }
-
-<p>Dotada da mais recente tecnologia e de um superior serviço de acompanhamento, através de Gestores de Clientes, a FPF Sistemas Gestão vem trazer-lhe uma nova realidade livre de preocupações de modo a que se possa concentrar no que lhe é mais próximo: o seu Negócio.</p>
-
-<p>A FPF Sistemas Gestão apresenta ampla experiência na disponibilização de soluções integradas a algumas das maiores empresas do panorama empresarial nacional, através de uma vasta oferta de soluções integradas de voz, Internet, dados e tecnologias de informação adequadas a empresas e organizações de diferentes dimensões.</p>
-
-<p>A filosofia de acção da FPF Sistemas Gestão assenta em seis valores fundamentais. Neles reside a nossa força e identidade. Assumimos o compromisso de agir de acordo com estes princípios, no sentido de melhorarmos a vida dos que em nós depositam confiança:</p>
-
-<p>Experiência – Dispomos de uma grande experiência acumulada ao longo de mais de cinco anos na prestação de serviços e soluções ao Mercado Empresarial;</p>
-
-<p>Simplicidade – Criamos soluções de fácil utilização e compreensão;</p>
-<p>Transparência – Os nossos Clientes sabem com o que podem contar. Somos claros e directos;</p>
-
-<p>Inovação – Procuramos novas formas de satisfazer as necessidades dos nossos Clientes;</p>
-
-<p>Orientação para o Cliente – A nossa principal preocupação é oferecer o que os nossos Clientes querem e necessitam;</p>
-
-<p>Espírito de equipa – Recrutamos desenvolvemos e mantemos uma equipa de sucesso.</p-->
+                   
                 </span>
             </div>
         </div>
+        <!--/Info - 1 -->
+
+        <!--Info - 2 -->
+        <div class="row">
+            <div class="col-12 col-md-6 mx-md-5">
+                <div class="pt-5 pb-3">
+                    <p class="about-us-title">Missão</p>
+                </div>
+                <div class="pb-5">
+                    {{colContent['text-1']|raw}}
+                    <!--p class="about-us-first-text">A FPF Sistemas Gestão iniciou atividade em 1999, é especializada em Tecnologias de Informação, e presta serviços nas áreas de Consultoria, Desenvolvimento e Implementação de Software de Gestão. Empresa 100% nacional, tem como principiais atividades a instalação e implementação do ERP (Drivefx, ZONESOFT, Eticadata), desenvolvimento de software próprio e integrações com plataformas web, móveis e TI.</p-->
+                    
+                </div>
+            </div>
+            <div class="col-12 col-md d-flex justify-content-end justify-content-md-start">
+                <div class="about-us-squares-position">
+                        <span class="about-us-square-plus"><i class="mdi mdi-plus icon-about-us"></i></span>
+                        <span class="about-us-square-plus_2"></span>
+                </div>
+                <div>
+                    <span class="about-us-plus-info d-none"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 mx-md-5 about-us-bg-content" style="display: none;">
+                <span class="about-us-text-content">
+                    {{colContent['text-2']|raw}}
+                   
+                </span>
+            </div>
+        </div>
+        <!--/Info - 2 -->
+        #}
+         <div class="container pt-5">
+            {% include '_render_block/doubts-send-email.html.twig' %}
+         </div>
     </div>
 
 
@@ -81,10 +144,11 @@
 {% block  javascripts %}
         {{parent()}}
     <script type="text/javascript">
-             console.log("fd");
         $(document).ready(function(){
           $('.about-us-square-plus').on('click', function(){
-                    
+                    let id = $(this).data('id');
+                    let row = $(this).eq(5).find('[data-target='+id+']');
+                    console.log(row);
                     if($(this).children().hasClass('mdi-plus')){
                         $('.about-us-bg-content').slideDown();
                         $('.about-us-plus-info').removeClass('d-none');

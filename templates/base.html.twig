@@ -43,11 +43,15 @@
 
 <body>
 
-<!--div id="body_loading_first">
-    <h1>{% trans %}Please Wait{% endtrans %}...</h1>
-</div-->
 
-<div class="body-loading-load"></div>
+
+<div id="body_loading_first">
+    <h1>{% trans %}Please Wait{% endtrans %}...</h1>
+</div>
+
+<div class="body-load d-none">
+    <img src='/assets/images/load_2.gif'>
+</div>
 
 
 {% if app.request.cookies.has('cookie-consent-' ~ appVersionCookiePolicy) %}

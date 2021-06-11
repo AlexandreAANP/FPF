@@ -413,6 +413,9 @@ var querybiz = {
 			}
 		});
 
+		$('a').on('click', function(){
+			$('.body-load').removeClass('d-none');
+		});
 		$('.btn-modal-product-stock-zero').click(function() {
 			alert('sem estoque');
 		});
