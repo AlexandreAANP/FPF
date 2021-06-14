@@ -30,35 +30,51 @@
 
         {% set articles = colContent.articles %}
         {% for i in 1..articles|length %}
-        
-        <div class="row" data-id="{{i}}">
-            <div class="col-12 col-md-6 mx-md-5">
-                <div class="pt-5 pb-3">
-                    <p class="about-us-title">{{articles[i][1].title}}</p>
+        <div>
+            <div class="row">
+                <div class="col-12 col-md-6 mx-md-5">
+                    <div class="pt-5 pb-3">
+                        <p class="about-us-title">{{articles[i][1].title}}</p>
+                    </div>
+                    <div class="pb-5">
+                        {{articles[i][1].text|raw}}
+                        
+                        
+                    </div>
                 </div>
-                <div class="pb-5">
-                    {{articles[i][1].text|raw}}
-                    <!--p class="about-us-first-text">A FPF Sistemas Gestão iniciou atividade em 1999, é especializada em Tecnologias de Informação, e presta serviços nas áreas de Consultoria, Desenvolvimento e Implementação de Software de Gestão. Empresa 100% nacional, tem como principiais atividades a instalação e implementação do ERP (Drivefx, ZONESOFT, Eticadata), desenvolvimento de software próprio e integrações com plataformas web, móveis e TI.</p-->
-                    
+                <div class="col-12 col-md d-flex justify-content-end justify-content-md-start">
+                    <div class="about-us-squares-position">
+                            <span class="about-us-square-plus"><i class="mdi mdi-plus icon-about-us"></i></span>
+                            <span class="about-us-square-plus_2"></span>
+                    </div>
+                    <div>
+                        <!--span class="about-us-plus-info d-none" style="background-color:;"></span-->
+                    </div>
                 </div>
             </div>
-            <div class="col-12 col-md d-flex justify-content-end justify-content-md-start">
-                <div class="about-us-squares-position">
-                        <span class="about-us-square-plus"><i class="mdi mdi-plus icon-about-us"></i></span>
-                        <span class="about-us-square-plus_2"></span>
-                </div>
-                <div>
-                    <span class="about-us-plus-info d-none"></span>
+            <div class="row">
+                <div class="col-12 col-md-6 mx-md-5 about-us-bg-content" style="display: none; background-image: url({{articles[i][2].filename}});">
+                    <span class="about-us-text-content">
+                        {{articles[i][2].text|raw}}
+                        {% if articles[i]|length > 2 %}
+                            {% for content in articles[i] %}
+                                {#{dump(content)}#}<!--br><br-->
+                                {% if content.description|number_format > 2 %}
+
+                                    {% if content.filename == "" %}
+                                        {{content.text|raw}}
+                                    {% else %}
+                                        <div class="py-3 text-center">
+                                            <img src="{{content.filename}}">
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </span>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6 mx-md-5 about-us-bg-content" style="display: none;">
-                <span data-target={{i}} class="about-us-text-content">
-                    {{articles[i][2].text|raw}}
-                   
-                </span>
-            </div>
+           
         </div>
         
         {% endfor %}
@@ -131,7 +147,7 @@
         </div>
         <!--/Info - 2 -->
         #}
-         <div class="container pt-5">
+         <div id="contact" class="container pt-5">
             {% include '_render_block/doubts-send-email.html.twig' %}
          </div>
     </div>
@@ -147,21 +163,30 @@
         $(document).ready(function(){
           $('.about-us-square-plus').on('click', function(){
                     let id = $(this).data('id');
-                    let row = $(this).eq(5).find('[data-target='+id+']');
-                    console.log(row);
+                    let row = $(this).parent().parent().parent().parent().find('.about-us-bg-content');
+                    let plus_info = $(this).parent().parent().parent().parent().find('.about-us-plus-info');
                     if($(this).children().hasClass('mdi-plus')){
-                        $('.about-us-bg-content').slideDown();
-                        $('.about-us-plus-info').removeClass('d-none');
+                        row.slideDown();
+                        plus_info.removeClass('d-none');
                         $(this).children().removeClass('mdi-plus');
                         $(this).children().addClass('mdi-minus');
                     }
                     else{
-                        $('.about-us-bg-content').slideUp();
-                        $('.about-us-plus-info').addClass('d-none');
+                        row.slideUp();
+                        plus_info.addClass('d-none');
                         $(this).children().removeClass('mdi-minus');
                         $(this).children().addClass('mdi-plus');
                     }
                 });
+
+          $(".ancora").on("click", function(event){
+
+    $('html, body').animate({
+        scrollTop: $($(this).attr("href")).offset().top
+    }, 500);
+
+    event.preventDefault();
+});
         });
        
 

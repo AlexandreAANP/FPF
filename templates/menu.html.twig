@@ -94,7 +94,7 @@
             <span class="warning">{{ productItemsInCart ?? 0 }}</span>
         </a>#}
 
-        <a href="#menu" class="d-lg-none btn bt-link ml-auto main-menu">
+        <a href="#menu" class="d-lg-none btn bt-link ml-auto main-menu noLoad">
             <img src="/assets/images/navbar.svg" />
         </a>
     </div>
@@ -127,12 +127,30 @@
 
 <nav id="menu" class="panel bg-color-black" role="navigation">
     <div class="d-flex flex-column align-items-end h-100">
-        <a href="#menu" class="main-menu mb-4">
+        <a href="#menu" class="main-menu mb-4 noLoad">
             <img src="/assets/images/close-menu.svg" alt="close menu">
         </a>
         <ul id="menu-links" class="menu-mobile-link list-unstyled d-flex flex-column flex-fill w-100">
             {% include '_render_block/menu_links.html.twig' %}
             <li class='mobile-menu-speak-with-us'><a>{% trans %}Speak with us{% endtrans %}</a></li>
+             {% set supportedLanguages = LayoutFunctions.getSupportedLanguages(LayoutFunctions.getEnvVars('SUPPORTED_LOCALES')) %}
+                {% if supportedLanguages|length > 1 %}
+                    <li class="language-style nav-item dropdown py-3 mr-5 ">
+                        <span class="nav-link py-0 px-4 dropdown-toggle btn-sm p-1 menu-link-font mb-lg-dropdown" href="#" id="dropdownMenuLink" role="button"  aria-expanded="false">
+                            {{ LayoutFunctions.getCurrentLanguage()|upper }}
+                        </span>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            {% for language in supportedLanguages %}
+                                {% set href = LayoutFunctions.changeLanguage(language, languageUri) %}
+                                {% if href == '/' %}
+                                    {% set href = '/' ~ LayoutFunctions.getEnvVars('DEFAULT_LANGUAGE') %}
+                                {% endif %}
+                                {% set noLoad = href == '#' ? 'noLoad' : '' %}
+                                <li><a class="dropdown-item language-links-menu d-none {{noLoad}}" href="{{ href }}">{{ language|upper }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endif %}
         </ul>
 
         {#<div class="d-flex align-items-center justify-content-between w-100 pr-1 pl-1">

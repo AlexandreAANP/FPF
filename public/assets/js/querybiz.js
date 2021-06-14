@@ -414,7 +414,21 @@ var querybiz = {
 		});
 
 		$('a').on('click', function(){
-			$('.body-load').removeClass('d-none');
+			if(!$(this).hasClass('noLoad')){
+				$('.body-load').removeClass('d-none');
+			}
+		});
+		$('.mb-lg-dropdown').on('click', function(){
+			if($(this).parent().find('.dropdown-menu').hasClass("d-none")){
+				$(this).parent().find('.dropdown-menu').slideDown();
+				$(this).parent().find('.dropdown-menu').removeClass("d-none");
+
+			}
+			else{
+				$(this).parent().find('.dropdown-menu').slideDown()
+				$(this).parent().find('.dropdown-menu').addClass("d-none");
+			}
+
 		});
 		$('.btn-modal-product-stock-zero').click(function() {
 			alert('sem estoque');

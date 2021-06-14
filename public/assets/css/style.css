@@ -1293,7 +1293,7 @@ border-bottom: 1px solid white !important;
 .about-us-bg-content{
 	padding-top: 40px;
     padding-bottom: 40px;
-    padding-right: 90px;
+    padding-right: 104px;
     padding-left: 75px;
     display: block;
     background-size: cover;
@@ -1305,6 +1305,7 @@ border-bottom: 1px solid white !important;
 	color: white;
 	font-size: 17px;
 	font-family: arial;
+	text-align: justify;
 }
 .tag-a-class{
 	color:none;
@@ -1808,4 +1809,13 @@ border-bottom: 1px solid white !important;
 }
 .about-us-text-content{
 	color: white;
+}
+.title-Services{
+	font-size: 35px;
+
+	font-weight: bold;
+}
+.text-Serivces{
+	font-size: 27px;
+
 }

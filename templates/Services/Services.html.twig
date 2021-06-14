@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {#% include 'slider.html.twig' %#}
+
+
+    {#% include '_includes/modal_product_color_size.html.twig' %#}
+
+    {% set text = null  %}
+    {% set image = null %}
+    {% for media in colBanner %}
+        {% if media.referenceKey == 'richmedia-services-banner' %}
+            {% set text = media.text %}
+            {% set image = media.filename %}
+        {% endif %}
+    {% endfor %}
+	<div class="background-image-header" style="background-image: url('{{image}}')">
+	    {% include '_render_block/header_squares_animation.html.twig' %}
+	    <div class="container">
+	        <div class="d-flex justify-content-center">
+	            {{text|raw}}
+	        </div>
+	    </div>
+	</div>
+
+     
+
+        
+
+
+              
+
+<div class="background-index-image" style="padding-top: 15vh; padding-bottom: 100px;">
+
+			<div class="container py-5">
+				<div class="row col d-flex justify-content-center">
+					<div>
+						<span class="title-Services">
+							CONSULTORIA, PLANEAMENTO E DESENHO
+						</span>
+						<div class="text-center pt-5">
+							<img src="https://www.fpfsistemas.com/template/people%20(4).png">
+						</div>
+					</div>
+				</div>
+				<div class="pt-5 row">
+					<span class="text-Serivces text-center">Nesta área, a FPF Sistemas Gestão avalia de forma rigorosa, através de uma equipa de consultores especializados, as necessidades dos seus clientes e parceiros criando soluções imediatas.<br><br>Este serviço inclui:</span>
+					<span class="py-5 text-Serivces text-left">
+						<ul>
+							<li>Serviços de Consultoria</li>
+							<li>Reengenharia de processos</li>
+							<li>Implementação de Soluções</li>
+							<li>Auditoria a Sistemas Informáticos</li>
+							<li>Gestão de projectos e Serviços</li>
+							<li>Segurança de sistemas</li>
+						</ul>
+					</span>
+					<span class="text-Serivces text-justify">Os serviços de consultoria visam a análise, certificação e acompanhamento da implementação de soluções.<br><br>Iniciando os processos de consultoria, em termos de necessidades, passando por objectivos funcionais e orçamentais, a FPF Sistemas Gestão oferece a garantia de servir os seus clientes com soluções adequadas agregadas ao verdadeiro ponto fulcral de uma empresa, a funcionalidade.</span>
+
+				</div>
+				<div class="row pt-5">
+					<span class="text-Serivces text-center">
+						<b>Competência dos serviços de Consultoria:</b>
+						<ul class="text-left pt-5">
+							<li>Consultoria para Software de Gestão</li>
+							<li>Consultoria para Redes Estruturadas</li>
+							<li>Consultoria para Sistemas Passivos e Activos</li>
+							<li>Acompanhamento dos processos de Implementação</li>
+							<li>Consultoria para Software de Produção</li>
+							<li>Consultoria para Hardware</li>
+							<li>Consultoria para Soluções Específicas</li>
+						</ul>
+					</span>
+				</div>
+				<hr style="border: 1px solid gray;">
+				<div class="py-5 row col d-flex justify-content-center">
+					<div>
+						<span class="title-Services">
+							IMPLEMENTAÇÃO SOFTWARE
+						</span>
+						<div class="text-center pt-5">
+							<img src="https://www.fpfsistemas.com/template/icon%20(1).png">
+						</div>
+					</div>
+				</div>
+				<div class="py-3 row">
+					<span class="text-Serivces text-center">Normalmente a forma de implementar um sistema é com um contrato de implementação que se renova automaticamente a medida que as horas se vão esgotando.<br><br>
+Temos dois tipos de horas, as horas locais e as horas remotas, desta forma conseguimos reduzir os custos de implementação e criar satisfação nos clientes com um alto valor acrescentado na implementação e nas soluções solicitadas.<br><br>
+A sua flexibilidade torna possível a existência de configurações adicionais definidas pelo cliente, disponibilizando uma solução adaptada ao seu modo de funcionamento.<br><br>
+</span>
+<span class="text-Serivces text-left"><b>A metodologia para implementação consiste:</b></span>
+				</div>
+            </div>
+
+</div>
+
+{% endblock %}
