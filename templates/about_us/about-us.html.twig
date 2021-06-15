@@ -147,9 +147,7 @@
         </div>
         <!--/Info - 2 -->
         #}
-         <div id="contact" class="container pt-5">
-            {% include '_render_block/doubts-send-email.html.twig' %}
-         </div>
+      
     </div>
 
 
@@ -178,15 +176,6 @@
                         $(this).children().addClass('mdi-plus');
                     }
                 });
-
-          $(".ancora").on("click", function(event){
-
-    $('html, body').animate({
-        scrollTop: $($(this).attr("href")).offset().top
-    }, 500);
-
-    event.preventDefault();
-});
         });
        
 

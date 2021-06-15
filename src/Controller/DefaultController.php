@@ -715,7 +715,7 @@ class DefaultController extends SiteCacheController
             /*Artigos*/
             /*/Artigos*/
             $colContent = [];
-                $url = $this->apiUrl . '/api/content?category=articles-category-services&type=articles&fields=url,text,filename,area&language=' . $defaultLanguage;
+                $url = $this->apiUrl . '/api/content?category=articles-category-service&type=articles&fields=url,text,filename,area&language=' . $defaultLanguage;
             if ($data = $this->getAPIData($url)) {
                 if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                     if (array_key_exists('colContent', $objData)) {
@@ -741,7 +741,7 @@ class DefaultController extends SiteCacheController
             /*/Banner*/
                 /*Footer*/
             $colFooter = [];
-            $url = $this->apiUrl . '/api/content?category=richmedia-category-services&area=content-area-page-footer&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
+            $url = $this->apiUrl . '/api/content?category=richmedia-category-service&area=content-area-page-footer&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
             if ($data = $this->getAPIData($url)) {
                 if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                     if (array_key_exists('colContent', $objData)) {
@@ -753,7 +753,7 @@ class DefaultController extends SiteCacheController
             /*/Footer*/
             /*Footer Down*/
             $colFooterDown = [];
-            $url = $this->apiUrl . '/api/content?category=richmedia-category-services&area=content-area-footer-footer&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
+            $url = $this->apiUrl . '/api/content?category=richmedia-category-service&area=content-area-footer-footer&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
             if ($data = $this->getAPIData($url)) {
                 if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                     if (array_key_exists('colContent', $objData)) {
@@ -838,15 +838,25 @@ class DefaultController extends SiteCacheController
             /*Item*/
 
 
-            /*Artigos*/
-            /*/Artigos*/
-            $colContent = [];
-                $url = $this->apiUrl . '/api/content?category=articles-category-services&type=articles&fields=url,text,filename,area&language=' . $defaultLanguage;
+            /*Content*/
+            $Consultoria = [];
+                $url = $this->apiUrl . '/api/content?category=articles-category-services&area=content-area-consulting-planning-and-design&type=articles&fields=url,text,filename,area&language=' . $defaultLanguage;
             if ($data = $this->getAPIData($url)) {
                 if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                     if (array_key_exists('colContent', $objData)) {
-                        $colContent = $objData['colContent'];
-                        $colContent = $this->organizeArticles($objData['colContent']);
+                        $Consultoria = $objData['colContent'];
+                       
+                    }
+                }
+            }
+
+            $implementacao = [];
+                $url = $this->apiUrl . '/api/content?category=articles-category-services&area=content-area-consulting-planning-and-design&type=articles&fields=url,text,filename,area&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $implementacao = $objData['colContent'];
+                       
                     }
                 }
             }
@@ -879,7 +889,7 @@ class DefaultController extends SiteCacheController
             /*/Footer*/
             /*Footer Down*/
             $colFooterDown = [];
-            $url = $this->apiUrl . '/api/content?category=richmedia-category-services&area=content-area-footer-footer&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
+            $url = $this->apiUrl . '/api/content?category=richmedia-category-service&area=content-area-footer-footer&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
             if ($data = $this->getAPIData($url)) {
                 if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                     if (array_key_exists('colContent', $objData)) {
@@ -892,7 +902,8 @@ class DefaultController extends SiteCacheController
             return $this->renderSite('Services/Services.html.twig',[
                 'item' => $item,
                 'allItens' => $allItens,
-                'colContent' => $colContent,
+                'colConsultoria' => $Consultoria,
+                'colImplementacao' => $implementacao,
                 'colDoubts' => $colDoubts,
                 'colBanner' =>$colBanner,
                 'colFooter' =>$colFooter,

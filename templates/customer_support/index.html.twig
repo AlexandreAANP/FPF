@@ -42,10 +42,11 @@
 	</div>
 
 	<div class="container py-5">
-		<div class="row">
-			<span class="second-title-customer-page text-center">{% trans %}Still having doubts{% endtrans %}?</span>
+		<div class="row d-flex justify-content-between">
+			<div><span class="second-title-customer-page text-center">{% trans %}Still having doubts{% endtrans %}?</span></div>
+			<div><a class="btn btn-danger noLoad border-0" href="#contact" style="background-color:#8019B3;">{% trans %}Contact us{% endtrans %}</a></div>
 		</div>
-				{% include '_render_block/doubts-send-email.html.twig' %}
+				{#% include '_render_block/doubts-send-email.html.twig' %#}
 			<!--div class="col-12 col-md-8 col-lg-8 py-5"><img src="/assets/images/help-person.svg" style="width:100%;"></div>
 			<div class="col-12 col-md-4 col-lg-4 py-5">
 				<form>

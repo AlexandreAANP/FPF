@@ -412,6 +412,16 @@ var querybiz = {
 				});
 			}
 		});
+		
+
+    $(".ancora").on("click", function(event){
+
+    $('html, body').animate({
+        scrollTop: $($(this).attr("href")).offset().top
+    }, 500);
+
+    event.preventDefault();
+});
 
 		$('a').on('click', function(){
 			if(!$(this).hasClass('noLoad')){

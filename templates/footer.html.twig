@@ -28,6 +28,7 @@
 
     <div class="footer-menu mt-5">
         <div class="container">
+           
             <div class="row">
                 <div class="col-12 col-lg-5 d-flex flex-column order-1 order-lg-2">
                     <span class="footer-menu-header d-block">{% trans %}Newsletter{% endtrans %}</span>
@@ -45,6 +46,7 @@
                     <div class="my-4 d-lg-none">
                         <hr>
                     </div>
+
                 </div>
                 <div class="col-12 col-lg-7 order-2 order-lg-1">
 
@@ -121,6 +123,20 @@
                     {% endif %}
                 </div>
             </div>
+
+             <div class="row" id="contact"><h2>{% trans %}Contact us{% endtrans %}</h2></div>
+            <div class="row" style="margin-bottom: 30px;">
+                  {% set formDoubts = null %}
+                        {% for i in colDoubts %}
+                        {% if i.title == "send-email" %}
+                            {% set formDoubts = i %}
+                        {% endif %}
+                        {% endfor %}
+                    <div class="col">
+                        <img src="{{formDoubts.filename}}" style="width:100%;">
+                    </div>
+                    {{formDoubts.text|raw}}
+                </div>
         </div>
     </div>
 

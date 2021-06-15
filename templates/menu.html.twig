@@ -46,7 +46,7 @@
         
 
                 <li class="btn-speak-with-us d-flex align-items-center" style="list-style-type:none;">
-                    <a href="/contact">
+                    <a href="#contact" class="ancora noLoad">
                         <div class="dropleft-speak-with-us">
                             <span class="text-speak-with-us">{% trans %}Speak with us{% endtrans %}</span>
                             <spam class='box-speak-with-us'></spam>
@@ -132,7 +132,7 @@
         </a>
         <ul id="menu-links" class="menu-mobile-link list-unstyled d-flex flex-column flex-fill w-100">
             {% include '_render_block/menu_links.html.twig' %}
-            <li class='mobile-menu-speak-with-us'><a>{% trans %}Speak with us{% endtrans %}</a></li>
+            <li class='mobile-menu-speak-with-us'><a class=" noLoad" href="#contact">{% trans %}Speak with us{% endtrans %}</a></li>
              {% set supportedLanguages = LayoutFunctions.getSupportedLanguages(LayoutFunctions.getEnvVars('SUPPORTED_LOCALES')) %}
                 {% if supportedLanguages|length > 1 %}
                     <li class="language-style nav-item dropdown py-3 mr-5 ">

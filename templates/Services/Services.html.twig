@@ -35,63 +35,246 @@
 			<div class="container py-5">
 				<div class="row col d-flex justify-content-center">
 					<div>
-						<span class="title-Services">
-							CONSULTORIA, PLANEAMENTO E DESENHO
+						<span class="title-Services text-center">
+							{{colConsultoria[0].colContentArea[0].name}}
 						</span>
 						<div class="text-center pt-5">
-							<img src="https://www.fpfsistemas.com/template/people%20(4).png">
+							<img src="{{cdnUrl}}{{colConsultoria[0].colContentArea[0].image}}">
 						</div>
 					</div>
 				</div>
 				<div class="pt-5 row">
-					<span class="text-Serivces text-center">Nesta área, a FPF Sistemas Gestão avalia de forma rigorosa, através de uma equipa de consultores especializados, as necessidades dos seus clientes e parceiros criando soluções imediatas.<br><br>Este serviço inclui:</span>
-					<span class="py-5 text-Serivces text-left">
-						<ul>
-							<li>Serviços de Consultoria</li>
-							<li>Reengenharia de processos</li>
-							<li>Implementação de Soluções</li>
-							<li>Auditoria a Sistemas Informáticos</li>
-							<li>Gestão de projectos e Serviços</li>
-							<li>Segurança de sistemas</li>
-						</ul>
+					<span class="text-Serivces text-center">{{colConsultoria[0].text|raw}}</span>
+					<span class="py-5 m-0 text-Serivces text-left">
+						{{colConsultoria[1].text|raw}}
 					</span>
-					<span class="text-Serivces text-justify">Os serviços de consultoria visam a análise, certificação e acompanhamento da implementação de soluções.<br><br>Iniciando os processos de consultoria, em termos de necessidades, passando por objectivos funcionais e orçamentais, a FPF Sistemas Gestão oferece a garantia de servir os seus clientes com soluções adequadas agregadas ao verdadeiro ponto fulcral de uma empresa, a funcionalidade.</span>
+					<span class="text-Serivces text-justify">{{colConsultoria[2].text|raw}}</span>
 
 				</div>
 				<div class="row pt-5">
 					<span class="text-Serivces text-center">
-						<b>Competência dos serviços de Consultoria:</b>
-						<ul class="text-left pt-5">
-							<li>Consultoria para Software de Gestão</li>
-							<li>Consultoria para Redes Estruturadas</li>
-							<li>Consultoria para Sistemas Passivos e Activos</li>
-							<li>Acompanhamento dos processos de Implementação</li>
-							<li>Consultoria para Software de Produção</li>
-							<li>Consultoria para Hardware</li>
-							<li>Consultoria para Soluções Específicas</li>
-						</ul>
+						{{colConsultoria[3].text|raw}}
 					</span>
 				</div>
 				<hr style="border: 1px solid gray;">
-				<div class="py-5 row col d-flex justify-content-center">
+				<div class="py-5 m-0 row col d-flex justify-content-center">
 					<div>
 						<span class="title-Services">
-							IMPLEMENTAÇÃO SOFTWARE
+							{{colImplementacao[0].colContentArea[0].name}}
 						</span>
 						<div class="text-center pt-5">
-							<img src="https://www.fpfsistemas.com/template/icon%20(1).png">
+							<img src="{{cdnUrl}}{{colImplementacao[0].colContentArea[0].image}}">
 						</div>
 					</div>
 				</div>
 				<div class="py-3 row">
-					<span class="text-Serivces text-center">Normalmente a forma de implementar um sistema é com um contrato de implementação que se renova automaticamente a medida que as horas se vão esgotando.<br><br>
-Temos dois tipos de horas, as horas locais e as horas remotas, desta forma conseguimos reduzir os custos de implementação e criar satisfação nos clientes com um alto valor acrescentado na implementação e nas soluções solicitadas.<br><br>
-A sua flexibilidade torna possível a existência de configurações adicionais definidas pelo cliente, disponibilizando uma solução adaptada ao seu modo de funcionamento.<br><br>
-</span>
-<span class="text-Serivces text-left"><b>A metodologia para implementação consiste:</b></span>
+					<span class="text-Serivces text-center">
+						Normalmente a forma de implementar um sistema é com um contrato de implementação que se renova automaticamente a medida que as horas se vão esgotando.<br><br>
+						Temos dois tipos de horas, as horas locais e as horas remotas, desta forma conseguimos reduzir os custos de implementação e criar satisfação nos clientes com um alto valor acrescentado na implementação e nas soluções solicitadas.<br><br>
+						A sua flexibilidade torna possível a existência de configurações adicionais definidas pelo cliente, disponibilizando uma solução adaptada ao seu modo de funcionamento.<br><br>
+					</span>
+					<span class="text-Serivces text-left"><b>A metodologia para implementação consiste:</b></span>
+				</div>
+				<div class="py-3 row">
+					<span class="text-Serivces text-left">
+						<b>Levantamento de Necessidades</b>
+					</span>
+					<span class="text-Serivces text-center">
+						É necessário efectuar a devida identificação de todo o processo de funcionamento da empresa, desde a emissão do orçamento e recepção de encomendas até ao controlo de existências e à contabilidade, não descurando a análise do layout e conteúdo dos respectivos documentos.
+					</span>
+				</div>
+
+				<div class="py-3 row">
+					<span class="text-Serivces text-left">
+						<b>Configuração de Software</b>
+					</span>
+					<span class="text-Serivces text-center">
+						Configuração e parametrização do software e toda a documentação, tendo em conta o método a implementar na empresa e todo o levantamento.
+					</span>
+				</div>
+
+				<div class="py-3 row">
+					<span class="text-Serivces text-left">
+						<b>Definição e Instalação da Base de Dados</b>
+					</span>
+					<span class="text-Serivces text-center">
+						Configuração e instalação da base dados no Servidor do cliente e nos postos de trabalho.
+					</span>
+				</div>
+
+				<div class="py-3 row">
+					<span class="text-Serivces text-left">
+						<b>Formação</b>
+					</span>
+					<span class="text-Serivces text-center">
+						A Formação do software será definida entre a FPF Sistemas Gestão e a empresa cliente. Essa formação, por norma deverá ser realizada nas instalações da FPF Sistemas Gestão, salvo raras excepções, onde terá que haver acordo entre as partes interessadas. Deverá ser agendado os dias para a respectiva formação.
+					</span>
+				</div>
+
+				<hr style="border: 1px solid gray;">
+				<div class="py-5 m-0 row col d-flex justify-content-center">
+					<div>
+						<span class="title-Services">
+							ASSISTÊNCIA SOFTWARE
+						</span>
+						<div class="text-center pt-5">
+							<img src="https://www.fpfsistemas.com/template/people%20(3).png">
+						</div>
+					</div>
+				</div>
+
+				<div class="row py-3 d-flex justify-content-center">
+					<span class="text-Serivces text-center">
+						Como complemento ao serviço pós-venda, os técnicos de software da FPF Sistemas Gestão farão os ajustes necessários ao software para que este se adapte à realidade e necessidade de cada Empresa.<br><br>
+						Efectuando todos os serviços necessários desde a conversão dos dados vindos de outros softwares, até à configuração dos impressos para as impressoras passando pela formação dos colaboradores de cada Empresa.<br><br>
+						Os técnicos de software estão devidamente qualificados e preparados para prestar apoio tanto On-Site, nas próprias instalações ou por telefone/telemóvel.<br><br>
+						Por fim, a FPF Sistemas Gestão dispõe de um Help Desk telefónico cujo objectivo é auxiliar os clientes, aquando das suas dúvidas, questões e problemas.<br><br>
+
+					</span>
+					<span class="text-Serivces text-center"><b>Competência dos serviços de Assistência a Software:</b></span>
+				</div>
+
+				<div class="row py-4">
+					
+					<span class="text-Serivces text-left">
+						<ul>
+							<li>Assistência pós-venda</li>
+							<li>Estruturação</li>
+							<li>Personalização</li>
+							<li>Prestar serviços de Formação de Software de Gestão</li>
+							<li>Assistência On-Site ou por telefone / telemóvel</li>
+							<li>Serviços de assistência através de Call-Center</li>
+							<li>Análise</li>
+							<li>Implementação</li>
+							<li>Efectuar a Configuração dos documentos relativos (Máscaras de Factura, Recibos, etc.)</li>
+							<li>Actualizações de Software</li>
+						</ul>
+					</span>
+				</div>
+
+				<hr style="border: 1px solid gray;">
+				<div class="py-5 m-0 row col d-flex justify-content-center">
+					<div>
+						<span class="title-Services">
+							ASSISTÊNCIA TÉCNICA
+						</span>
+						<div class="text-center pt-5">
+							<i class="mdi mdi-wrench-outline icon-Services"></i>
+						</div>
+					</div>
+				</div>
+
+				<div class="row py-3 d-flex justify-content-center">
+					<span class="text-Serivces text-center">Em termos de Assistência Técnica, a FPF Sistemas Gestão conta com uma experiente equipa de pessoal especializado nas mais diversas áreas que vão desde a configuração de um simples terminal de trabalho, até à implementação de complexas redes.<br><br>
+					Esta equipa, presta suporte que garante a funcionalidade de todo o sistema de cada Empresa Cliente, alertando para que, e resolvendo possíveis e potenciais problemas, aquando da sua detecção, porque a funcionalidade de cada Cliente é a prioridade da FPF Sistemas Gestão.<br><br></span>
+					<span class="text-Serivces text-center"><b>Competência dos serviços de Assistência Técnica:</b></span>
+				</div>
+
+				<div class="row py-3">
+					<span class="text-Serivces text-left">
+						<ul>
+						<li>Assistir os pedidos de assistência dos clientes On-Site ou nas instalações da FPF Sistemas Gestão.</li>
+						<li>Efectuar os serviços de manutenção periódicos On-Site ao abrigo de contrato.</li>
+						<li>Estações de Trabalho (PC’s).</li>
+						<li>Impressoras.</li>
+						<li>Configuração de Redes Empresariais, desde os simples postos de trabalho, até aos servidores de Ficheiros / Bases de Dados.</li>
+						<li>Ajudar o Cliente a efectuar uma primeira despistagem por telefone, antes de ser enviado um técnico à empresa do Cliente, caso a situação recaia sobre uma incidência passiva.</li>
+						<li>Servidores.</li>
+						<li>Fontes de Alimentação e Suporte de Backup.</li>
+						<li>Efectuar manutenção da estrutura física da rede da empresa do Cliente.</li>
+						<li>Proceder à instalação e teste de equipamentos.</li>
+	
+						</ul>
+					</span>
+				</div>
+
+
+
+				<hr style="border: 1px solid gray;">
+				<div class="py-5 m-0 row col d-flex justify-content-center">
+					<div>
+						<span class="title-Services">
+							SOLUÇÕES EMPRESARIAIS
+						</span>
+						<div class="text-center pt-5">
+							<i class="mdi mdi-laptop icon-Services"></i>
+						</div>
+					</div>
+				</div>
+
+					<div class="row py-3 d-flex justify-content-center">
+					<span class="text-Serivces text-center">
+						A Oferta de soluções empresariais desenvolveu-se nos últimos anos vulgarizando a utilização de sistemas ERP como ferramenta indispensável para o controlo e integração da informação.<br><br>
+						A customização e evolução dos ERP instalados acrescentarão por sua vez valor e diferenciação ao negócio da empresa.<br><br>
+						A experiência sectorial da FPF Sistemas Gestão determina decisivamente o valor da sua oferta neste domínio.<br><br>
+
+					</span>
+				
+				</div>
+
+
+
+				<hr style="border: 1px solid gray;">
+				<div class="py-5 m-0 row col d-flex justify-content-center">
+					<div>
+						<span class="title-Services">
+							Qualidade
+						</span>
+						<div class="text-center pt-5">
+							<i class="mdi mdi-account-star-outline icon-Services"></i>
+						</div>
+					</div>
+				</div>
+
+				<div class="py-3 row d-flex justify-content-center">
+					<span class="text-Serivces text-center">
+						O elemento chave da actividade da FPF Sistemas Gestão é a oferta de produtos e serviços diferenciados, com o objectivo de identificar e satisfazer as necessidades dos seus clientes, de forma a corresponder às suas expectativas e contribuir para o seu sucesso.<br><br>
+					</span>
+					<a class="btn btn-danger noLoad quality-more-info-btn">SABER MAIS</a>
+				</div>
+
+				<div class="quality-more-info" style="display: none;">
+					<div class="py-3 row d-flex justify-content-center">
+						<span class="text-Serivces text-center">A aposta na Qualidade dos produtos e serviços fornecidos constitui a melhor defesa em relação à concorrência e a única forma de assegurar o crescimento continuado de resultados positivos, em condições cada vez mais competitivas de mercado.<br><br></span>
+						<span class="text-Serivces text-center"><b>Comercializar produtos com qualidade, dentro do prazo definido e de acordo com os requisitos especificados;</b></span>
+					</div>
+
+					<div class="py-3 row d-flex justify-content-center">
+						<span class="text-Serivces text-left">
+							<ul>
+								<li>Praticar uma politica de preços competitivos;</li>
+								<li>Prestar um eficaz serviço após venda;</li>
+								<li>Desenvolver uma relação de parceria com os seus fornecedores de forma a manter uma permanente actualização em termos tecnológicos e de mercado;</li>
+								<li>Manter um sistema de gestão participativa, descentralizando poderes e delegando níveis de autoridade;</li>
+								<li>Proporcionar um bom ambiente de trabalho aos colaboradores, fornecendo-lhes os meios e recursos técnicos e humanos necessários ao bom desempenho das tarefas inerentes às suas funções;</li>
+								<li>Incentivar e promover a constante actualização e formação profissional, contribuindo para a valorização profissional dos colaboradores da FPF Sistemas Gestão.</li>
+								<li>Colaborar com as entidades oficiais competentes, no sentido de contribuir para a conservação do ambiente, nomeadamente separando e enviando para reciclagem os materiais e desperdícios passíveis de o serem.</li>
+							</ul>
+						</span>
+					</div>
+
+					<div class="py-3 row d-flex justify-content-center">
+						<span class="text-Serivces text-center">Esta estratégia só poderá ser alcançada com trabalho de equipa, em que todos na empresa se empenham na eliminação dos erros evitáveis, concentrando esforços no sentido de prevenir a sua ocorrência, garantindo assim a continuidade do sucesso da FPF Sistemas Gestão e a longo prazo<br><br></span>
+					</div>
 				</div>
             </div>
-
 </div>
+
+{% endblock %}
+
+{% block javascripts %}
+	{{parent()}}
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('.quality-more-info-btn').on('click', function(){
+			if($('.quality-more-info').css('display')=='none'){
+				$('.quality-more-info').slideDown();
+			}
+			else{
+				$('.quality-more-info').slideUp();
+			}
+		});
+	});
+	</script>
 
 {% endblock %}

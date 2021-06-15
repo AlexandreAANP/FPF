@@ -64,6 +64,11 @@ body {
 /*Mycode*/
 /*mobile*/
 @media only screen and (max-width: 770px) {
+	.text-Serivces{
+	font-size: 17px !important;
+    line-height: 23px !important;
+
+}
 	.about-us-bg-content{
 	padding-top: 25px !important;
     padding-bottom: 40px !important;
@@ -1816,6 +1821,10 @@ border-bottom: 1px solid white !important;
 	font-weight: bold;
 }
 .text-Serivces{
-	font-size: 27px;
+	font-size: 26px;
+    line-height: 30px;
 
+}
+.icon-Services:before{
+	font-size: 95px;
 }
