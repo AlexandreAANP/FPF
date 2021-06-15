@@ -184,6 +184,7 @@ class DefaultController extends SiteCacheController
             return $this->renderSite('index.html.twig', [
             'allItens' => $allItens,
             'colBanner' => $colBanner,
+            'colDoubts' => $colDoubts,
             'colFooter' =>$colFooter,
             'colFooterDown' => $colFooterDown,
             'colWitnesses' => $colWitnesses
