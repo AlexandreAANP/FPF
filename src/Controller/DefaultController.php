@@ -846,17 +846,97 @@ class DefaultController extends SiteCacheController
                 if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                     if (array_key_exists('colContent', $objData)) {
                         $Consultoria = $objData['colContent'];
+                        $order = [];
+                       foreach ($Consultoria as $key => $value) {
+                            $order[$value['url']-1]= $value;
+                       }
+                       ksort($order);
+                       $Consultoria = $order;
+                    }
+                }
+            }
+            
+           
+
+            $implementacao = [];
+                $url = $this->apiUrl . '/api/content?category=articles-category-services&area=content-area-software-implementation&type=articles&fields=url,text,filename,area&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $implementacao = $objData['colContent'];
+                         $order = [];
+                       foreach ($implementacao as $key => $value) {
+                            $order[$value['url']-1]= $value;
+                       }
+                       ksort($order);
+                       $implementacao = $order;
+                    }
+                }
+            }
+
+            $assistencia = [];
+                $url = $this->apiUrl . '/api/content?category=articles-category-services&area=content-area-software-assistance&type=articles&fields=url,text,filename,area&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $assistencia = $objData['colContent'];
+                        $order = [];
+                       foreach ($assistencia as $key => $value) {
+                            $order[$value['url']-1]= $value;
+                       }
+                       ksort($order);
+                       $assistencia = $order;
                        
                     }
                 }
             }
 
-            $implementacao = [];
-                $url = $this->apiUrl . '/api/content?category=articles-category-services&area=content-area-consulting-planning-and-design&type=articles&fields=url,text,filename,area&language=' . $defaultLanguage;
+            $tecnica = [];
+                $url = $this->apiUrl . '/api/content?category=articles-category-services&area=content-area-technical-assistance&type=articles&fields=url,text,filename,area&language=' . $defaultLanguage;
             if ($data = $this->getAPIData($url)) {
                 if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                     if (array_key_exists('colContent', $objData)) {
-                        $implementacao = $objData['colContent'];
+                        $tecnica = $objData['colContent'];
+                        $order = [];
+                       foreach ($tecnica as $key => $value) {
+                            $order[$value['url']-1]= $value;
+                       }
+                       ksort($order);
+                       $tecnica = $order;
+                       
+                    }
+                }
+            }
+
+             $solutions = [];
+                $url = $this->apiUrl . '/api/content?category=articles-category-services&area=content-area-business-solutions&type=articles&fields=url,text,filename,area&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $solutions = $objData['colContent'];
+                        $order = [];
+                       foreach ($solutions as $key => $value) {
+                            $order[$value['url']-1]= $value;
+                       }
+                       ksort($order);
+                       $solutions = $order;
+                       
+                    }
+                }
+            }
+
+              $qualidade = [];
+                $url = $this->apiUrl . '/api/content?category=articles-category-services&area=content-area-quality&type=articles&fields=url,text,filename,area&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $qualidade = $objData['colContent'];
+                        $order = [];
+                       foreach ($qualidade as $key => $value) {
+                            $order[$value['url']-1]= $value;
+                       }
+                       ksort($order);
+                       $qualidade = $order;
                        
                     }
                 }
@@ -905,6 +985,10 @@ class DefaultController extends SiteCacheController
                 'allItens' => $allItens,
                 'colConsultoria' => $Consultoria,
                 'colImplementacao' => $implementacao,
+                'colAssistencia' => $assistencia,
+                'colTecnica' => $tecnica,
+                'colSolutions' => $solutions,
+                'colQualidade' => $qualidade,
                 'colDoubts' => $colDoubts,
                 'colBanner' =>$colBanner,
                 'colFooter' =>$colFooter,
