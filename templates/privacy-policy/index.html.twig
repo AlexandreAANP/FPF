@@ -1,0 +1,36 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {#% include 'slider.html.twig' %#}
+
+
+    {#% include '_includes/modal_product_color_size.html.twig' %#}
+
+    {% set text = null  %}
+    {% set image = null %}
+    {% for media in colBanner %}
+        {% if media.referenceKey == 'richmedia-privacy-policy' %}
+            {% set text = media.text %}
+            {% set image = media.filename %}
+        {% endif %}
+    {% endfor %}
+  <div class="background-image-header" style="background-image: url('{{image}}')">
+    {% include '_render_block/header_squares_animation.html.twig' %}
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            {{text|raw}}
+        </div>
+    </div>
+</div>
+
+     
+
+<div class="background-index-image" style="padding-top: 15vh; padding-bottom: 100px;">
+    <div class="container">
+    {% for content in colContent %}
+    {{content.text|raw}}<br>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
