@@ -53,18 +53,16 @@
                 <div class='row'>
                      <div class='col'>
                         {% set colContentFooterLinks = LayoutFunctions.getAPI('content?category=richmedia-category-home&area=content-area-page-footer&type=richmedia&fields=url,text,filename&language=' ~ app.request.getLocale())%}
-                        <!--pre>{{dump(colContentFooterLinks.colContent)}}</pre-->
                         <ul class='list-unstyled mb-5'>
                             <li class="footer-menu-header">{% trans %}Quick Acess{% endtrans %}</li>
                              {% for link in colContentFooterLinks.colContent ?? [] %}
                                 {% if link.description == "coluna 01" %}
-                                    {% if link.url|length > 0 or link.text|length > 0 %}
+                                    {% if link.url|length == 0 or (link.url|length > 0 and link.text|length > 0) %}
                                         {% set class = "noLoad" %}
                                     {% else %}
                                         {% set class = "" %}
                                     {% endif %}
                                     <li><a class='{{class}}' href="{{link.url}}" {{link.text|length > 0 ? 'target="_blank"' : '' }} title="{{link.title}}">{{link.title}}</a></li>
-                                    
                                 {% endif %}
                                     <!--li><a class='' href="/who-we-are" title="{% trans %}Who we are{% endtrans %}">{% trans %}Who we are{% endtrans %}</a></li>
                                     <li><a class='' href="/Services" title="{% trans %}Services{% endtrans %}">{% trans %}Services{% endtrans %}</a></li>
@@ -80,7 +78,7 @@
                             <li class="footer-menu-header ">{% trans %}Help{% endtrans %}</li>
                              {% for link in colContentFooterLinks.colContent ?? [] %}
                                 {% if link.description == "coluna 02" %}
-                                    {% if link.url|length > 0 or link.text|length > 0 %}
+                                    {% if link.url|length == 0 or (link.url|length > 0 and link.text|length > 0) %}
                                         {% set class = "noLoad" %}
                                     {% else %}
                                         {% set class = "" %}
@@ -100,7 +98,7 @@
                             <li class="footer-menu-header ">{% trans %}Contact us{% endtrans %}</li>
                             {% for link in colContentFooterLinks.colContent ?? [] %}
                                 {% if link.description == "coluna 03" %}
-                                    {% if link.url|length > 0 or link.text|length > 0 %}
+                                    {% if link.url|length == 0 or (link.url|length > 0 and link.text|length > 0) %}
                                         {% set class = "noLoad" %}
                                     {% else %}
                                         {% set class = "" %}
