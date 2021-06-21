@@ -63,7 +63,7 @@
                                     {% else %}
                                         {% set class = "" %}
                                     {% endif %}
-                                    <li><a class='{{class}}' href="{{link.url}}" {{link.text}} title="{{link.title}}">{{link.title}}</a></li>
+                                    <li><a class='{{class}}' href="{{link.url}}" {{link.text|length > 0 ? 'target="_blank"' : '' }} title="{{link.title}}">{{link.title}}</a></li>
                                     
                                 {% endif %}
                                     <!--li><a class='' href="/who-we-are" title="{% trans %}Who we are{% endtrans %}">{% trans %}Who we are{% endtrans %}</a></li>

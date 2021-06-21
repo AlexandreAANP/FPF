@@ -194,6 +194,122 @@ class DefaultController extends SiteCacheController
     }
 
      /**
+     * @Route("/litigation", name="frontoffice_litigation", methods={"GET"})
+     */
+
+     public function Litigation (Request $request){
+        
+        $this->setCacheFilename('home');
+        $defaultLanguage = $request->getLocale();
+
+                   /*DOUBTS*/
+        $colDoubts=[];
+          $url = $this->apiUrl . '/api/content?area=content-area-all-pages&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
+        if ($data = $this->getAPIData($url)) {
+            if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                if (array_key_exists('colContent', $objData)) {
+                    $colDoubts = $objData['colContent'];
+                }
+            }
+        }
+        /*/DOUBTS*/
+
+           /*Banner*/
+            $colBanner = [];
+            $url = $this->apiUrl . '/api/content?category=richmedia-category-litigation&area=content-area-page-header&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $colBanner = $objData['colContent'];
+                    }
+                }
+            }
+            /*/Banner*/
+
+         /*content*/
+            $colContent = [];
+            $url = $this->apiUrl . '/api/content?type=terms&category=terms-category-litigation&fields=url,text,filename&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $colContent = $objData['colContent'];
+                    }
+                }
+            }
+            /*/content*/
+
+              return $this->renderSite('terms/litigation.html.twig',[
+                'colBanner' =>$colBanner,
+                'colDoubts' => $colDoubts,
+                'colContent' => $colContent
+            ]);
+
+
+    }
+
+
+    /**
+     * @Route("/SLA", name="frontoffice_sla", methods={"GET"})
+     */
+
+     public function SLA(Request $request){
+        
+        $this->setCacheFilename('home');
+        $defaultLanguage = $request->getLocale();
+
+                   /*DOUBTS*/
+        $colDoubts=[];
+          $url = $this->apiUrl . '/api/content?area=content-area-all-pages&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
+        if ($data = $this->getAPIData($url)) {
+            if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                if (array_key_exists('colContent', $objData)) {
+                    $colDoubts = $objData['colContent'];
+                }
+            }
+        }
+        /*/DOUBTS*/
+
+           /*Banner*/
+            $colBanner = [];
+            $url = $this->apiUrl . '/api/content?category=richmedia-category-sla&area=content-area-page-header&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $colBanner = $objData['colContent'];
+                    }
+                }
+            }
+            /*/Banner*/
+
+         /*content*/
+            $colContent = [];
+            $url = $this->apiUrl . '/api/content?type=terms&category=terms-category-sla&fields=url,text,filename&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $colContent = $objData['colContent'];
+                        $content = [];
+                        foreach ($colContent as $key => $value) {
+                            $content[intval($value['url'])] = $value;
+                        }
+                        ksort($content);
+                        $colContent=$content;
+                    }
+                }
+            }
+            /*/content*/
+
+              return $this->renderSite('terms/SLA.html.twig',[
+                'colBanner' =>$colBanner,
+                'colDoubts' => $colDoubts,
+                'colContent' => $colContent
+            ]);
+
+
+    }
+
+
+     /**
      * @Route("/privacy-policy", name="frontoffice_privacy-policy", methods={"GET"})
      * @Route("/politica-de-privacidade", name="frontoffice_politica-privacidade", methods={"GET"})
      */
@@ -234,9 +350,16 @@ class DefaultController extends SiteCacheController
                 if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                     if (array_key_exists('colContent', $objData)) {
                         $colContent = $objData['colContent'];
+                        $content = [];
+                        foreach ($colContent as $key => $value) {
+                            $content[intval($value['url'])] = $value;
+                        }
+                        ksort($content);
+                        $colContent=$content;
                     }
                 }
             }
+
             /*/content*/
               return $this->renderSite('privacy-policy/index.html.twig',[
                 'colBanner' =>$colBanner,
