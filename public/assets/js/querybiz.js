@@ -32,14 +32,23 @@ var querybiz = {
 		querybiz.redirectLogin();
 
 		querybiz.hideLoadingPage();
+
+		   $('a').click(function(){
+		   	console.log("dd");
+        	href = $(this).attr('href');
+        	target = $(this).attr('target');
+        	if(href != '#' || target != '_self'){
+            	$('#preloader').css('display','block');
+        	}
+        })
 	},
 
 	hideLoadingPage: function() {
-		$('#body_loading_first').fadeOut();
+		$('#preloader').fadeOut();
 	},
 
 	showLoadingPage: function() {
-		$('#body_loading_first').fadeIn();
+		$('#preloader').fadeIn();
 	},
 
 	isMobile: function() {
@@ -423,11 +432,11 @@ var querybiz = {
     event.preventDefault();
 });
 
-		$('a').on('click', function(){
+		/*$('a').on('click', function(){
 			if(!$(this).hasClass('noLoad')){
 				$('.body-load').removeClass('d-none');
 			}
-		});
+		});*/
 		$('.mb-lg-dropdown').on('click', function(){
 			if($(this).parent().find('.dropdown-menu').hasClass("d-none")){
 				$(this).parent().find('.dropdown-menu').slideDown();
