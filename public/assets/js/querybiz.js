@@ -34,11 +34,12 @@ var querybiz = {
 		querybiz.hideLoadingPage();
 
 		   $('a').click(function(){
-		   	console.log("dd");
         	href = $(this).attr('href');
         	target = $(this).attr('target');
-        	if(href != '#' || target != '_self'){
-            	$('#preloader').css('display','block');
+        	if(href && !href.includes('#')){
+        		if(href != '#' || target != '_self'){
+            		$('#preloader').css('display','block');
+        		}
         	}
         })
 	},
@@ -291,6 +292,26 @@ var querybiz = {
 	},
 
 	formValidated: function(e, self, options = null) {
+		const regex = /newsletter/;
+		if($(e.target).attr('id').match(regex) && !$(e.target).find('[name=name]').val() || !$(e.target).find('[name=email]').val()){
+			let message = '';
+		 	if(!$(e.target).find('[name=name]').val() ){
+				message += querybiz.trans('Name is required!')+'<br>';
+			}
+			if(!$(e.target).find('[name=email]').val() ){
+				message += querybiz.trans('Email is required!')
+			}
+
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				html: message,
+			});
+			querybiz.stopLoadingText(options.formSubmitId);
+			querybiz.hideSpinnerButton(options.formSubmitId);
+			return false;
+		}
+
 		let fields = self.find('input,textarea,checkbox,radiobox');
 
 		let ret = true;

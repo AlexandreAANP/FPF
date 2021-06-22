@@ -35,7 +35,7 @@ class EmailTemplateController extends SiteCacheController
         $contentEmailTemplateTable = $request->request->get('content_email_template_table');
 
         $defaultLanguage = $request->getLocale();
-
+/*
         $recaptchaV2 = $request->request->get('g-recaptcha-response');
         $recaptchaV3 = $request->request->get('g-recaptcha-response-v3');
 
@@ -110,7 +110,7 @@ class EmailTemplateController extends SiteCacheController
             }
         }
         // -------------------------------- //
-
+*/
         $this->request->getMethod();    // e.g. GET, POST, PUT, DELETE or HEAD
         $this->request->getLanguages(); // an array of languages the client accepts
 
