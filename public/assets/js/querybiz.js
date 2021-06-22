@@ -37,7 +37,7 @@ var querybiz = {
         	href = $(this).attr('href');
         	target = $(this).attr('target');
         	if(href && !href.includes('#')){
-        		if(href != '#' || target != '_self'){
+        		if(target == '_self'){
             		$('#preloader').css('display','block');
         		}
         	}
