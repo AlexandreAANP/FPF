@@ -64,6 +64,18 @@ body {
 /*Mycode*/
 /*mobile*/
 @media only screen and (max-width: 770px) {
+	#gmap_canvas{
+		width:300px !important;
+		height:300px !important;
+	}
+	.mapouter{
+		width:300px !important;
+		height:300px !important;
+	}
+	.gmap_canvas {
+		width:300px !important;
+		height: 300px !important;
+	}
 	.text-Services{
 	font-size: 17px !important;
     line-height: 23px !important;
