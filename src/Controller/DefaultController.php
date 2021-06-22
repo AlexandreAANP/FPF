@@ -195,6 +195,7 @@ class DefaultController extends SiteCacheController
 
      /**
      * @Route("/litigation", name="frontoffice_litigation", methods={"GET"})
+     * @Route("/litigios", name="frontoffice_litigios", methods={"GET"})
      */
 
      public function Litigation (Request $request){

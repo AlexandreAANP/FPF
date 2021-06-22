@@ -1,5 +1,26 @@
 <footer class="bg-white">
     <div class="footer-top">
+        <div class="container-fluid own-container">
+            <div class="row">
+
+                <div class="order-1 order-lg-2 col-12 col-lg-4 d-flex align-items-center justify-content-center py-3 footer-top-middle">
+                    <i class="mdi mdi-swap-horizontal-bold color-purple"></i>
+                    <span class="footer-top-text">{%trans%}Exchange Points for experiences{%endtrans%}</span>
+                </div>
+                <div class="order-2 order-lg-1 col-12 col-lg-4 d-flex align-items-center justify-content-center py-3 ">
+                    <!-- <span class="material-icons">search</span> -->
+                    <i class="mdi mdi-trophy color-purple"></i>
+                    <span class="footer-top-text">{%trans%}Convert Tokens in Points{%endtrans%}</span>
+                </div>
+                <div class="order-3 order-lg-3 col-12 col-lg-4 d-flex align-items-center justify-content-center py-3 ">
+                    <i class="mdi mdi-cellphone-text color-purple"></i>
+                    <span class="footer-top-text">{%trans%}Get discounts with the app.{%endtrans%}</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {#<div class="footer-top">
         <div class="container">
             <div class="row">
                 <div class="order-1 order-lg-1 col-12 col-lg-4 d-flex align-items-center justify-content-center py-3">
@@ -24,7 +45,7 @@
                 
             </div>
         </div>
-    </div>
+    </div>#}
 
     <div class="footer-menu mt-5">
         <div class="container">
@@ -64,12 +85,12 @@
                                     {% endif %}
                                     <li><a class='{{class}}' href="{{link.url}}" {{link.text|length > 0 ? 'target="_blank"' : '' }} title="{{link.title}}">{{link.title}}</a></li>
                                 {% endif %}
-                                    <!--li><a class='' href="/who-we-are" title="{% trans %}Who we are{% endtrans %}">{% trans %}Who we are{% endtrans %}</a></li>
+                                    {#<li><a class='' href="/who-we-are" title="{% trans %}Who we are{% endtrans %}">{% trans %}Who we are{% endtrans %}</a></li>
                                     <li><a class='' href="/Services" title="{% trans %}Services{% endtrans %}">{% trans %}Services{% endtrans %}</a></li>
                                     <li><a class='' href="" title="{% trans %}SLA{% endtrans %}">{% trans %}SLA{% endtrans %}</a></li>
                                     <li><a class='' href="" title="{% trans %}Support{% endtrans %}">{% trans %}Support{% endtrans %}</a></li>
                                     <li><a class='' href="" title="{% trans %}Online Store{% endtrans %}">{% trans %}Online Store{% endtrans %}</a></li>
-                                    <li><a class='' href="" title="{% trans %}Blog{% endtrans %}">{% trans %}Blog{% endtrans %}</a></li-->
+                                    <li><a class='' href="" title="{% trans %}Blog{% endtrans %}">{% trans %}Blog{% endtrans %}</a></li>#}
                          {% endfor %}
                         </ul>
                     </div>
@@ -87,10 +108,10 @@
                                     
                                 {% endif %}
                             {% endfor %}
-                            <!--li><a class='' href="" title="{% trans %}Privacy Policy{% endtrans %}">{% trans %}Privacy Policy{% endtrans %}</a></li>
+                            {#<!--li><a class='' href="" title="{% trans %}Privacy Policy{% endtrans %}">{% trans %}Privacy Policy{% endtrans %}</a></li>
                             <li><a class="" href="" title="{% trans %}Terms & Conditions{% endtrans %}">{% trans %}Terms & Conditions{% endtrans %}</a></li>
                             <li><a class="" href="" title="{% trans %}Litigation{% endtrans %}">{% trans %}Litigation{% endtrans %}</a></li>
-                            <li><a class="" href="" title="{% trans %}Complaint book{% endtrans %}">{% trans %}Complaint book{% endtrans %}</a></li-->
+                            <li><a class="" href="" title="{% trans %}Complaint book{% endtrans %}">{% trans %}Complaint book{% endtrans %}</a></li-->#}
                         </ul>
                     </div>
                      <div class='col '>
@@ -107,8 +128,8 @@
                                     
                                 {% endif %}
                             {% endfor %}
-                            <!--li><a class='' href="" title="{% trans %}Form{% endtrans %}">{% trans %}Form{% endtrans %}</a></li>
-                            <li><a class="" href="" title="{% trans %}Google Maps{% endtrans %}">{% trans %}Google Maps{% endtrans %}</a></li-->
+                            {#<!--li><a class='' href="" title="{% trans %}Form{% endtrans %}">{% trans %}Form{% endtrans %}</a></li>
+                            <li><a class="" href="" title="{% trans %}Google Maps{% endtrans %}">{% trans %}Google Maps{% endtrans %}</a></li-->#}
                         </ul>
                     </div>
                 </div>
