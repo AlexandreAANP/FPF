@@ -85,7 +85,16 @@
                             <li class="footer-menu-header">{% trans %}Quick Acess{% endtrans %}</li>
                              {% for link in colContentFooterLinks.colContent ?? [] %}
                                 {% if link.description == "coluna 01" %}
-                                    <li><a {{link.url ? "href="~link.url~"" : ""}} {{link.text|length > 0 ? 'target="_blank"' : '' }} title="{{link.title}}">{{link.title}}</a></li>
+                                    {% set url = null %}
+                                    {% if link.url %}
+                                        {% if link.url|first == "/" %}
+                                            {% set url = baseUri~link.url%}
+                                        {% else %}
+                                            {% set url = link.url %}
+                                        {% endif %}
+                                    {% endif %}
+                                    <li><a {{ url ? "href="~url : "" }} {{link.text|length > 0 ? 'target="_blank"' : '' }} title="{{link.title}}">{{link.title}}</a></li>
+                                    
                                 {% endif %}
                                     {#<li><a class='' href="/who-we-are" title="{% trans %}Who we are{% endtrans %}">{% trans %}Who we are{% endtrans %}</a></li>
                                     <li><a class='' href="/Services" title="{% trans %}Services{% endtrans %}">{% trans %}Services{% endtrans %}</a></li>
@@ -101,7 +110,15 @@
                             <li class="footer-menu-header ">{% trans %}Help{% endtrans %}</li>
                              {% for link in colContentFooterLinks.colContent ?? [] %}
                                 {% if link.description == "coluna 02" %}
-                                    <li><a {{link.url ? "href="~link.url~"" : ""}} {{link.text}} title="{{link.title}}">{{link.title}}</a></li>
+                                       {% set url = null %}
+                                    {% if link.url %}
+                                        {% if link.url|first == "/" %}
+                                            {% set url = baseUri~link.url%}
+                                        {% else %}
+                                            {% set url = link.url %}
+                                        {% endif %}
+                                    {% endif %}
+                                    <li><a {{ url ? "href="~url : "" }} {{link.text|length > 0 ? 'target="_blank"' : '' }} title="{{link.title}}">{{link.title}}</a></li>
                                 {% endif %}
                             {% endfor %}
                             {#<!--li><a class='' href="" title="{% trans %}Privacy Policy{% endtrans %}">{% trans %}Privacy Policy{% endtrans %}</a></li>
@@ -115,7 +132,15 @@
                             <li class="footer-menu-header ">{% trans %}Contact us{% endtrans %}</li>
                             {% for link in colContentFooterLinks.colContent ?? [] %}
                                 {% if link.description == "coluna 03" %}
-                                    <li><a {{link.url ? "href="~link.url~"" : ""}} {{link.text}} title="{{link.title}}">{{link.title}}</a></li>
+                                       {% set url = null %}
+                                    {% if link.url %}
+                                        {% if link.url|first == "/" %}
+                                            {% set url = baseUri~link.url%}
+                                        {% else %}
+                                            {% set url = link.url %}
+                                        {% endif %}
+                                    {% endif %}
+                                    <li><a {{ url ? "href="~url : "" }} {{link.text|length > 0 ? 'target="_blank"' : '' }} title="{{link.title}}">{{link.title}}</a></li>
                                 {% endif %}
                             {% endfor %}
                             {#<!--li><a class='' href="" title="{% trans %}Form{% endtrans %}">{% trans %}Form{% endtrans %}</a></li>
@@ -170,18 +195,24 @@
 
              <div class="row" id="contact"><h2>{% trans %}Contact us{% endtrans %}</h2></div>
             <div class="row" style="margin-bottom: 30px;">
-                  {% set formDoubts = null %}
-                        {% for i in colDoubts %}
-                        {% if i.title == "send-email" %}
-                            {% set formDoubts = i %}
-                        {% endif %}
-                        {% endfor %}
                         <div class="col">
-                    {{formDoubts.text|raw}}
+                            <form>
+                                <p><label for="input_name">Name</label> <input class="form-control rounded-0" id="input_name" name="name" type="text" /> <label for="input_name">Company</label> <input class="form-control rounded-0" id="input_name" name="empresa" type="text" /> <label for="input_name">Role</label> <input class="form-control rounded-0" id="input_name" name="cargo" type="text" /></p>
+
+                                <div class="row">
+                                <div class="col-5"><label for="input_name">Indicative</label> <input class="form-control rounded-0" id="input_name" name="Indicativo" type="text" /></div>
+
+                                <div class="col-7"><label for="input_name">Phone</label> <input class="form-control rounded-0" id="input_name" name="telefone" type="text" /></div>
+                                </div>
+
+                                <p><label for="input_name">Email</label> <input class="form-control rounded-0" id="input_name" name="content_email_template" type="email" /> <label>Why do you contact us?</label><textarea class="form-control rounded-0 border" name="" rows="5"></textarea></p>
+
+                                <div class="d-flex justify-content-center justify-content-md-start py-5"><input class="btn btn-submit-customer" name="" type="submit" value="Send" /></div>
+                            </form>
                         </div>
                      <div class="col d-flex justify-content-center">
                         <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=lagoa,%20fpf%20sistemas&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies2.org">fmovies,to</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:500px;}</style><a href="https://www.embedgooglemap.net">google map widget for website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:500px;}</style></div></div>
-                        {#<img src="{{formDoubts.filename}}" style="width:100%;">#}
+                        
                     </div>
                 </div>
         </div>

@@ -152,6 +152,7 @@ class EmailTemplateController extends SiteCacheController
                 'table' => $contentEmailTemplateTable,
             ];
 
+            
             $objData = [];
             if ($data = $this->setAPIData($this->apiUrl . '/api/sendEmailTemplate', $arData)) {
                 $objData = json_decode($data);

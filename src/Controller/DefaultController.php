@@ -353,7 +353,9 @@ class DefaultController extends SiteCacheController
                         $colContent = $objData['colContent'];
                         $content = [];
                         foreach ($colContent as $key => $value) {
-                            $content[intval($value['url'])] = $value;
+                            if($value['description']=='fpf_sistemas'){
+                                $content[intval($value['url'])] = $value;
+                            }
                         }
                         ksort($content);
                         $colContent=$content;
@@ -886,8 +888,6 @@ class DefaultController extends SiteCacheController
                 }
             }
             /*Item*/
-
-
             /*Artigos*/
             /*/Artigos*/
             $colContent = [];

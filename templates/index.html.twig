@@ -61,7 +61,7 @@
                                 {% for  items in allItens['Restoration-body'] ?? [] %}
 
                                     <div class="col item-index"><a class="tag-a-class" href="{{baseUri}}/{% trans %}restoration{% endtrans %}/{{items.title}}">
-                                            <img src='{{items.filename}}' class="img-squares">
+                                            <img src='{{apiUrl}}{{items.description}}' class="img-squares">
                                             <i class="mdi-48px {{items.url}} index-icon-restoration d-flex justify-content-center"></i>
 
                                             <p class=" d-flex justify-content-center font-weight-bold text-center py-4">{{items.title}}</p>
@@ -91,7 +91,7 @@
 
                                    <div class="col item-index">
                                      <a class='tag-a-class' href="{{baseUri}}/{% trans %}retail{% endtrans %}/{{items.title}}">
-                                            <img src='{{items.filename}}' class="img-squares-retail">
+                                            <img src='{{apiUrl}}{{items.description}}' class="img-squares-retail">
                                             <i class="mdi-48px {{items.url}} index-icon-retail d-flex justify-content-center"></i>
 
                                             <p class=" d-flex justify-content-center font-weight-bold text-center py-4">{{items.title}}</p>
@@ -122,7 +122,7 @@
                                 {% for  items in allItens['Services-body'] %}
 
                                     <div class="col item-index"><a class="tag-a-class" href="{{baseUri}}/{% trans %}services{% endtrans %}/{{items.title}}">
-                                            <img src='{{items.filename}}' class="img-squares-services">
+                                            <img src='{{apiUrl}}{{items.description}}' class="img-squares-services">
                                             <i class="mdi-48px {{items.url}} index-icon-services d-flex justify-content-center"></i>
 
                                             <p class=" d-flex justify-content-center font-weight-bold text-center py-4">{{items.title}}</p>
@@ -153,7 +153,7 @@
                                 {% for  items in allItens['Mobile-body'] %}
 
                                     <div class="col item-index"><a class="tag-a-class" href="{{baseUri}}/{% trans %}mobile{% endtrans %}/{{items.title}}">
-                                            <img src='{{items.filename}}' class="img-squares-mobile">
+                                            <img src='{{apiUrl}}{{items.description}}' class="img-squares-mobile">
                                             <i class="mdi-48px {{items.url}} index-icon-mobile d-flex justify-content-center"></i>
 
                                             <p class=" d-flex justify-content-center font-weight-bold text-center py-4">{{items.title}}</p>

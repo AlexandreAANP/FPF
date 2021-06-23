@@ -28,7 +28,7 @@
 
 <div class="background-index-image" style="padding-top: 15vh; padding-bottom: 100px;">
     <div class="container" style="font-family: Roboto;">
-    {% for content in colContent %}
+    {% for i,content in colContent %}
     {{content.text|raw}}<br>
     {% endfor %}
     </div>

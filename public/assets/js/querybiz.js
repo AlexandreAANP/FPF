@@ -976,6 +976,7 @@ var querybiz = {
 					}
 
 				} else {
+					
 					querybiz.showTemporaryMsg('error-data-type');
 				}
 			},
