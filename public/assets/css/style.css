@@ -121,18 +121,6 @@ body {
 /*Mycode*/
 /*mobile*/
 @media only screen and (max-width: 770px) {
-	#gmap_canvas{
-		width:300px !important;
-		height:300px !important;
-	}
-	.mapouter{
-		width:300px !important;
-		height:300px !important;
-	}
-	.gmap_canvas {
-		width:300px !important;
-		height: 300px !important;
-	}
 	.text-Services{
 	font-size: 17px !important;
     line-height: 23px !important;
@@ -1896,4 +1884,10 @@ border-bottom: 1px solid white !important;
 }
 .icon-Services:before{
 	font-size: 95px;
+}
+footer .footer-menu-header{
+	font-family: "MuseoModerno", sans-serif !important;
+}
+footer .footer-menu li:not(.footer-menu-header) a{
+	font-family: "MuseoModerno", sans-serif !important;
 }

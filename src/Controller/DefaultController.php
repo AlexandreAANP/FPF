@@ -585,17 +585,28 @@ class DefaultController extends SiteCacheController
         $this->setCacheFilename('home');
         $defaultLanguage = $request->getLocale();
 
-        $allItens = [];
+        $allItensEn = [];
         
-           $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=' . $defaultLanguage;
+           $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=en';
         if ($data = $this->getAPIData($url)) {
             if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                 if (array_key_exists('colContent', $objData)) {
-                    $allItens = $this->OrganizeItens($objData['colContent']);
+                    $allItensEn = $this->OrganizeItens($objData['colContent']);
 
                 }
             }
         }
+        $allItensPt = [];
+             $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=pt';
+        if ($data = $this->getAPIData($url)) {
+            if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                if (array_key_exists('colContent', $objData)) {
+                    $allItensPt = $this->OrganizeItens($objData['colContent']);
+
+                }
+            }
+        }
+
 
 
 
@@ -615,28 +626,59 @@ class DefaultController extends SiteCacheController
          /*Item*/
             if($item){
                 $item= strtolower($item);
-                foreach ($allItens['Restoration-body'] as $value) {
-                    if(array_key_exists('title', $value) && strtolower($value['title'])===$item){
-                        $item=$value;
+                //dd($defaultLanguage);
+                    $itemPt = null;
+                    $itemEn = null;
+                    foreach ($allItensEn['Restoration-body'] as $value) {
+                        if(array_key_exists('title', $value) && strtolower($value['title'])===$item){
+                            $item=$value['referenceKey'];
+                        }
                     }
-                }
-                if(!is_array($item)){
-                     if($allItens['Restoration-body']){
-                         $item=$allItens['Restoration-body'][0];
+                    
+                    if(!$itemEn){
+                         foreach ($allItensPt['Restoration-body'] as $key => $value) {
+                             if(array_key_exists('title', $value) && strtolower($value['title'])===$item){
+
+                                $item=$value['referenceKey'];
+                            }
+                        }
                     }
-                    else{
-                        $item= [];
+
+                    if($item && $defaultLanguage=='en'){
+                        foreach ($allItensEn['Restoration-body'] as $key => $value) {
+                            if(array_key_exists('referenceKey', $value) && $value['referenceKey'] === $item){
+                                $item = $value;
+                                break;
+                            }
+                        }
                     }
-                }
+                    elseif($item && $defaultLanguage=='pt'){
+                     
+                         foreach ($allItensPt['Restoration-body'] as $key => $value) {
+                            if(array_key_exists('referenceKey', $value) && $value['referenceKey'] === $item){
+                                $item = $value;
+                                break;
+                            }
+                        }
+                    }
+                    elseif(!is_array($item)){
+                        if($defaultLanguage=='pt'){
+                            $item = $allItensPt['Restoration-body'][0] ?? [];
+                        }
+                        else{
+                            $item = $allItensEn['Restoration-body'][0] ?? [];   
+                        }
+                    }
             }
             else{
-                if($allItens['Restoration-body']){
-                    $item=$allItens['Restoration-body'][0];
-                }
+                if($defaultLanguage=='pt'){
+                    $item = $allItensPt['Restoration-body'][0] ?? [];
+                        }
+                else{
+                    $item = $allItensEn['Restoration-body'][0] ?? [];   
+                        }
             }
             /*Item*/
-
-
 
             /*Artigos*/
             /*/Artigos*/
@@ -689,7 +731,7 @@ class DefaultController extends SiteCacheController
             }
             /*/Footer Down*/
             return $this->renderSite('business_areas/restoration.html.twig',[
-                'allItens' => $allItens,
+                'allItens' => $allItensEn,
                 'item' => $item,
                 'colContent' => $colContent,
                 'colDoubts' => $colDoubts,
@@ -711,13 +753,23 @@ class DefaultController extends SiteCacheController
         $this->setCacheFilename('home');
         $defaultLanguage = $request->getLocale();
 
-        $allItens = [];
+            $allItensEn = [];
         
-           $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=' . $defaultLanguage;
+           $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=en';
         if ($data = $this->getAPIData($url)) {
             if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                 if (array_key_exists('colContent', $objData)) {
-                    $allItens = $this->OrganizeItens($objData['colContent']);
+                    $allItensEn = $this->OrganizeItens($objData['colContent']);
+
+                }
+            }
+        }
+        $allItensPt = [];
+             $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=pt';
+        if ($data = $this->getAPIData($url)) {
+            if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                if (array_key_exists('colContent', $objData)) {
+                    $allItensPt = $this->OrganizeItens($objData['colContent']);
 
                 }
             }
@@ -741,24 +793,57 @@ class DefaultController extends SiteCacheController
              /*Item*/
             if($item){
                 $item= strtolower($item);
-                foreach ($allItens['Retail-body'] as $value) {
-                    if(array_key_exists('title', $value) && strtolower($value['title'])===$item){
-                        $item=$value;
+                //dd($defaultLanguage);
+                    $itemPt = null;
+                    $itemEn = null;
+                    foreach ($allItensEn['Retail-body'] as $value) {
+                        if(array_key_exists('title', $value) && strtolower($value['title'])===$item){
+                            $item=$value['referenceKey'];
+                        }
                     }
-                }
-                if(!is_array($item)){
-                     if($allItens['Retail-body']){
-                         $item=$allItens['Retail-body'][0];
+                    
+                    if(!$itemEn){
+                         foreach ($allItensPt['Retail-body'] as $key => $value) {
+                             if(array_key_exists('title', $value) && strtolower($value['title'])===$item){
+
+                                $item=$value['referenceKey'];
+                            }
+                        }
                     }
-                    else{
-                        $item= [];
+
+                    if($item && $defaultLanguage=='en'){
+                        foreach ($allItensEn['Retail-body'] as $key => $value) {
+                            if(array_key_exists('referenceKey', $value) && $value['referenceKey'] === $item){
+                                $item = $value;
+                                break;
+                            }
+                        }
                     }
-                }
+                    elseif($item && $defaultLanguage=='pt'){
+                     
+                         foreach ($allItensPt['Retail-body'] as $key => $value) {
+                            if(array_key_exists('referenceKey', $value) && $value['referenceKey'] === $item){
+                                $item = $value;
+                                break;
+                            }
+                        }
+                    }
+                    elseif(!is_array($item)){
+                        if($defaultLanguage=='pt'){
+                            $item = $allItensPt['Retail-body'][0] ?? [];
+                        }
+                        else{
+                            $item = $allItensEn['Retail-body'][0] ?? [];   
+                        }
+                    }
             }
             else{
-                if($allItens['Retail-body']){
-                    $item=$allItens['Retail-body'][0];
-                }
+                if($defaultLanguage=='pt'){
+                    $item = $allItensPt['Retail-body'][0] ?? [];
+                        }
+                else{
+                    $item = $allItensEn['Retail-body'][0] ?? [];   
+                        }
             }
             /*Item*/
 
@@ -815,7 +900,7 @@ class DefaultController extends SiteCacheController
 
             return $this->renderSite('business_areas/retail.html.twig',[
                 'item' => $item,
-                'allItens' => $allItens,
+                'allItens' => $allItensEn,
                 'colContent' => $colContent,
                 'colDoubts' => $colDoubts,
                 'colBanner' =>$colBanner,
@@ -837,18 +922,28 @@ class DefaultController extends SiteCacheController
         $this->setCacheFilename('home');
         $defaultLanguage = $request->getLocale();
 
+                $allItensEn = [];
         
-        $allItens = [];
-        
-           $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=' . $defaultLanguage;
+           $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=en';
         if ($data = $this->getAPIData($url)) {
             if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                 if (array_key_exists('colContent', $objData)) {
-                    $allItens = $this->OrganizeItens($objData['colContent']);
+                    $allItensEn = $this->OrganizeItens($objData['colContent']);
 
                 }
             }
         }
+        $allItensPt = [];
+             $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=pt';
+        if ($data = $this->getAPIData($url)) {
+            if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                if (array_key_exists('colContent', $objData)) {
+                    $allItensPt = $this->OrganizeItens($objData['colContent']);
+
+                }
+            }
+        }
+
 
 
 
@@ -866,26 +961,60 @@ class DefaultController extends SiteCacheController
 
 
 
+          /*Item*/
             if($item){
                 $item= strtolower($item);
-                foreach ($allItens['Services-body'] as $value) {
-                    if(array_key_exists('title', $value) && strtolower($value['title'])===$item){
-                        $item=$value;
+                //dd($defaultLanguage);
+                    $itemPt = null;
+                    $itemEn = null;
+                    foreach ($allItensEn['Services-body'] as $value) {
+                        if(array_key_exists('title', $value) && strtolower($value['title'])===$item){
+                            $item=$value['referenceKey'];
+                        }
                     }
-                }
-                if(!is_array($item)){
-                     if($allItens['Services-body']){
-                         $item=$allItens['Services-body'][0];
+                    
+                    if(!$itemEn){
+                         foreach ($allItensPt['Services-body'] as $key => $value) {
+                             if(array_key_exists('title', $value) && strtolower($value['title'])===$item){
+
+                                $item=$value['referenceKey'];
+                            }
+                        }
                     }
-                    else{
-                        $item= [];
+
+                    if($item && $defaultLanguage=='en'){
+                        foreach ($allItensEn['Services-body'] as $key => $value) {
+                            if(array_key_exists('referenceKey', $value) && $value['referenceKey'] === $item){
+                                $item = $value;
+                                break;
+                            }
+                        }
                     }
-                }
+                    elseif($item && $defaultLanguage=='pt'){
+                     
+                         foreach ($allItensPt['Services-body'] as $key => $value) {
+                            if(array_key_exists('referenceKey', $value) && $value['referenceKey'] === $item){
+                                $item = $value;
+                                break;
+                            }
+                        }
+                    }
+                    elseif(!is_array($item)){
+                        if($defaultLanguage=='pt'){
+                            $item = $allItensPt['Services-body'][0] ?? [];
+                        }
+                        else{
+                            $item = $allItensEn['Services-body'][0] ?? [];   
+                        }
+                    }
             }
             else{
-                if($allItens['Services-body']){
-                    $item=$allItens['Services-body'][0];
-                }
+                if($defaultLanguage=='pt'){
+                    $item = $allItensPt['Services-body'][0] ?? [];
+                        }
+                else{
+                    $item = $allItensEn['Services-body'][0] ?? [];   
+                        }
             }
             /*Item*/
             /*Artigos*/
@@ -941,7 +1070,7 @@ class DefaultController extends SiteCacheController
 
             return $this->renderSite('business_areas/services.html.twig',[
                 'item' => $item,
-                'allItens' => $allItens,
+                'allItens' => $allItensEn,
                 'colContent' => $colContent,
                 'colDoubts' => $colDoubts,
                 'colBanner' =>$colBanner,
@@ -989,27 +1118,60 @@ class DefaultController extends SiteCacheController
         /*/DOUBTS*/
 
 
-
+ /*Item*/
             if($item){
                 $item= strtolower($item);
-                foreach ($allItens['Services-body'] as $value) {
-                    if(array_key_exists('title', $value) && strtolower($value['title'])===$item){
-                        $item=$value;
+                //dd($defaultLanguage);
+                    $itemPt = null;
+                    $itemEn = null;
+                    foreach ($allItensEn['Services-body'] as $value) {
+                        if(array_key_exists('title', $value) && strtolower($value['title'])===$item){
+                            $item=$value['referenceKey'];
+                        }
                     }
-                }
-                if(!is_array($item)){
-                     if($allItens['Services-body']){
-                         $item=$allItens['Services-body'][0];
+                    
+                    if(!$itemEn){
+                         foreach ($allItensPt['Services-body'] as $key => $value) {
+                             if(array_key_exists('title', $value) && strtolower($value['title'])===$item){
+
+                                $item=$value['referenceKey'];
+                            }
+                        }
                     }
-                    else{
-                        $item= [];
+
+                    if($item && $defaultLanguage=='en'){
+                        foreach ($allItensEn['Services-body'] as $key => $value) {
+                            if(array_key_exists('referenceKey', $value) && $value['referenceKey'] === $item){
+                                $item = $value;
+                                break;
+                            }
+                        }
                     }
-                }
+                    elseif($item && $defaultLanguage=='pt'){
+                     
+                         foreach ($allItensPt['Services-body'] as $key => $value) {
+                            if(array_key_exists('referenceKey', $value) && $value['referenceKey'] === $item){
+                                $item = $value;
+                                break;
+                            }
+                        }
+                    }
+                    elseif(!is_array($item)){
+                        if($defaultLanguage=='pt'){
+                            $item = $allItensPt['Services-body'][0] ?? [];
+                        }
+                        else{
+                            $item = $allItensEn['Services-body'][0] ?? [];   
+                        }
+                    }
             }
             else{
-                if($allItens['Services-body']){
-                    $item=$allItens['Services-body'][0];
-                }
+                if($defaultLanguage=='pt'){
+                    $item = $allItensPt['Services-body'][0] ?? [];
+                        }
+                else{
+                    $item = $allItensEn['Services-body'][0] ?? [];   
+                        }
             }
             /*Item*/
 
@@ -1181,12 +1343,23 @@ class DefaultController extends SiteCacheController
         $this->setCacheFilename('home');
         $defaultLanguage = $request->getLocale();
 
-        $allItens = [];
-           $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=' . $defaultLanguage;
+               $allItensEn = [];
+        
+           $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=en';
         if ($data = $this->getAPIData($url)) {
             if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
                 if (array_key_exists('colContent', $objData)) {
-                    $allItens = $this->OrganizeItens($objData['colContent']);
+                    $allItensEn = $this->OrganizeItens($objData['colContent']);
+
+                }
+            }
+        }
+        $allItensPt = [];
+             $url = $this->apiUrl . '/api/content?category=files-category-home&type=files&fields=url,text,filename,area&language=pt';
+        if ($data = $this->getAPIData($url)) {
+            if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                if (array_key_exists('colContent', $objData)) {
+                    $allItensPt = $this->OrganizeItens($objData['colContent']);
 
                 }
             }
@@ -1205,27 +1378,60 @@ class DefaultController extends SiteCacheController
             }
         }
         /*/DOUBTS*/
-
-        if($item){
+ /*Item*/
+            if($item){
                 $item= strtolower($item);
-                foreach ($allItens['Mobile-body'] as $value) {
-                    if(array_key_exists('title', $value) && strtolower($value['title'])===$item){
-                        $item=$value;
+                //dd($defaultLanguage);
+                    $itemPt = null;
+                    $itemEn = null;
+                    foreach ($allItensEn['Mobile-body'] as $value) {
+                        if(array_key_exists('title', $value) && strtolower($value['title'])===$item){
+                            $item=$value['referenceKey'];
+                        }
                     }
-                }
-                if(!is_array($item)){
-                     if($allItens['Mobile-body']){
-                         $item=$allItens['Mobile-body'][0];
+                    
+                    if(!$itemEn){
+                         foreach ($allItensPt['Mobile-body'] as $key => $value) {
+                             if(array_key_exists('title', $value) && strtolower($value['title'])===$item){
+
+                                $item=$value['referenceKey'];
+                            }
+                        }
                     }
-                    else{
-                        $item= [];
+
+                    if($item && $defaultLanguage=='en'){
+                        foreach ($allItensEn['Mobile-body'] as $key => $value) {
+                            if(array_key_exists('referenceKey', $value) && $value['referenceKey'] === $item){
+                                $item = $value;
+                                break;
+                            }
+                        }
                     }
-                }
+                    elseif($item && $defaultLanguage=='pt'){
+                     
+                         foreach ($allItensPt['Mobile-body'] as $key => $value) {
+                            if(array_key_exists('referenceKey', $value) && $value['referenceKey'] === $item){
+                                $item = $value;
+                                break;
+                            }
+                        }
+                    }
+                    elseif(!is_array($item)){
+                        if($defaultLanguage=='pt'){
+                            $item = $allItensPt['Mobile-body'][0] ?? [];
+                        }
+                        else{
+                            $item = $allItensEn['Mobile-body'][0] ?? [];   
+                        }
+                    }
             }
             else{
-                if($allItens['Mobile-body']){
-                    $item=$allItens['Mobile-body'][0];
-                }
+                if($defaultLanguage=='pt'){
+                    $item = $allItensPt['Mobile-body'][0] ?? [];
+                        }
+                else{
+                    $item = $allItensEn['Mobile-body'][0] ?? [];   
+                        }
             }
             /*Item*/
 
@@ -1280,7 +1486,7 @@ class DefaultController extends SiteCacheController
 
             return $this->renderSite('business_areas/mobile.html.twig',[
                 'item' => $item,
-                'allItens' => $allItens,
+                'allItens' => $allItensEn,
                 'colContent' => $colContent,
                 'colDoubts' => $colDoubts,
                 'colBanner' =>$colBanner,

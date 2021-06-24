@@ -51,7 +51,7 @@
             <div class="row">
                 <div class="col-12 col-lg-5 d-flex flex-column order-1 order-lg-2">
                      <span class="footer-menu-header d-block">{% trans %}Newsletter{% endtrans %}</span>
-                    <p>{% trans %}Subscribe our newsletter{% endtrans %}.</p>
+                    <p class="footer-menu-header">{% trans %}Subscribe our newsletter{% endtrans %}.</p>
 
                     {% set varNameFormTemplateEmail = 'newsletter' %}
                     <div class="d-block mt-2">
@@ -61,10 +61,10 @@
                             <input type="hidden" name="date_inserted" value="{{ 'now'|date('d/m/Y H:i:s') }}">
                             <input type="hidden" name="customer_id" value="{{ customerId }}">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="name" placeholder="{% trans %}Name{% endtrans %} *">
+                                <input type="text" class="form-control footer-menu-header" name="name" placeholder="{% trans %}Name{% endtrans %} *">
                             </div>
                             <div class="input-group">
-                                <input type="email" class="form-control" name="email" placeholder="{% trans %}Type your Email{% endtrans %} *">
+                                <input type="email" class="form-control footer-menu-header" name="email" placeholder="{% trans %}Type your Email{% endtrans %} *">
                                 <input type="submit" id="form_{{ varNameFormTemplateEmail }}_sendmail_template_submit" value="{% trans %}Send{% endtrans %}" class="input-group-text btn" data-loading-text="{% trans %}Sending{% endtrans %}">
                             </div>
                         </form>
@@ -96,12 +96,6 @@
                                     <li><a {{ url ? "href="~url : "" }} {{link.text|length > 0 ? 'target="_blank"' : '' }} title="{{link.title}}">{{link.title}}</a></li>
                                     
                                 {% endif %}
-                                    {#<li><a class='' href="/who-we-are" title="{% trans %}Who we are{% endtrans %}">{% trans %}Who we are{% endtrans %}</a></li>
-                                    <li><a class='' href="/Services" title="{% trans %}Services{% endtrans %}">{% trans %}Services{% endtrans %}</a></li>
-                                    <li><a class='' href="" title="{% trans %}SLA{% endtrans %}">{% trans %}SLA{% endtrans %}</a></li>
-                                    <li><a class='' href="" title="{% trans %}Support{% endtrans %}">{% trans %}Support{% endtrans %}</a></li>
-                                    <li><a class='' href="" title="{% trans %}Online Store{% endtrans %}">{% trans %}Online Store{% endtrans %}</a></li>
-                                    <li><a class='' href="" title="{% trans %}Blog{% endtrans %}">{% trans %}Blog{% endtrans %}</a></li>#}
                          {% endfor %}
                         </ul>
                     </div>
@@ -121,10 +115,6 @@
                                     <li><a {{ url ? "href="~url : "" }} {{link.text|length > 0 ? 'target="_blank"' : '' }} title="{{link.title}}">{{link.title}}</a></li>
                                 {% endif %}
                             {% endfor %}
-                            {#<!--li><a class='' href="" title="{% trans %}Privacy Policy{% endtrans %}">{% trans %}Privacy Policy{% endtrans %}</a></li>
-                            <li><a class="" href="" title="{% trans %}Terms & Conditions{% endtrans %}">{% trans %}Terms & Conditions{% endtrans %}</a></li>
-                            <li><a class="" href="" title="{% trans %}Litigation{% endtrans %}">{% trans %}Litigation{% endtrans %}</a></li>
-                            <li><a class="" href="" title="{% trans %}Complaint book{% endtrans %}">{% trans %}Complaint book{% endtrans %}</a></li-->#}
                         </ul>
                     </div>
                      <div class='col '>
@@ -143,13 +133,11 @@
                                     <li><a {{ url ? "href="~url : "" }} {{link.text|length > 0 ? 'target="_blank"' : '' }} title="{{link.title}}">{{link.title}}</a></li>
                                 {% endif %}
                             {% endfor %}
-                            {#<!--li><a class='' href="" title="{% trans %}Form{% endtrans %}">{% trans %}Form{% endtrans %}</a></li>
-                            <li><a class="" href="" title="{% trans %}Google Maps{% endtrans %}">{% trans %}Google Maps{% endtrans %}</a></li-->#}
                         </ul>
                     </div>
                 </div>
 
-                    {% set colContentFooter = LayoutFunctions.getContentGroup('content?area=content-area-footer&fields=area,url', 'area') %}
+                    {#% set colContentFooter = LayoutFunctions.getContentGroup('content?area=content-area-footer&fields=area,url', 'area') %}
                     {% if colContentFooter is iterable and colContentFooter|length > 0 %}
                         <div class="row">
                             <div class="col-12 col-md-6 col-lg-4">
@@ -189,29 +177,29 @@
                                 </div>
                             {% endif %}
                         </div>
-                    {% endif %}
+                    {% endif %#}
                 </div>
             </div>
 
              <div class="row" id="contact"><h2>{% trans %}Contact us{% endtrans %}</h2></div>
             <div class="row" style="margin-bottom: 30px;">
-                        <div class="col">
+                        <div class="col-12 col-lg-6">
                             <form>
-                                <p><label for="input_name">Name</label> <input class="form-control rounded-0" id="input_name" name="name" type="text" /> <label for="input_name">Company</label> <input class="form-control rounded-0" id="input_name" name="empresa" type="text" /> <label for="input_name">Role</label> <input class="form-control rounded-0" id="input_name" name="cargo" type="text" /></p>
+                                <p><label for="input_name" class="footer-menu-header">Name</label> <input class="form-control rounded-0" id="input_name" name="name" type="text" /> <label class="footer-menu-header" for="input_name">Company</label> <input class="form-control rounded-0" id="input_name" name="empresa" type="text" /> <label class="footer-menu-header" for="input_name">Role</label> <input class="form-control rounded-0" id="input_name" name="cargo" type="text" /></p>
 
                                 <div class="row">
-                                <div class="col-5"><label for="input_name">Indicative</label> <input class="form-control rounded-0" id="input_name" name="Indicativo" type="text" /></div>
+                                <div class="col-5"><label class="footer-menu-header" for="input_name">Indicative</label> <input class="form-control rounded-0" id="input_name" name="Indicativo" type="text" /></div>
 
-                                <div class="col-7"><label for="input_name">Phone</label> <input class="form-control rounded-0" id="input_name" name="telefone" type="text" /></div>
+                                <div class="col-7"><label class="footer-menu-header" for="input_name">Phone</label> <input class="form-control rounded-0" id="input_name" name="telefone" type="text" /></div>
                                 </div>
 
-                                <p><label for="input_name">Email</label> <input class="form-control rounded-0" id="input_name" name="content_email_template" type="email" /> <label>Why do you contact us?</label><textarea class="form-control rounded-0 border" name="" rows="5"></textarea></p>
+                                <p><label for="input_name" class="footer-menu-header">Email</label> <input class="form-control rounded-0" id="input_name" name="content_email_template" type="email" /> <label class="footer-menu-header">Why do you contact us?</label><textarea class="form-control rounded-0 border" name="text" rows="5"></textarea></p>
 
                                 <div class="d-flex justify-content-center justify-content-md-start py-5"><input class="btn btn-submit-customer" name="" type="submit" value="Send" /></div>
                             </form>
                         </div>
-                     <div class="col d-flex justify-content-center">
-                        <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=lagoa,%20fpf%20sistemas&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies2.org">fmovies,to</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:500px;}</style><a href="https://www.embedgooglemap.net">google map widget for website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:500px;}</style></div></div>
+                     <div class="col-12 col-lg-6 d-flex justify-content-center">
+                        <div class="mapouter" style="width:100%;"><div class="gmap_canvas"><iframe width="100%" height="500px" id="gmap_canvas" src="https://maps.google.com/maps?q=lagoa,%20fpf%20sistemas&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies2.org">fmovies,to</a><br><style>.mapouter{position:relative;text-align:right;}</style><a href="https://www.embedgooglemap.net">google map widget for website</a><style>.gmap_canvas {overflow:hidden;background:none!important;}</style></div></div>
                         
                     </div>
                 </div>

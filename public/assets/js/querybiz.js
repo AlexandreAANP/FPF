@@ -36,8 +36,9 @@ var querybiz = {
 		   $('a').click(function(){
         	href = $(this).attr('href');
         	target = $(this).attr('target');
+        	console.log(target);
         	if(href && !href.includes('#')){
-        		if(target == '_self'){
+        		if(!target || target == '_self'){
             		$('#preloader').css('display','block');
         		}
         	}
