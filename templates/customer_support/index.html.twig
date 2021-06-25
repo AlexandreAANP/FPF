@@ -35,7 +35,8 @@
 		</div>
 		<div class="row d-flex justify-content-center">
 			{% for i in colContent %}
-				<img class='image-device-customer-page' src="{{i.filename}}" title='{{i.title}}'>
+				
+				<a {{i.url ? "href="~i.url : "" }}><img class='image-device-customer-page' src="{{i.filename}}" title='{{i.title}}'></a>
 			{% endfor %}
 			<!--img class='image-device-customer-page' src="assets/images/sp-img.svg"-->
 		</div>
