@@ -193,6 +193,97 @@ class DefaultController extends SiteCacheController
 
     }
 
+
+      /**
+     * @Route("/Event/{EventName}", name="frontoffice_event", methods={"GET"})
+     */
+    
+      public function Event (Request $request, $EventName = null){
+        $this->setCacheFilename('home');
+        $defaultLanguage = $request->getLocale();
+
+    
+
+           /*Banner*/
+            $colBanner = [];
+            $url = $this->apiUrl . '/api/content?category=richmedia-category-event&area=content-area-page-header&type=richmedia&fields=url,text,filename&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $colBanner = $objData['colContent'];
+                    }
+                }
+            }
+            /*/Banner*/
+
+
+            /*Check name of event exist*/
+            $referenceKeyOfEvent = null;
+            if($EventName){    
+                $colContent = [];
+                $url = $this->apiUrl . '/api/content?category=events-category-events&fields=url,text,filename,area&language=' . $defaultLanguage;
+                if ($data = $this->getAPIData($url)) {
+                    if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                        if (array_key_exists('colContent', $objData)) {
+                            $colContent = $objData['colContent'];
+                            foreach ($colContent as $value) {
+                                foreach ($value['colContentArea'] as $value1) {
+                                    if(strtolower($value1['name'])===strtolower($EventName)){
+                                        $referenceKeyOfEvent = $value1['referenceKey'];
+                                        break;
+                                    }
+                                }
+                                if($referenceKeyOfEvent){
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+            if($referenceKeyOfEvent){
+            /*Content*/
+            $colContent = [];
+            $url = $this->apiUrl . '/api/content?category=events-category-events&area='.$referenceKeyOfEvent.'&fields=url,text,filename,area&language=' . $defaultLanguage;
+            if ($data = $this->getAPIData($url)) {
+                if ($objData = json_decode($data, JSON_UNESCAPED_UNICODE)) {
+                    if (array_key_exists('colContent', $objData)) {
+                        $col = $objData['colContent'];
+                        foreach ($col as $key => $value) {
+                            if(strpos($value['description'], "plus-information") !== false){
+                                if(strpos($value['description'], "1")){
+                                    $colContent[intval($value['url'])][0] = $value;    
+                                }
+                                elseif(strpos($value['description'], "2")){
+                                    $colContent[intval($value['url'])][1] = $value;   
+                                }
+                            }
+                            else{
+                                $colContent[intval($value['url'])] = $value;    
+                            }
+                            
+                        }
+                        ksort($colContent);
+                    }
+                }
+            }
+            /*/Content*/
+            }
+            else{
+                return $this->redirectToRoute('frontoffice_index');
+            }
+            
+            //dd($colContent);
+            return $this->renderSite('Event/index.html.twig',[
+                'colBanner'         => $colBanner,
+                'colContent'        => $colContent,
+                'event'             => $EventName
+            ]);
+      }
+
      /**
      * @Route("/litigation", name="frontoffice_litigation", methods={"GET"})
      * @Route("/litigios", name="frontoffice_litigios", methods={"GET"})

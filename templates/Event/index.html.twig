@@ -1,0 +1,193 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+	{% set text = null  %}
+    {% set image = null %}
+    {% for media in colBanner %}
+        {% if media.referenceKey == 'richmedia-event-banner' %}
+            {% set text = media.text %}
+            {% set image = media.filename %}
+        {% endif %}
+    {% endfor %}
+  <div class="background-image-header" style="background-image: url('{{image}}')">
+    {% include '_render_block/header_squares_animation.html.twig' %}
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            {{text|raw}}
+        </div>
+    </div>
+</div>
+
+<div class="background-index-image" style="padding-top: 15vh; padding-bottom: 100px;">
+	<div class="container">
+
+
+		<h1 class="text-center text-uppercase pb-5 mb-5 d-flex justify-content-center" style="font-size: 50px;">{{event}}</h1>
+		{% for Content in colContent %}
+			{% if Content|length == 10 %}
+			<div class="row text-center pb-5 mb-5 d-flex justify-content-center">
+				<div>
+					<h1>{{Content.title}}</h1>
+				<hr>
+				<div style="font-size: 22px;">
+					{{Content.text|raw}}
+				</div>
+				</div>
+			</div>
+			{% else %}
+				<div class="row text-center pb-5 mb-5 d-flex justify-content-center">
+					<div>
+						<h1>{{Content[0].title}}</h1>
+						<hr>
+						<div style="font-size: 22px;">
+							{{Content[0].text|raw}}
+						</div>
+						<button class="btn btn-danger my-2 click-more-information my-2">{% trans %}Know more{% endtrans %}</button>
+						<div class="more-information" style="display: none; font-size: 22px;">
+							{{Content[1].text|raw}}
+						</div>
+
+					</div>
+				</div>
+				
+
+
+			{% endif %}
+		{% endfor %}
+
+
+		{#
+		<div class="row text-center pb-5">
+
+			<div>
+
+			<h1 class="text-weight-bold">SISTEMA DE NORMALIZAÇÃO CONTABILÍSTICA</h1>
+			<hr>
+			<p style="font-size: 22px;">Em processos de transição cruciais como o do Sistema de Normalização Contabilística o acesso a informação e a antecipação constituem pontos-chave para o sucesso.
+			A FPF tem procurado, em processos de transição como o que se aproxima, apoiar a todos os níveis as PMEs, no sentido de simplificar o processo, disponibilizando antecipadamente todos os instrumentos necessários a que a conversão para o novo sistema tenha o menor impacto possível nas organizações.</p>
+
+			</div>
+
+		</div>
+
+		<div class="row text-center pb-5">
+
+			<div>
+
+			<h1 class="text-weight-bold">DIVULGAÇÃO DO EVENTO</h1>
+			<hr>
+			<p style="font-size: 22px;">Em processos de transição cruciais como o do Sistema de Normalização Contabilística o acesso a informação e a antecipação constituem pontos-chave para o sucesso.
+			A FPF tem procurado, em processos de transição como o que se aproxima, apoiar a todos os níveis as PMEs, no sentido de simplificar o processo, disponibilizando antecipadamente todos os instrumentos necessários a que a conversão para o novo sistema tenha o menor impacto possível nas organizações.</p>
+			<button class="btn btn-danger my-2 click-more-information">{% trans %}Know more{% endtrans %}</button>
+			<div class="more-information" style="display: none;">
+			<p style="font-size: 22px;">O relato de acordo com as Normas Internacionais de Relato Financeiro tal como adoptadas na União Europeia (IFRS) é, no entanto, obrigatório já desde 2005 para as demonstrações financeiras consolidadas das entidades cotadas, pelo que em 2010 a adopção do SNC em Portugal será generalizada, caminhando desta forma para a convergência internacional em matéria de relato financeiro.<br><br>
+
+
+A FPF tem procurado, em processos de transição como o que se aproxima, apoiar a todos os níveis as PMEs, no sentido de simplificar o processo, disponibilizando antecipadamente todos os instrumentos necessários a que a conversão para o novo sistema tenha o menor impacto possível nas organizações.<br><br>
+
+
+O que é o SNC
+O Sistema de Normalização Contabilística Português (SNC) surge como resposta nacional à transposição do regulamento (CE) nº 1606/2002. Este regulamento comunitário tem como objectivo assegurar o funcionamento eficiente do mercado de capitais da União Europeia (UE) e do mercado interno, através de um processo de harmonização da informação financeira que mantenha assegurado um elevado grau de transparência e comparabilidade na informação financeira prestada pelas empresas.<br><br>
+
+
+O SNC revoga o POC e legislação complementar e é constituído por um conjunto de Normas Contabilísticas de Relato Financeiro (NCFR) e de Normas Interpretativas (NI), que substituem os vários planos oficiais de contabilidade, assim como as Directrizes Contabilísticas e Decretos-Lei que regulam a actividade contabilística em Portugal.<br><br>
+
+
+O SNC assenta, por isso, nos seguintes elementos: 1 - Decreto-lei de enquadramento; 2 - Bases e normativos de carácter geral; 3 - Modelos de declarações financeiras; 4 - Codificação das contas; 5 - Normas contabilísticas de relato financeiro (NCRF); 6 - Normas contabilísticas de relato financeiro para pequenas empresas (NCRF-PE); 7 - Normas interpretativas (NI).<br><br>
+
+
+Trata-se de um modelo de normalização assente em princípios que pretende, acima de tudo, contribuir para a convergência internacional, promovendo a transparência e comparabilidade das demonstrações financeiras e a desejada eficiência e eficácia do mercado de capitais, estando por isso em sintonia com as normas internacionais de contabilidade emitidas pelo IASB e adoptadas na UE.<br><br>
+
+
+Refira-se que com a adopção do SNC, as regras contabilísticas portuguesas (NCRF) aproximam-se às Normas Internacionais de Contabilidade que determinam os procedimentos a adoptar em matéria de reconhecimento, mensuração, apresentação e divulgação das contas das empresas. Este processo acompanha a tendência de harmonização contabilística que cruza várias culturas, blocos económicos e sectores de actividade.<br><br>
+
+
+O Evento SNC 2010 destina-se a Técnicos de Contabilidade, Empresários e Gestores de PME’s, bem como outros Gestores, para que possam ficar esclarecidos nesta matéria e a transição possa ser pacífica e todos os processos de transição possam ser facilitados.<br><br>
+
+
+Contando com a presença do Dr. Abílio Sousa e do Dr. Manuel, Patuleia Presidente da Associação Portuguesa de Técnicos de Contabilidade (APOTEC), o Evento SNC promovido pela FPF – Sistemas de Gestão, tem o apoio da Câmara Municipal de Lagoa bem como de outras entidades públicas e privadas.<br><br>
+
+
+Para se inscreverem no Evento SNC 2010, ou para obterem mais informações detalhadas, podem os interessados contactar a organização através do Telefone 282 353 994 ou visitar o site www.snc2010.fpfsistemas.com.<br><br></p>
+</div>
+
+			</div>
+
+		</div>
+	
+
+
+
+		<div class="row text-center pb-5">
+
+			<div>
+
+			<h1 class="text-weight-bold">DIVULGAÇÃO DO EVENTO</h1>
+			<hr>
+			<p style="font-size: 22px;">Em processos de transição cruciais como o do Sistema de Normalização Contabilística o acesso a informação e a antecipação constituem pontos-chave para o sucesso.
+			A FPF tem procurado, em processos de transição como o que se aproxima, apoiar a todos os níveis as PMEs, no sentido de simplificar o processo, disponibilizando antecipadamente todos os instrumentos necessários a que a conversão para o novo sistema tenha o menor impacto possível nas organizações.</p>
+			<button class="btn btn-danger my-2 click-more-information">{% trans %}Know more{% endtrans %}</button>
+			<div class="more-information" style="display: none; font-size: 22px;">
+			<p>O relato de acordo com as Normas Internacionais de Relato Financeiro tal como adoptadas na União Europeia (IFRS) é, no entanto, obrigatório já desde 2005 para as demonstrações financeiras consolidadas das entidades cotadas, pelo que em 2010 a adopção do SNC em Portugal será generalizada, caminhando desta forma para a convergência internacional em matéria de relato financeiro.</p>
+
+
+<p>A FPF tem procurado, em processos de transição como o que se aproxima, apoiar a todos os níveis as PMEs, no sentido de simplificar o processo, disponibilizando antecipadamente todos os instrumentos necessários a que a conversão para o novo sistema tenha o menor impacto possível nas organizações.</p>
+
+
+<p>O que é o SNC
+O Sistema de Normalização Contabilística Português (SNC) surge como resposta nacional à transposição do regulamento (CE) nº 1606/2002. Este regulamento comunitário tem como objectivo assegurar o funcionamento eficiente do mercado de capitais da União Europeia (UE) e do mercado interno, através de um processo de harmonização da informação financeira que mantenha assegurado um elevado grau de transparência e comparabilidade na informação financeira prestada pelas empresas.</p>
+
+
+<p>O SNC revoga o POC e legislação complementar e é constituído por um conjunto de Normas Contabilísticas de Relato Financeiro (NCFR) e de Normas Interpretativas (NI), que substituem os vários planos oficiais de contabilidade, assim como as Directrizes Contabilísticas e Decretos-Lei que regulam a actividade contabilística em Portugal.</p>
+
+
+<p>O SNC assenta, por isso, nos seguintes elementos: 1 - Decreto-lei de enquadramento; 2 - Bases e normativos de carácter geral; 3 - Modelos de declarações financeiras; 4 - Codificação das contas; 5 - Normas contabilísticas de relato financeiro (NCRF); 6 - Normas contabilísticas de relato financeiro para pequenas empresas (NCRF-PE); 7 - Normas interpretativas (NI).</p>
+
+
+<p>Trata-se de um modelo de normalização assente em princípios que pretende, acima de tudo, contribuir para a convergência internacional, promovendo a transparência e comparabilidade das demonstrações financeiras e a desejada eficiência e eficácia do mercado de capitais, estando por isso em sintonia com as normas internacionais de contabilidade emitidas pelo IASB e adoptadas na UE.</p>
+
+
+<p>Refira-se que com a adopção do SNC, as regras contabilísticas portuguesas (NCRF) aproximam-se às Normas Internacionais de Contabilidade que determinam os procedimentos a adoptar em matéria de reconhecimento, mensuração, apresentação e divulgação das contas das empresas. Este processo acompanha a tendência de harmonização contabilística que cruza várias culturas, blocos económicos e sectores de actividade.</p>
+
+
+<p>O Evento SNC 2010 destina-se a Técnicos de Contabilidade, Empresários e Gestores de PME’s, bem como outros Gestores, para que possam ficar esclarecidos nesta matéria e a transição possa ser pacífica e todos os processos de transição possam ser facilitados.</p>
+
+
+<p>Contando com a presença do Dr. Abílio Sousa e do Dr. Manuel, Patuleia Presidente da Associação Portuguesa de Técnicos de Contabilidade (APOTEC), o Evento SNC promovido pela FPF – Sistemas de Gestão, tem o apoio da Câmara Municipal de Lagoa bem como de outras entidades públicas e privadas.</p>
+
+
+<p>Para se inscreverem no Evento SNC 2010, ou para obterem mais informações detalhadas, podem os interessados contactar a organização através do Telefone 282 353 994 ou visitar o site www.snc2010.fpfsistemas.com.</p>
+</div>
+
+			</div>
+
+		</div>#}
+
+
+
+
+	</div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		$('.click-more-information').on('click', function(){
+			
+			
+			if($(this).parent().find('.more-information').css('display') == 'none'){
+				$(this).parent().find('.more-information').slideDown();
+			}
+			else{
+				$(this).parent().find('.more-information').slideUp();
+			}
+		});
+	});
+	</script>
+{% endblock %}
