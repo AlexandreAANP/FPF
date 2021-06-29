@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+	{% set text = null  %}
+    {% set image = null %}
+    {% for media in colBanner %}
+        {% if media.referenceKey == 'richmedia-event-banner' %}
+            {% set text = media.text %}
+            {% set image = media.filename %}
+        {% endif %}
+    {% endfor %}
+  <div class="background-image-header" style="background-image: url('{{image}}')">
+    {% include '_render_block/header_squares_animation.html.twig' %}
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            {{text|raw}}
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    .list-group .list-group-item a{
+    font-size: 30px;
+    margin: 40px;
+    color: #1a68bb;
+    }
+
+@media only screen and (max-width: 770px) {
+    .list-group .list-group-item a{
+        font-size: 20px !important;
+        margin: 0 !important;
+    }
+
+}
+</style>
+<div class="background-index-image" style="padding-top: 15vh; padding-bottom: 100px;">
+	<div class="container">
+        <div class="row col">
+            <div>
+            <h1>{% trans %}List of events:{% endtrans %}</h1>
+            <ul class="list-group">
+                {% for item in Eventlist %}
+                   <li class="list-group-item rounded-0"><a class="text-black" href="/{{app.request.getLocale()}}/Event/{{item.title}}">{{item.title}}</a></li>
+                {% endfor %}
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
